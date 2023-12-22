@@ -196,6 +196,7 @@ class Skills(Enum):
     }
 
     Comedian = {
+        # this skill raises agility
         SoulAttributes.Language: Scores.A,
         SoulAttributes.Creativity: Scores.B,
         SoulAttributes.Kinesthesic: Scores.C,
@@ -215,6 +216,7 @@ class Skills(Enum):
     }
 
     Intimidator = {
+        # this skill raises agility
         SoulAttributes.Language: Scores.A,
         SoulAttributes.Kinesthesic: Scores.B,
         BodyAttributes.Strength: Scores.A,
