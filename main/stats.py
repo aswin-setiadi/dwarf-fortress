@@ -1,4 +1,4 @@
-from enum import Enum
+from enum import Enum, IntEnum
 
 
 # descriptions in overview (green and orange) can changer over dwarf lifetime
@@ -41,18 +41,19 @@ class Values(Enum):
     Knowledge = 9
     Law = 10
     Leisure = 11
-    MasterCraft = 12
-    Nature = 13
-    OtherSlowSkillMastering = 14
-    Peaceful = 15
-    Perserverance = 16
-    Romance = 17
-    Sacrifice = 18
-    SkillMastery = 19
-    Stoicism = 20
-    Tradition = 21
-    Tranquility = 22
-    WorkOfArt = 23
+    Martialprowess = 12
+    MasterCraft = 13
+    Nature = 14
+    OtherSlowSkillMastering = 15
+    Peaceful = 16
+    Perserverance = 17
+    Romance = 18
+    Sacrifice = 19
+    SkillMastery = 20
+    Stoicism = 21
+    Tradition = 22
+    Tranquility = 23
+    WorkOfArt = 24
 
 
 class Personalities(Enum):
@@ -60,3 +61,9 @@ class Personalities(Enum):
     Reserved = 2
     StraightForward = 3
     Guarded = 4
+
+
+class Scores(IntEnum):
+    A = 100
+    B = 250
+    C = 250
