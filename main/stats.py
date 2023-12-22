@@ -4,6 +4,16 @@ from enum import Enum
 # descriptions in overview (green and orange) can changer over dwarf lifetime
 # sourced from df discord
 class BodyAttributes(Enum):
+    Agility = 1
+    DiseaseResistance = 4
+    Endurance = 6
+    Frail = 8
+    Recuperation = 15
+    Strength = 18
+    Toughness = 19
+
+
+class SoulAttributes(Enum):
     AnalyticalAbility = 2
     Creativity = 3
     Empathy = 5
@@ -17,16 +27,6 @@ class BodyAttributes(Enum):
     SocialAwareness = 16
     SpatialSense = 17
     Willpower = 20
-
-
-class SoulAttributes(Enum):
-    Agility = 1
-    DiseaseResistance = 4
-    Endurance = 6
-    Frail = 8
-    Recuperation = 15
-    Strength = 18
-    Toughness = 19
 
 
 class Values(Enum):
