@@ -1,0 +1,68 @@
+[
+    [
+        "START_A_FAMILY",
+        "dreams of raising a family",
+        "Goal completed upon giving birth/fathering an infant."
+    ],
+    [
+        "RULE_THE_WORLD",
+        "dreams of ruling the world"
+    ],
+    [
+        "CREATE_A_GREAT_WORK_OF_ART",
+        "dreams of creating a great work of art",
+        "Goal completed upon creation of Artifact or Masterpiece."
+    ],
+    [
+        "CRAFT_A_MASTERWORK",
+        "dreams of crafting a masterwork someday",
+        "Goal completed upon creation of Artifact or Masterpiece."
+    ],
+    [
+        "BRING_PEACE_TO_THE_WORLD",
+        "dreams of bringing lasting peace to the world"
+    ],
+    [
+        "BECOME_A_LEGENDARY_WARRIOR",
+        "dreams of becoming a legendary warrior"
+    ],
+    [
+        "MASTER_A_SKILL",
+        "dreams of mastering a skill",
+        "Goal completed upon reaching Legendary skill status."
+    ],
+    [
+        "FALL_IN_LOVE",
+        "dreams of falling in love"
+    ],
+    [
+        "SEE_THE_GREAT_NATURAL_SITES",
+        "dreams of seeing the great natural places of the world"
+    ],
+    [
+        "IMMORTALITY",
+        "has become obsessed with his/her own mortality",
+        "Leads to necromancy, which renders the necromancer immune to death by old age. Creatures like goblins and elves, who are immortal from the start, cannot have this dream."
+    ],
+    [
+        "MAKE_A_GREAT_DISCOVERY",
+        "dreams of making a great discovery"
+    ],
+    [
+        "ATTAIN_RANK_IN_SOCIETY",
+        "dreams of attaining rank in society",
+        "Goal completed upon becoming a baron (and possibly other noble positions)."
+    ],
+    [
+        "BATHE_WORLD_IN_CHAOS",
+        "dreams of bathing the world in chaos"
+    ],
+    [
+        "STAY_ALIVE",
+        ""
+    ],
+    [
+        "MAINTAIN_ENTITY_STATUS",
+        ""
+    ]
+]
