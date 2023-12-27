@@ -678,14 +678,6 @@ class Skills(Enum):
         self.value
 
 
-class Animal:
-    def __init__(self, name: str) -> None:
-        self.name = name
-
-
 if __name__ == "__main__":
     print(Skills.WoodCutter)  # Skills.WoodCutter
     print(type(Skills.WoodCutter))  # <enum 'Skills'>
-    a = Animal("cat")
-    print(a)  # <__main__.Animal object at 0x000002462B053850>
-    print(type(a))  # <class '__main__.Animal'>
