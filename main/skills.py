@@ -8,7 +8,7 @@ class Skill(metaclass=ABCMeta):
     def __init__(self) -> None:
         self.attributes: dict[BodyAttributes | SoulAttributes, Scores] = {}
 
-    def can_get_xp(self, personalities: set[Personalities]):
+    def can_get_xp(self, personalities: set[Personalities]) -> bool:
         return True
 
 
