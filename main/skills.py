@@ -114,6 +114,12 @@ class Comedian(Skill):
             BodyAttributes.Agility: Scores.A,
         }
 
+    def can_get_xp(self, personalities: set[Personalities]) -> bool:
+        if Personalities.SelfConscious in personalities:
+            return False
+        else:
+            return True
+
 
 class Concentration(Skill):
     def __init__(self) -> None:
@@ -132,6 +138,12 @@ class Consoler(Skill):
             SoulAttributes.SocialAwareness: Scores.C,
         }
 
+    def can_get_xp(self, personalities: set[Personalities]) -> bool:
+        if Personalities.Guarded in personalities:
+            return False
+        else:
+            return True
+
 
 class Conversationalist(Skill):
     def __init__(self) -> None:
@@ -140,6 +152,12 @@ class Conversationalist(Skill):
             SoulAttributes.SocialAwareness: Scores.B,
             SoulAttributes.Empathy: Scores.C,
         }
+
+    def can_get_xp(self, personalities: set[Personalities]) -> bool:
+        if Personalities.Reserved in personalities:
+            return False
+        else:
+            return True
 
 
 class Cook(Skill):
@@ -266,6 +284,12 @@ class Flatterer(Skill):
             SoulAttributes.SocialAwareness: Scores.B,
             SoulAttributes.Empathy: Scores.C,
         }
+
+    def can_get_xp(self, personalities: set[Personalities]) -> bool:
+        if Personalities.StraightForward in personalities:
+            return False
+        else:
+            return True
 
 
 class FurnaceOperator(Skill):
