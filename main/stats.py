@@ -12,6 +12,9 @@ class BodyAttributes(Enum):
     Strength = 18
     Toughness = 19
 
+    def __repr__(self) -> str:
+        return f"{self.name}"
+
 
 class SoulAttributes(Enum):
     AnalyticalAbility = 2
@@ -27,6 +30,9 @@ class SoulAttributes(Enum):
     SocialAwareness = 16
     SpatialSense = 17
     Willpower = 20
+
+    def __repr__(self) -> str:
+        return f"{self.name}"
 
 
 class Values(Enum):
