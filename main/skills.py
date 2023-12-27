@@ -163,7 +163,11 @@ class Diagnoser(Skill):
 
 class Discipline(Skill):
     """
-    Military less likely to route
+    Military less likely to route.
+    Medic keep away from panic when lose a patient when others waiting.
+    Active military training raise discipline rather quickly.
+    Exposed to dead body, rain, cancelling jobs due to "horrified" also raise it.
+    Creature naturally high stress and horror tolerance hard to train discipline.
     """
 
     def __init__(self) -> None:
@@ -621,6 +625,10 @@ class Skills(Enum):
     AnimalTrainer = AnimalTrainer()
     Miner = Miner()
     StoneCutter = StoneCutter()
+    # Successfully completing the 'capture a live land animal' task
+    # fulfills a dwarf's 'do something exciting' need.
+    # Trapper = Trapper()
+    # Tanner = Tanner()
 
     # Crafting
     Cook = Cook()
@@ -635,7 +643,7 @@ class Skills(Enum):
     Mason = Mason()
 
     # military
-    Discipline = Discipline()
+    # Discipline = Discipline() easy to increase w. basic mil. training.
     ArmorUser = ArmorUser()
     Fighter = Fighter()
     Dodger = Dodger()
