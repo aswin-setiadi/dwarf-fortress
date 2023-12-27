@@ -1,10 +1,13 @@
 from abc import ABCMeta
 from enum import Enum
-from main.stats import Personalities
+
 from stats import BodyAttributes, Personalities, Scores, SoulAttributes
 
 
 class Skill(metaclass=ABCMeta):
+    def __init__(self) -> None:
+        self.attributes: dict[BodyAttributes | SoulAttributes, Scores] = {}
+
     def can_get_xp(self, personalities: set[Personalities]):
         return True
 
