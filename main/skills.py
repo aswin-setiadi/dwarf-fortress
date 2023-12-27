@@ -55,6 +55,28 @@ class BoneDoctor(Skill):
         }
 
 
+class Bowyer(Skill):
+    """
+    Produces wooden crossbows.
+    Although crossbows can also be created from metal by a weaponsmith in a forge,
+    the damage a crossbow deals when fired is determined by the weapon's quality
+    and not their material. The material only affects damage when dwarves swing
+    their crossbows as impromptu hammers during melee combat.
+    This skill is not used to make bolts, which requires either wood crafting for
+    wooden bolts, bone carving for bone bolts, or weaponsmithing for metal bolts.
+    Wiki: https://dwarffortresswiki.org/index.php/Bowyer
+
+    """
+
+    def __init__(self) -> None:
+        self.attributes = {
+            SoulAttributes.Kinesthesic: Scores.A,
+            SoulAttributes.SpatialSense: Scores.B,
+            SoulAttributes.Creativity: Scores.C,
+            BodyAttributes.Agility: Scores.A,
+        }
+
+
 class Brewer(Skill):
     def __init__(self) -> None:
         self.attributes = {
@@ -602,6 +624,7 @@ class Skills(Enum):
 
     # Crafting
     Cook = Cook()
+    Bowyer = Bowyer()
     WeaponSmith = WeaponSmith()
     GemCutter = GemCutter()
     Carpenter = Carpenter()
