@@ -1,6 +1,5 @@
 from abc import ABCMeta
 from enum import Enum
-
 from stats import BodyAttributes, Personalities, Scores, SoulAttributes
 
 
@@ -362,6 +361,12 @@ class Liar(Skill):
             SoulAttributes.Creativity: Scores.C,
         }
 
+    def can_get_xp(self, personalities: set[Personalities]) -> bool:
+        if Personalities.Guarded in personalities:
+            return False
+        else:
+            return True
+
 
 class Mason(Skill):
     def __init__(self) -> None:
@@ -430,6 +435,12 @@ class Persuader(Skill):
             SoulAttributes.SocialAwareness: Scores.B,
             SoulAttributes.Empathy: Scores.C,
         }
+
+    def can_get_xp(self, personalities: set[Personalities]) -> bool:
+        if Personalities.Unassertive in personalities:
+            return False
+        else:
+            return True
 
 
 class Planter(Skill):
@@ -713,3 +724,4 @@ class Skills(Enum):
 if __name__ == "__main__":
     print(Skills.WoodCutter)  # Skills.WoodCutter
     print(type(Skills.WoodCutter))  # <enum 'Skills'>
+    print(Skills.WoodBurner.name)
