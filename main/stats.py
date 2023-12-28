@@ -219,9 +219,6 @@ class MentalBreakdowns(Enum):
     Oblivious = 2
     Depression = 3
 
-    def __repr__(self) -> str:
-        return f"{self.name}"
-
 
 class Insanity(Enum):
     """https://dwarffortresswiki.org/index.php/Insanity"""
@@ -230,6 +227,3 @@ class Insanity(Enum):
     Melancholy = 2
     Berserk = 3
     Catatonic = 4
-
-    def __repr__(self) -> str:
-        return f"{self.name}"
