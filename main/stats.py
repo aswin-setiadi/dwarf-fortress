@@ -203,15 +203,15 @@ class AttributeType(IntEnum):
     Qualifier for BodyAttributes and SoulAttributes
     """
 
-    GOOD4 = 4
-    GOOD3 = 3
-    GOOD2 = 2
-    GOOD1 = 1
+    GOOD4 = 1000
+    GOOD3 = 750
+    GOOD2 = 500
+    GOOD1 = 250
     NEUTRAL = 0
-    BAD1 = -1
-    BAD2 = -2
-    BAD3 = -3
-    BAD4 = -4
+    BAD1 = -250
+    BAD2 = -500
+    BAD3 = -750
+    BAD4 = -1000
 
 
 class MentalBreakdowns(Enum):
