@@ -84,6 +84,7 @@ class ArmorUser(Skill):
             or facets[Facets.STRESS_VULNERABILITY] > Quality.Neutral
             or facets[Facets.DEPRESSION_PROPENSITY] > Quality.Neutral
             or facets[Facets.ANXIETY_PROPENSITY] > Quality.Neutral
+            or Goals.BRING_PEACE_TO_THE_WORLD in goals
         ):
             return True
         else:
@@ -389,6 +390,7 @@ class Dodger(Skill):
             or facets[Facets.STRESS_VULNERABILITY] > Quality.Neutral
             or facets[Facets.DEPRESSION_PROPENSITY] > Quality.Neutral
             or facets[Facets.ANXIETY_PROPENSITY] > Quality.Neutral
+            or Goals.BRING_PEACE_TO_THE_WORLD in goals
         ):
             return True
         else:
@@ -463,6 +465,7 @@ class Fighter(Skill):
             or facets[Facets.STRESS_VULNERABILITY] > Quality.Neutral
             or facets[Facets.DEPRESSION_PROPENSITY] > Quality.Neutral
             or facets[Facets.ANXIETY_PROPENSITY] > Quality.Neutral
+            or Goals.BRING_PEACE_TO_THE_WORLD in goals
         ):
             return True
         else:
@@ -653,6 +656,7 @@ class Leader(Skill):
             or facets[Facets.STRESS_VULNERABILITY] > Quality.Neutral
             or facets[Facets.DEPRESSION_PROPENSITY] > Quality.Neutral
             or facets[Facets.ANXIETY_PROPENSITY] > Quality.Neutral
+            or Goals.BRING_PEACE_TO_THE_WORLD in goals
         ):
             return True
         else:
@@ -942,6 +946,7 @@ class Tactician(Skill):
             or facets[Facets.STRESS_VULNERABILITY] > Quality.Neutral
             or facets[Facets.DEPRESSION_PROPENSITY] > Quality.Neutral
             or facets[Facets.ANXIETY_PROPENSITY] > Quality.Neutral
+            or Goals.BRING_PEACE_TO_THE_WORLD in goals
         ):
             return True
         else:
