@@ -21,16 +21,23 @@ T = TypeVar("T", BodyAttributes, SoulAttributes)
 
 
 class Character:
-    # crafting_values = {Values.MasterCraft, Values.WorkOfArt}
-    # military_values = {Values.MartialProwess, Values.Stoicism, Values.War}
-    # military_disdains = {
-    #     Values.EasilyStressed,
-    #     Values.Family,
-    #     Values.Friendship,
-    #     Values.Peace,
-    #     Values.Coward,
-    #     Values.Trauma,
-    # }
+    crafting_related_values = {
+        Beliefs.CRAFTSMANSHIP,
+        Goals.CREATE_A_GREAT_WORK_OF_ART,
+        Goals.CRAFT_A_MASTERWORK,
+    }
+    # trauma is depression_propensity?
+    military_related_values = {
+        Beliefs.MARTIAL_PROWESS,
+        Beliefs.STOICISM,
+        Beliefs.PEACE,
+        Beliefs.FAMILY,
+        Beliefs.FRIENDSHIP,
+        Facets.BRAVERY,
+        Facets.STRESS_VULNERABILITY,
+        Facets.DEPRESSION_PROPENSITY,
+        Facets.ANXIETY_PROPENSITY,
+    }
 
     def __init__(
         self,
