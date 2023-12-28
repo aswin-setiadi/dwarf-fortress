@@ -36,6 +36,18 @@ class Skill(metaclass=ABCMeta):
         """Check if skill clashes with any beliefs/ facets"""
         return False
 
+    def get_skill_score(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> tuple[int, bool]:
+        """
+        Get skill score based on beliefs, facets, and goals.
+        Will return tuple of belief+face score (int) and if goal support or not (bool)
+        """
+        return (0, False)
+
 
 class AnimalTrainer(Skill):
     def __init__(self) -> None:
@@ -134,6 +146,24 @@ class Bowyer(Skill):
         else:
             return False
 
+    def get_skill_score(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> tuple[int, bool]:
+        goal = (
+            False
+            if {Goals.CRAFT_A_MASTERWORK, Goals.CREATE_A_GREAT_WORK_OF_ART}.isdisjoint(
+                goals
+            )
+            else True
+        )
+        score = 0
+        if beliefs[Beliefs.CRAFTSMANSHIP] > Quality.Neutral:
+            score += beliefs[Beliefs.CRAFTSMANSHIP]
+        return (score, goal)
+
 
 class Brewer(Skill):
     def __init__(self) -> None:
@@ -185,6 +215,24 @@ class Carpenter(Skill):
             return True
         else:
             return False
+
+    def get_skill_score(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> tuple[int, bool]:
+        goal = (
+            False
+            if {Goals.CRAFT_A_MASTERWORK, Goals.CREATE_A_GREAT_WORK_OF_ART}.isdisjoint(
+                goals
+            )
+            else True
+        )
+        score = 0
+        if beliefs[Beliefs.CRAFTSMANSHIP] > Quality.Neutral:
+            score += beliefs[Beliefs.CRAFTSMANSHIP]
+        return (score, goal)
 
 
 class Comedian(Skill):
@@ -337,6 +385,24 @@ class Cook(Skill):
         else:
             return False
 
+    def get_skill_score(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> tuple[int, bool]:
+        goal = (
+            False
+            if {Goals.CRAFT_A_MASTERWORK, Goals.CREATE_A_GREAT_WORK_OF_ART}.isdisjoint(
+                goals
+            )
+            else True
+        )
+        score = 0
+        if beliefs[Beliefs.CRAFTSMANSHIP] > Quality.Neutral:
+            score += beliefs[Beliefs.CRAFTSMANSHIP]
+        return (score, goal)
+
 
 class Diagnoser(Skill):
     def __init__(self) -> None:
@@ -436,6 +502,24 @@ class Engraver(Skill):
             return True
         else:
             return False
+
+    def get_skill_score(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> tuple[int, bool]:
+        goal = (
+            False
+            if {Goals.CRAFT_A_MASTERWORK, Goals.CREATE_A_GREAT_WORK_OF_ART}.isdisjoint(
+                goals
+            )
+            else True
+        )
+        score = 0
+        if beliefs[Beliefs.CRAFTSMANSHIP] > Quality.Neutral:
+            score += beliefs[Beliefs.CRAFTSMANSHIP]
+        return (score, goal)
 
 
 class Fighter(Skill):
@@ -558,6 +642,24 @@ class GemCutter(Skill):
             return True
         else:
             return False
+
+    def get_skill_score(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> tuple[int, bool]:
+        goal = (
+            False
+            if {Goals.CRAFT_A_MASTERWORK, Goals.CREATE_A_GREAT_WORK_OF_ART}.isdisjoint(
+                goals
+            )
+            else True
+        )
+        score = 0
+        if beliefs[Beliefs.CRAFTSMANSHIP] > Quality.Neutral:
+            score += beliefs[Beliefs.CRAFTSMANSHIP]
+        return (score, goal)
 
 
 class Herbalist(Skill):
@@ -701,6 +803,24 @@ class Mason(Skill):
             return True
         else:
             return False
+
+    def get_skill_score(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> tuple[int, bool]:
+        goal = (
+            False
+            if {Goals.CRAFT_A_MASTERWORK, Goals.CREATE_A_GREAT_WORK_OF_ART}.isdisjoint(
+                goals
+            )
+            else True
+        )
+        score = 0
+        if beliefs[Beliefs.CRAFTSMANSHIP] > Quality.Neutral:
+            score += beliefs[Beliefs.CRAFTSMANSHIP]
+        return (score, goal)
 
 
 class Miner(Skill):
@@ -860,6 +980,24 @@ class StoneCarver(Skill):
         else:
             return False
 
+    def get_skill_score(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> tuple[int, bool]:
+        goal = (
+            False
+            if {Goals.CRAFT_A_MASTERWORK, Goals.CREATE_A_GREAT_WORK_OF_ART}.isdisjoint(
+                goals
+            )
+            else True
+        )
+        score = 0
+        if beliefs[Beliefs.CRAFTSMANSHIP] > Quality.Neutral:
+            score += beliefs[Beliefs.CRAFTSMANSHIP]
+        return (score, goal)
+
 
 class StoneCrafter(Skill):
     """
@@ -884,6 +1022,24 @@ class StoneCrafter(Skill):
             return True
         else:
             return False
+
+    def get_skill_score(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> tuple[int, bool]:
+        goal = (
+            False
+            if {Goals.CRAFT_A_MASTERWORK, Goals.CREATE_A_GREAT_WORK_OF_ART}.isdisjoint(
+                goals
+            )
+            else True
+        )
+        score = 0
+        if beliefs[Beliefs.CRAFTSMANSHIP] > Quality.Neutral:
+            score += beliefs[Beliefs.CRAFTSMANSHIP]
+        return (score, goal)
 
 
 class StoneCutter(Skill):
@@ -985,6 +1141,24 @@ class WeaponSmith(Skill):
         else:
             return False
 
+    def get_skill_score(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> tuple[int, bool]:
+        goal = (
+            False
+            if {Goals.CRAFT_A_MASTERWORK, Goals.CREATE_A_GREAT_WORK_OF_ART}.isdisjoint(
+                goals
+            )
+            else True
+        )
+        score = 0
+        if beliefs[Beliefs.CRAFTSMANSHIP] > Quality.Neutral:
+            score += beliefs[Beliefs.CRAFTSMANSHIP]
+        return (score, goal)
+
 
 class Weaver(Skill):
     def __init__(self) -> None:
@@ -1029,6 +1203,24 @@ class WoodCrafter(Skill):
             return True
         else:
             return False
+
+    def get_skill_score(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> tuple[int, bool]:
+        goal = (
+            False
+            if {Goals.CRAFT_A_MASTERWORK, Goals.CREATE_A_GREAT_WORK_OF_ART}.isdisjoint(
+                goals
+            )
+            else True
+        )
+        score = 0
+        if beliefs[Beliefs.CRAFTSMANSHIP] > Quality.Neutral:
+            score += beliefs[Beliefs.CRAFTSMANSHIP]
+        return (score, goal)
 
 
 class WoodCutter(Skill):
