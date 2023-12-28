@@ -18,9 +18,11 @@ class Skill(metaclass=ABCMeta):
     def can_get_xp(
         self, beliefs: dict[Beliefs, Quality], facets: dict[Facets, Quality]
     ) -> bool:
+        """Check if beliefs/ facets cause skill unable to get xp"""
         return True
 
     def get_thought_type(self, beliefs: dict[Beliefs, Quality]) -> ThoughtType:
+        """Check if beliefs/ facets cause skill to generate unhappy thoughts"""
         return ThoughtType.NEUTRAL
 
 
