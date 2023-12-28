@@ -4,72 +4,181 @@ from enum import Enum, IntEnum
 # descriptions in overview (green and orange) can changer over dwarf lifetime
 # sourced from df discord
 class BodyAttributes(Enum):
-    Agility = 1
-    DiseaseResistance = 4
-    Endurance = 6
-    Frail = 8
-    Recuperation = 15
-    Strength = 18
-    Toughness = 19
+    Strength = 1
+    Agility = 2
+    Toughness = 3
+    Endurance = 4
+    Recuperation = 5
+    DiseaseResistance = 6
 
     def __repr__(self) -> str:
         return f"{self.name}"
 
 
 class SoulAttributes(Enum):
-    AnalyticalAbility = 2
-    Creativity = 3
-    Empathy = 5
-    Focus = 7
-    Intuition = 9
-    Kinesthesic = 10
-    Language = 11
-    Memory = 12
-    Music = 13
-    Patience = 14
-    SocialAwareness = 16
-    SpatialSense = 17
-    Willpower = 20
+    AnalyticalAbility = 1
+    Creativity = 2
+    Empathy = 3
+    Focus = 4
+    Intuition = 5
+    Kinesthesic = 6
+    Language = 7
+    Memory = 8
+    Music = 9
+    Patience = 10
+    SocialAwareness = 11
+    SpatialSense = 12
+    Willpower = 13
 
     def __repr__(self) -> str:
         return f"{self.name}"
 
 
-class Values(Enum):
-    ActiveLife = 1
-    ArtWork = 2  # in discord say only affect during chatter
-    ClimbSocietyRank = 3
-    Commerce = 4
-    Competition = 5
-    Family = 6
-    Friendship = 7
-    Introspection = 8
-    Knowledge = 9
-    Law = 10
-    Leisure = 11
-    Martialprowess = 12
-    MasterCraft = 13
-    Nature = 14
-    OtherSlowSkillMastering = 15
-    Peaceful = 16
-    Perserverance = 17
-    Romance = 18
-    Sacrifice = 19
-    SkillMastery = 20
-    Stoicism = 21
-    Tradition = 22
-    Tranquility = 23
-    WorkOfArt = 24
+class Beliefs(Enum):
+    """
+    UnderPersonality-> Values
+    Memory can change beliefs and facets overtime
+    """
+
+    LAW = 1
+    LOYALTY = 2
+    FAMILY = 3
+    FRIENDSHIP = 4
+    POWER = 5
+    TRUTH = 6
+    CUNNING = 7
+    ELOQUENCE = 8
+    FAIRNESS = 9
+    DECORUM = 10
+    TRADITION = 11
+    ARTWORK = 12
+    COOPERATION = 13
+    INDEPENDENCE = 14
+    STOICISM = 15
+    INTROSPECTION = 16
+    SELF_CONTROL = 17
+    TRANQUILITY = 18
+    HARMONY = 19
+    MERRIMENT = 20
+    CRAFTSMANSHIP = 21
+    MARTIAL_PROWESS = 22
+    SKILL = 23
+    HARD_WORK = 24
+    SACRIFICE = 25
+    COMPETITION = 26
+    PERSEVERANCE = 27
+    LEISURE_TIME = 28
+    COMMERCE = 29
+    ROMANCE = 30
+    NATURE = 31
+    PEACE = 32
+    KNOWLEDGE = 33
 
 
-class Personalities(Enum):
-    SelfConscious = 1
-    Reserved = 2
-    StraightForward = 3
-    Guarded = 4
+class Goals(Enum):
+    START_A_FAMILY = 1
+    RULE_THE_WORLD = 2
+    CREATE_A_GREAT_WORK_OF_ART = 3
+    CRAFT_A_MASTERWORK = 4
+    BRING_PEACE_TO_THE_WORLD = 5
+    BECOME_A_LEGENDARY_WARRIOR = 6
+    MASTER_A_SKILL = 7
+    FALL_IN_LOVE = 8
+    SEE_THE_GREAT_NATURAL_SITES = 9
+    IMMORTALITY = 10
+    MAKE_A_GREAT_DISCOVERY = 11
+    ATTAIN_RANK_IN_SOCIETY = 12
+    BATHE_WORLD_IN_CHAOS = 13
+    STAY_ALIVE = 14
+    MAINTAIN_ENTITY_STATUS = 15
+
+
+class Facets(Enum):
+    """
+    Memory can change beliefs and facets overtime
+    """
+
+    LOVE_PROPENSITY = 1
+    HATE_PROPENSITY = 2
+    ENVY_PROPENSITY = 3
+    CHEER_PROPENSITY = 4
+    DEPRESSION_PROPENSITY = 5
+    ANGER_PROPENSITY = 6
+    ANXIETY_PROPENSITY = 7
+    LUST_PROPENSITY = 8
+    STRESS_VULNERABILITY = 9
+    GREED = 10
+    IMMODERATION = 11
+    VIOLENT = 12
+    PERSEVERANCE = 13
+    WASTEFULNESS = 14
+    DISCORD = 15
+    FRIENDLINESS = 16
+    POLITENESS = 17
+    DISDAIN_ADVICE = 18
+    BRAVERY = 19
+    CONFIDENCE = 20
+    VANITY = 21
+    AMBITION = 22
+    GRATITUDE = 23
+    IMMODESTY = 24
+    HUMOR = 25
+    VENGEFUL = 26
+    PRIDE = 27
+    CRUELTY = 28
+    SINGLEMINDED = 29
+    HOPEFUL = 30
+    CURIOUS = 31
+    BASHFUL = 32
+    PRIVACY = 33
+    PERFECTIONIST = 34
+    CLOSEMINDED = 35
+    TOLERANT = 36
+    EMOTIONALLY_OBSESSIVE = 37
+    SWAYED_BY_EMOTIONS = 38
+    ALTRUISM = 39
+    DUTIFULNESS = 40
+    THOUGHTLESSNESS = 41
+    ORDERLINESS = 42
+    TRUST = 43
+    GREGARIOUSNESS = 44
+    ASSERTIVENESS = 45
+    ACTIVITY_LEVEL = 46
+    EXCITEMENT_SEEKING = 47
+    IMAGINATION = 48
+    ABSTRACT_INCLINED = 49
+    ART_INCLINED = 50
 
 
 class Scores(IntEnum):
     A = 100
     B = 250
     C = 250
+
+
+class Quality(IntEnum):
+    Highest = 3
+    VeryHigh = 2
+    High = 1
+    Neutral = 0
+    Low = -1
+    VeryLow = -2
+    Lowest = -3
+
+
+class ThoughtType(IntEnum):
+    HAPPY = 1
+    NEUTRAL = 0
+    UNHAPPY = -1
+
+
+class AttributeType(IntEnum):
+    GOOD4 = 4
+    GOOD3 = 3
+    GOOD2 = 2
+    GOOD1 = 1
+    NEUTRAL = 0
+    BAD1 = -1
+    BAD2 = -2
+    BAD3 = -3
+    BAD4 = -4
