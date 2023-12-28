@@ -28,6 +28,8 @@ class Character:
     }
     # trauma is depression_propensity?
     military_related_values = {
+        Goals.BECOME_A_LEGENDARY_WARRIOR,
+        Goals.BRING_PEACE_TO_THE_WORLD,
         Beliefs.MARTIAL_PROWESS,
         # Beliefs.STOICISM,
         Beliefs.PEACE,
