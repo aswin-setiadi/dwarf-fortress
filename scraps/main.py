@@ -25,7 +25,33 @@ def get_facets():
         print(k)
 
 
+def sort_beliefs():
+    with open("scraps/beliefs.json") as f:
+        d = json.load(f)
+    new_d = {}
+    for k, v in d.items():
+        tmp = [x[1] for x in v]
+        new_d[k] = tmp
+    sorted_d = dict(sorted(new_d.items()))
+    with open("scraps/beliefs_sorted.json", "w") as f:
+        json.dump(sorted_d, f)
+
+
+def sort_facets():
+    with open("scraps/facets.json") as f:
+        d = json.load(f)
+    new_d = {}
+    for k, v in d.items():
+        tmp = [x[1] for x in v]
+        new_d[k] = tmp
+    sorted_d = dict(sorted(new_d.items()))
+    with open("scraps/facets_sorted.json", "w") as f:
+        json.dump(sorted_d, f)
+
+
 if __name__ == "__main__":
     # get_beliefs()
     # get_goals()
-    get_facets()
+    # get_facets()
+    # sort_beliefs()
+    # sort_facets()
