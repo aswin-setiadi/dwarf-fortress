@@ -36,8 +36,9 @@ class SoulAttributes(Enum):
 
 class Beliefs(Enum):
     """
-    UnderPersonality-> Values
-    Memory can change beliefs and facets overtime
+    - Under Personality-> Values
+    - Memory can change beliefs and facets overtime.
+    - Dictates needs and frequency of them.
     """
 
     LAW = 1
@@ -95,7 +96,11 @@ class Goals(Enum):
 
 class Facets(Enum):
     """
-    Memory can change beliefs and facets overtime
+    - Memory can change beliefs and facets overtime.
+    - Conflicting facets currently gives unknown effect.
+    - 2 dwarves with conflicting facets (i.e. 1 value helping, others hate helping),
+    will have grudges with each other. Making grudges causes an unhappy thought. To
+    ameliorate, have more meeting zones (so they meet each other less?)
     """
 
     LOVE_PROPENSITY = 1
