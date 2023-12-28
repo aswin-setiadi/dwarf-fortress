@@ -1,9 +1,11 @@
 from abc import ABCMeta
 from enum import Enum
-from stats import (
+
+from main.stats import (
     Beliefs,
     BodyAttributes,
     Facets,
+    Goals,
     Quality,
     Scores,
     SoulAttributes,
@@ -24,6 +26,14 @@ class Skill(metaclass=ABCMeta):
     def get_thought_type(self, beliefs: dict[Beliefs, Quality]) -> ThoughtType:
         """Check if beliefs/ facets cause skill to generate unhappy thoughts"""
         return ThoughtType.NEUTRAL
+
+    def is_skill_clashes(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> bool:
+        return False
 
 
 class AnimalTrainer(Skill):
@@ -57,6 +67,27 @@ class ArmorUser(Skill):
             BodyAttributes.Endurance: Scores.C,
         }
 
+    def is_skill_clashes(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> bool:
+        if (
+            beliefs[Beliefs.MARTIAL_PROWESS] < Quality.Neutral
+            # or beliefs[Beliefs.STOICISM] < Quality.Neutral
+            or beliefs[Beliefs.PEACE] > Quality.Neutral
+            # or beliefs[Beliefs.FAMILY] == Quality.Highest
+            # or beliefs[Beliefs.FRIENDSHIP] == Quality.Highest
+            or facets[Facets.BRAVERY] < Quality.Neutral
+            or facets[Facets.STRESS_VULNERABILITY] > Quality.Neutral
+            or facets[Facets.DEPRESSION_PROPENSITY] > Quality.Neutral
+            or facets[Facets.ANXIETY_PROPENSITY] > Quality.Neutral
+        ):
+            return True
+        else:
+            return False
+
 
 class BoneDoctor(Skill):
     def __init__(self) -> None:
@@ -89,6 +120,17 @@ class Bowyer(Skill):
             SoulAttributes.Creativity: Scores.C,
             BodyAttributes.Agility: Scores.A,
         }
+
+    def is_skill_clashes(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> bool:
+        if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
+            return True
+        else:
+            return False
 
 
 class Brewer(Skill):
@@ -130,6 +172,17 @@ class Carpenter(Skill):
             BodyAttributes.Strength: Scores.A,
             BodyAttributes.Agility: Scores.B,
         }
+
+    def is_skill_clashes(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> bool:
+        if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
+            return True
+        else:
+            return False
 
 
 class Comedian(Skill):
@@ -271,6 +324,17 @@ class Cook(Skill):
             BodyAttributes.Agility: Scores.A,
         }
 
+    def is_skill_clashes(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> bool:
+        if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
+            return True
+        else:
+            return False
+
 
 class Diagnoser(Skill):
     def __init__(self) -> None:
@@ -308,6 +372,27 @@ class Dodger(Skill):
             BodyAttributes.Endurance: Scores.B,
         }
 
+    def is_skill_clashes(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> bool:
+        if (
+            beliefs[Beliefs.MARTIAL_PROWESS] < Quality.Neutral
+            # or beliefs[Beliefs.STOICISM] < Quality.Neutral
+            or beliefs[Beliefs.PEACE] > Quality.Neutral
+            # or beliefs[Beliefs.FAMILY] == Quality.Highest
+            # or beliefs[Beliefs.FRIENDSHIP] == Quality.Highest
+            or facets[Facets.BRAVERY] < Quality.Neutral
+            or facets[Facets.STRESS_VULNERABILITY] > Quality.Neutral
+            or facets[Facets.DEPRESSION_PROPENSITY] > Quality.Neutral
+            or facets[Facets.ANXIETY_PROPENSITY] > Quality.Neutral
+        ):
+            return True
+        else:
+            return False
+
 
 class Engraver(Skill):
     """
@@ -338,6 +423,17 @@ class Engraver(Skill):
             BodyAttributes.Agility: Scores.A,
         }
 
+    def is_skill_clashes(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> bool:
+        if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
+            return True
+        else:
+            return False
+
 
 class Fighter(Skill):
     def __init__(self) -> None:
@@ -349,6 +445,27 @@ class Fighter(Skill):
             BodyAttributes.Strength: Scores.B,
             BodyAttributes.Toughness: Scores.C,
         }
+
+    def is_skill_clashes(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> bool:
+        if (
+            beliefs[Beliefs.MARTIAL_PROWESS] < Quality.Neutral
+            # or beliefs[Beliefs.STOICISM] < Quality.Neutral
+            or beliefs[Beliefs.PEACE] > Quality.Neutral
+            # or beliefs[Beliefs.FAMILY] == Quality.Highest
+            # or beliefs[Beliefs.FRIENDSHIP] == Quality.Highest
+            or facets[Facets.BRAVERY] < Quality.Neutral
+            or facets[Facets.STRESS_VULNERABILITY] > Quality.Neutral
+            or facets[Facets.DEPRESSION_PROPENSITY] > Quality.Neutral
+            or facets[Facets.ANXIETY_PROPENSITY] > Quality.Neutral
+        ):
+            return True
+        else:
+            return False
 
 
 class FishCleaner(Skill):
@@ -426,6 +543,17 @@ class GemCutter(Skill):
             SoulAttributes.AnalyticalAbility: Scores.C,
             BodyAttributes.Agility: Scores.A,
         }
+
+    def is_skill_clashes(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> bool:
+        if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
+            return True
+        else:
+            return False
 
 
 class Herbalist(Skill):
@@ -508,6 +636,27 @@ class Leader(Skill):
             SoulAttributes.Language: Scores.C,
         }
 
+    def is_skill_clashes(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> bool:
+        if (
+            beliefs[Beliefs.MARTIAL_PROWESS] < Quality.Neutral
+            # or beliefs[Beliefs.STOICISM] < Quality.Neutral
+            or beliefs[Beliefs.PEACE] > Quality.Neutral
+            # or beliefs[Beliefs.FAMILY] == Quality.Highest
+            # or beliefs[Beliefs.FRIENDSHIP] == Quality.Highest
+            or facets[Facets.BRAVERY] < Quality.Neutral
+            or facets[Facets.STRESS_VULNERABILITY] > Quality.Neutral
+            or facets[Facets.DEPRESSION_PROPENSITY] > Quality.Neutral
+            or facets[Facets.ANXIETY_PROPENSITY] > Quality.Neutral
+        ):
+            return True
+        else:
+            return False
+
 
 class Liar(Skill):
     def __init__(self) -> None:
@@ -536,6 +685,17 @@ class Mason(Skill):
             BodyAttributes.Agility: Scores.B,
             BodyAttributes.Endurance: Scores.C,
         }
+
+    def is_skill_clashes(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> bool:
+        if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
+            return True
+        else:
+            return False
 
 
 class Miner(Skill):
@@ -684,6 +844,17 @@ class StoneCarver(Skill):
             BodyAttributes.Strength: Scores.C,
         }
 
+    def is_skill_clashes(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> bool:
+        if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
+            return True
+        else:
+            return False
+
 
 class StoneCrafter(Skill):
     """
@@ -697,6 +868,17 @@ class StoneCrafter(Skill):
             SoulAttributes.Creativity: Scores.C,
             BodyAttributes.Agility: Scores.A,
         }
+
+    def is_skill_clashes(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> bool:
+        if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
+            return True
+        else:
+            return False
 
 
 class StoneCutter(Skill):
@@ -743,6 +925,27 @@ class Tactician(Skill):
             SoulAttributes.Intuition: Scores.C,
         }
 
+    def is_skill_clashes(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> bool:
+        if (
+            beliefs[Beliefs.MARTIAL_PROWESS] < Quality.Neutral
+            # or beliefs[Beliefs.STOICISM] < Quality.Neutral
+            or beliefs[Beliefs.PEACE] > Quality.Neutral
+            # or beliefs[Beliefs.FAMILY] == Quality.Highest
+            # or beliefs[Beliefs.FRIENDSHIP] == Quality.Highest
+            or facets[Facets.BRAVERY] < Quality.Neutral
+            or facets[Facets.STRESS_VULNERABILITY] > Quality.Neutral
+            or facets[Facets.DEPRESSION_PROPENSITY] > Quality.Neutral
+            or facets[Facets.ANXIETY_PROPENSITY] > Quality.Neutral
+        ):
+            return True
+        else:
+            return False
+
 
 class Thresher(Skill):
     def __init__(self) -> None:
@@ -764,6 +967,17 @@ class WeaponSmith(Skill):
             BodyAttributes.Agility: Scores.B,
             BodyAttributes.Endurance: Scores.C,
         }
+
+    def is_skill_clashes(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> bool:
+        if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
+            return True
+        else:
+            return False
 
 
 class Weaver(Skill):
@@ -798,6 +1012,17 @@ class WoodCrafter(Skill):
             SoulAttributes.Creativity: Scores.C,
             BodyAttributes.Agility: Scores.A,
         }
+
+    def is_skill_clashes(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> bool:
+        if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
+            return True
+        else:
+            return False
 
 
 class WoodCutter(Skill):
