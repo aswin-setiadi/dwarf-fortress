@@ -29,10 +29,10 @@ class Character:
     # trauma is depression_propensity?
     military_related_values = {
         Beliefs.MARTIAL_PROWESS,
-        Beliefs.STOICISM,
+        # Beliefs.STOICISM,
         Beliefs.PEACE,
-        Beliefs.FAMILY,
-        Beliefs.FRIENDSHIP,
+        # Beliefs.FAMILY,
+        # Beliefs.FRIENDSHIP,
         Facets.BRAVERY,
         Facets.STRESS_VULNERABILITY,
         Facets.DEPRESSION_PROPENSITY,
