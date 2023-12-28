@@ -1,14 +1,27 @@
 from abc import ABCMeta
 from enum import Enum
-from stats import BodyAttributes, Personalities, Scores, SoulAttributes
+from stats import (
+    Beliefs,
+    BodyAttributes,
+    Facets,
+    Quality,
+    Scores,
+    SoulAttributes,
+    ThoughtType,
+)
 
 
 class Skill(metaclass=ABCMeta):
     def __init__(self) -> None:
         self.attributes: dict[BodyAttributes | SoulAttributes, Scores] = {}
 
-    def can_get_xp(self, personalities: set[Personalities]) -> bool:
+    def can_get_xp(
+        self, beliefs: dict[Beliefs, Quality], facets: dict[Facets, Quality]
+    ) -> bool:
         return True
+
+    def get_thought_type(self, beliefs: dict[Beliefs, Quality]) -> ThoughtType:
+        return ThoughtType.NEUTRAL
 
 
 class AnimalTrainer(Skill):
@@ -103,6 +116,13 @@ class Carpenter(Skill):
 class Comedian(Skill):
     """
     This skill raises agility
+    merriment
+    3 to -1=can,subj to humor
+    -2 to -3=cant, subj to humor
+    humor
+    3 to 2=can
+    1 to -1=can,subj to merriment
+    -2 to -3=cant
     """
 
     def __init__(self) -> None:
@@ -113,11 +133,15 @@ class Comedian(Skill):
             BodyAttributes.Agility: Scores.A,
         }
 
-    def can_get_xp(self, personalities: set[Personalities]) -> bool:
-        if Personalities.SelfConscious in personalities:
+    def can_get_xp(
+        self, beliefs: dict[Beliefs, Quality], facets: dict[Facets, Quality]
+    ) -> bool:
+        if facets[Facets.HUMOR] < -1:
             return False
-        else:
-            return True
+        if -2 < facets[Facets.HUMOR] < 2:
+            if beliefs[Beliefs.MERRIMENT] < -1:
+                return False
+        return True
 
 
 class Concentration(Skill):
@@ -137,11 +161,40 @@ class Consoler(Skill):
             SoulAttributes.SocialAwareness: Scores.C,
         }
 
-    def can_get_xp(self, personalities: set[Personalities]) -> bool:
-        if Personalities.Guarded in personalities:
+    def can_get_xp(
+        self, beliefs: dict[Beliefs, Quality], facets: dict[Facets, Quality]
+    ) -> bool:
+        """
+        stoic -3 to 1= can learn subject to sway, cruel, discord
+        stoic 2 to 3=cant subject to sway,cruel, discord
+
+        discord 3,2= cant
+        discord 1,0,-1=can subject to stoic,cruelty,sway
+        discord -2,-3=can subject to cruel,sway
+
+        cruel 3,2=cant
+        cruel 1,0,-1=can subject to stoic, discord, sway
+        cruel -2,-3=can subject to discord, sway
+
+        sway 3,2= can subj to cruel, discord
+        sway 1,0,-1=can subject to stoic,cruel,discord
+        sway -2,-3=cant
+        """
+        if (
+            facets[Facets.DISCORD] > 1
+            or facets[Facets.CRUELTY] > 1
+            or facets[Facets.SWAYED_BY_EMOTIONS] < -1
+        ):
             return False
-        else:
-            return True
+
+        if (
+            beliefs[Beliefs.STOICISM] > 1
+            and facets[Facets.DISCORD] > -2
+            and facets[Facets.CRUELTY] > -2
+            and facets[Facets.SWAYED_BY_EMOTIONS] < 2
+        ):
+            return False
+        return True
 
 
 class Conversationalist(Skill):
@@ -152,11 +205,34 @@ class Conversationalist(Skill):
             SoulAttributes.Empathy: Scores.C,
         }
 
-    def can_get_xp(self, personalities: set[Personalities]) -> bool:
-        if Personalities.Reserved in personalities:
+    def can_get_xp(
+        self, beliefs: dict[Beliefs, Quality], facets: dict[Facets, Quality]
+    ) -> bool:
+        """
+        friendship
+        3 to -1=maybe can, subj to leisure?, gregarious, bashful
+        -2 to -3=maybe cant, subj to gregarious, bashful
+        leisure
+        3 to -1=maybe can, subj to friend?, gregarious, bashful
+        -2 to -3= maybe cant, subj to gregarious, bashful
+        bashful
+        3 to 2=cant
+        1 to -1= can, subj to beliefs, gregarious (I assume belief here is friend,leisure)
+        -2 to -3= can, subj to gregarious
+        gregarious
+        3 to 2= can, subj to bashful
+        1 to -1=can, subj to beliefs, bashful (same as above assumption)
+        -2 to -3= cant
+        """
+        if facets[Facets.BASHFUL] > 1 or facets[Facets.GREGARIOUSNESS] < -1:
             return False
-        else:
-            return True
+        if (
+            -1 <= facets[Facets.BASHFUL] <= 1
+            and -1 <= facets[Facets.GREGARIOUSNESS] <= 1
+        ):
+            if beliefs[Beliefs.FRIENDSHIP] < -1 or beliefs[Beliefs.LEISURE_TIME] < -1:
+                return False
+        return True
 
 
 class Cook(Skill):
@@ -284,11 +360,24 @@ class Flatterer(Skill):
             SoulAttributes.Empathy: Scores.C,
         }
 
-    def can_get_xp(self, personalities: set[Personalities]) -> bool:
-        if Personalities.StraightForward in personalities:
+    def can_get_xp(
+        self, beliefs: dict[Beliefs, Quality], facets: dict[Facets, Quality]
+    ) -> bool:
+        """
+        truth
+        3 to 2=cant, unless friendliness
+        1 to -3=can, subj to friendlines
+        friendliness
+        3 to 2=can
+        1 to -1=can, subj to truth
+        -2 to 3=cant
+        """
+        if facets[Facets.FRIENDLINESS] < -1:
             return False
-        else:
-            return True
+        if -2 < facets[Facets.FRIENDLINESS] < 2:
+            if beliefs[Beliefs.TRUTH] > 1:
+                return False
+        return True
 
 
 class FurnaceOperator(Skill):
@@ -334,6 +423,40 @@ class Intimidator(Skill):
             BodyAttributes.Agility: Scores.B,
         }
 
+    def can_get_xp(
+        self, beliefs: dict[Beliefs, Quality], facets: dict[Facets, Quality]
+    ) -> bool:
+        """
+        belief power
+        3 to -1=can, subj to harmony, tranquility, assertiveness,discord
+        -2 to -3=cant, subj to assertiveness,discord
+        belief tranquility
+        3 to 2=cant, subj to assertiveness,discord
+        1 to -3=can, subj to power, assertiveness,discord
+        belief harmony
+        3 to 2=cant, subj to assertiveness,discord
+        1 to -3=can, subj to power, tranquility,assertiveness,discord
+        facet discord
+        3 to 2=can,subj to assertiveness
+        1 to -1=can,subj to harmony,power,tranquility,assertiveness
+        -2 to -3=cant
+        facet assertiveness
+        3 to 2=can,subj to discord
+        1 to -1=can,subj to harmony,power,tranquility,discord
+        -2 to -3=cant
+        """
+        if facets[Facets.DISCORD] < -1 or facets[Facets.ASSERTIVENESS] < -1:
+            return False
+        if -2 < facets[Facets.DISCORD] < 2 and -2 < facets[Facets.ASSERTIVENESS] < 2:
+            if (
+                beliefs[Beliefs.POWER] < -1
+                or 1 < beliefs[Beliefs.TRANQUILITY]
+                or 1 < beliefs[Beliefs.HARMONY]
+            ):
+                return False
+
+        return True
+
 
 class JudgeOfIntent(Skill):
     def __init__(self) -> None:
@@ -361,8 +484,10 @@ class Liar(Skill):
             SoulAttributes.Creativity: Scores.C,
         }
 
-    def can_get_xp(self, personalities: set[Personalities]) -> bool:
-        if Personalities.Guarded in personalities:
+    def can_get_xp(
+        self, beliefs: dict[Beliefs, Quality], facets: dict[Facets, Quality]
+    ) -> bool:
+        if beliefs[Beliefs.TRUTH] > 0:
             return False
         else:
             return True
@@ -427,6 +552,25 @@ class Pacifier(Skill):
             SoulAttributes.Empathy: Scores.C,
         }
 
+    def can_get_xp(
+        self, beliefs: dict[Beliefs, Quality], facets: dict[Facets, Quality]
+    ) -> bool:
+        """
+        belief peace
+        3 to -1= can, subj to discord
+        -2 to -3= cant, subj to discord
+        facet discord
+        3 to 2=cant
+        1 to -1=can,subj to peace
+        -2 to -3=can
+        """
+        if facets[Facets.DISCORD] > 1:
+            return False
+        if -2 < facets[Facets.DISCORD] < 2:
+            if beliefs[Beliefs.PEACE] < -1:
+                return False
+        return True
+
 
 class Persuader(Skill):
     def __init__(self) -> None:
@@ -436,11 +580,24 @@ class Persuader(Skill):
             SoulAttributes.Empathy: Scores.C,
         }
 
-    def can_get_xp(self, personalities: set[Personalities]) -> bool:
-        if Personalities.Unassertive in personalities:
+    def can_get_xp(
+        self, beliefs: dict[Beliefs, Quality], facets: dict[Facets, Quality]
+    ) -> bool:
+        """
+        belief eloquence
+        3 to -1= can, subj to assertiveness
+        -2 to -3= cant, subj to assertiveness
+        facet assertiveness
+        3 to 2=can
+        1 to -1=can,subj to assertiveness
+        -2 to -3=cant
+        """
+        if facets[Facets.ASSERTIVENESS] < -1:
             return False
-        else:
-            return True
+        if -2 < facets[Facets.ASSERTIVENESS] < 2:
+            if beliefs[Beliefs.ELOQUENCE] < -1:
+                return False
+        return True
 
 
 class Planter(Skill):
@@ -624,6 +781,13 @@ class WoodCutter(Skill):
             BodyAttributes.Agility: Scores.B,
             BodyAttributes.Endurance: Scores.C,
         }
+
+    def get_thought_type(self, beliefs: dict[Beliefs, Quality]) -> ThoughtType:
+        if beliefs[Beliefs.NATURE] > 1:
+            return ThoughtType.UNHAPPY
+        if beliefs[Beliefs.NATURE] < 0:
+            return ThoughtType.HAPPY
+        return ThoughtType.NEUTRAL
 
 
 class WoundDresser(Skill):
