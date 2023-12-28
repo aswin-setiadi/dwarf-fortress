@@ -856,11 +856,11 @@ class Skills(Enum):
     StoneCarver = StoneCarver()
     StoneCrafter = StoneCrafter()
     WoodCrafter = WoodCrafter()
-    Engraving = Engraver()
+    Engraver = Engraver()
     Mason = Mason()
 
     # military
-    # Discipline = Discipline() easy to increase w. basic mil. training.
+    Discipline = Discipline()  # easy to increase w. basic mil. training.
     ArmorUser = ArmorUser()
     Fighter = Fighter()
     Dodger = Dodger()
