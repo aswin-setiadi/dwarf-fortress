@@ -49,9 +49,21 @@ def sort_facets():
         json.dump(sorted_d, f)
 
 
+def sort_goals():
+    with open("scraps/goals.json") as f:
+        l = json.load(f)
+    new_l: list[str] = []
+    for v in l:
+        new_l.append(v[0])
+    new_l.sort()
+    with open("scraps/goals_sorted.json", "w") as f:
+        json.dump(new_l, f)
+
+
 if __name__ == "__main__":
     # get_beliefs()
     # get_goals()
     # get_facets()
     # sort_beliefs()
     # sort_facets()
+    sort_goals()
