@@ -131,18 +131,20 @@ class Character:
                 f"{self.name} orderliness<0, will leave scattered cloth after change"
             )
 
-    def calculate_skills(self):
+    def add_skills(self):
         for skill in Skills:
-            # if cant get xp (clashing personality) continue
             if not skill.value.can_get_xp(self.beliefs, self.facets):
                 continue
             if skill.value.get_thought_type(self.beliefs) == ThoughtType.UNHAPPY:
                 continue
-            self.skills.add(skill)
-            # TODO
+
             # check beliefs+facets, if 1 clash, continue
+            if skill.value.is_skill_clashes(self.beliefs, self.goals, self.facets):
+                continue
+            # TODO
             # score skill based on supporting beliefs/ facets
             # score skill based on supporting attributes
+            self.skills.add((skill, 0))
 
     # def evaluate_skill_score(self, skill: Skills) -> int:
     #     val: int = 0
