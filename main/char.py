@@ -1,9 +1,9 @@
 import logging
 from typing import TypeVar
 
-from roles import Roles
-from skills import Skills
-from stats import (
+from main.roles import Roles
+from main.skills import Skills
+from main.stats import (
     AttributeType,
     Beliefs,
     BodyAttributes,

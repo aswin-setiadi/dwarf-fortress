@@ -1,5 +1,6 @@
 from enum import Enum
-from skills import BodyAttributes, Skills, SoulAttributes
+
+from main.skills import BodyAttributes, Skills, SoulAttributes
 
 
 class Roles(Enum):

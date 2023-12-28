@@ -1,7 +1,7 @@
 import logging
 
-from char import Character
-from stats import (
+from main.char import Character
+from main.stats import (
     BodyAttributes as BA,
     SoulAttributes as SA,
     Beliefs,
