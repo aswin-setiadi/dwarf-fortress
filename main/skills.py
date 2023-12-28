@@ -171,6 +171,8 @@ class Concentration(Skill):
 
 
 class Consoler(Skill):
+    """empath, language, social awareness"""
+
     def __init__(self) -> None:
         self.attributes = {
             SoulAttributes.Empathy: Scores.A,
@@ -565,6 +567,8 @@ class Observer(Skill):
 
 
 class Organizer(Skill):
+    """analytics, social awareness, creativity"""
+
     def __init__(self) -> None:
         self.attributes = {
             SoulAttributes.AnalyticalAbility: Scores.A,
@@ -574,6 +578,8 @@ class Organizer(Skill):
 
 
 class Pacifier(Skill):
+    """language, social awareness, empathy"""
+
     def __init__(self) -> None:
         self.attributes = {
             SoulAttributes.Language: Scores.A,
@@ -885,10 +891,12 @@ class Skills(Enum):
     JudgeOfIntent = JudgeOfIntent()
     Negotiator = Negotiator()
 
-    # Expedition Leader/ Mayor at 50 pop.
+    # Manager
     Organizer = Organizer()
+    # Expedition Leader/ Mayor at 50 pop.
     Consoler = Consoler()
     Pacifier = Pacifier()
+
     # CMD-> do everything in beginning, depend on diagnose skill
     Diagnoser = Diagnoser()
 
