@@ -98,6 +98,23 @@ class Brewer(Skill):
         }
 
 
+class Butcher(Skill):
+    def __init__(self) -> None:
+        self.attributes = {
+            SoulAttributes.Kinesthesic: Scores.A,
+            BodyAttributes.Strength: Scores.A,
+            BodyAttributes.Agility: Scores.B,
+            BodyAttributes.Endurance: Scores.C,
+        }
+
+    def get_thought_type(self, beliefs: dict[Beliefs, Quality]) -> ThoughtType:
+        if beliefs[Beliefs.NATURE] > 1:
+            return ThoughtType.UNHAPPY
+        if beliefs[Beliefs.NATURE] < 0:
+            return ThoughtType.HAPPY
+        return ThoughtType.NEUTRAL
+
+
 class Carpenter(Skill):
     """
     Produces wooden bed bin barrel, etc.
