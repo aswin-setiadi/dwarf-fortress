@@ -108,9 +108,9 @@ class Butcher(Skill):
         }
 
     def get_thought_type(self, beliefs: dict[Beliefs, Quality]) -> ThoughtType:
-        if beliefs[Beliefs.NATURE] > 1:
+        if beliefs[Beliefs.NATURE] > Quality.High:
             return ThoughtType.UNHAPPY
-        if beliefs[Beliefs.NATURE] < 0:
+        if beliefs[Beliefs.NATURE] < Quality.Neutral:
             return ThoughtType.HAPPY
         return ThoughtType.NEUTRAL
 
@@ -153,10 +153,10 @@ class Comedian(Skill):
     def can_get_xp(
         self, beliefs: dict[Beliefs, Quality], facets: dict[Facets, Quality]
     ) -> bool:
-        if facets[Facets.HUMOR] < -1:
+        if facets[Facets.HUMOR] < Quality.Low:
             return False
-        if -2 < facets[Facets.HUMOR] < 2:
-            if beliefs[Beliefs.MERRIMENT] < -1:
+        if Quality.VeryLow < facets[Facets.HUMOR] < Quality.VeryHigh:
+            if beliefs[Beliefs.MERRIMENT] < Quality.Low:
                 return False
         return True
 
@@ -198,17 +198,17 @@ class Consoler(Skill):
         sway -2,-3=cant
         """
         if (
-            facets[Facets.DISCORD] > 1
-            or facets[Facets.CRUELTY] > 1
-            or facets[Facets.SWAYED_BY_EMOTIONS] < -1
+            facets[Facets.DISCORD] > Quality.High
+            or facets[Facets.CRUELTY] > Quality.High
+            or facets[Facets.SWAYED_BY_EMOTIONS] < Quality.Low
         ):
             return False
 
         if (
-            beliefs[Beliefs.STOICISM] > 1
-            and facets[Facets.DISCORD] > -2
-            and facets[Facets.CRUELTY] > -2
-            and facets[Facets.SWAYED_BY_EMOTIONS] < 2
+            beliefs[Beliefs.STOICISM] > Quality.High
+            and facets[Facets.DISCORD] > Quality.VeryLow
+            and facets[Facets.CRUELTY] > Quality.VeryLow
+            and facets[Facets.SWAYED_BY_EMOTIONS] < Quality.VeryHigh
         ):
             return False
         return True
@@ -241,13 +241,19 @@ class Conversationalist(Skill):
         1 to -1=can, subj to beliefs, bashful (same as above assumption)
         -2 to -3= cant
         """
-        if facets[Facets.BASHFUL] > 1 or facets[Facets.GREGARIOUSNESS] < -1:
+        if (
+            facets[Facets.BASHFUL] > Quality.High
+            or facets[Facets.GREGARIOUSNESS] < Quality.Low
+        ):
             return False
         if (
-            -1 <= facets[Facets.BASHFUL] <= 1
-            and -1 <= facets[Facets.GREGARIOUSNESS] <= 1
+            Quality.Low <= facets[Facets.BASHFUL] <= Quality.High
+            and Quality.Low <= facets[Facets.GREGARIOUSNESS] <= Quality.High
         ):
-            if beliefs[Beliefs.FRIENDSHIP] < -1 or beliefs[Beliefs.LEISURE_TIME] < -1:
+            if (
+                beliefs[Beliefs.FRIENDSHIP] < Quality.Low
+                or beliefs[Beliefs.LEISURE_TIME] < Quality.Low
+            ):
                 return False
         return True
 
@@ -389,10 +395,10 @@ class Flatterer(Skill):
         1 to -1=can, subj to truth
         -2 to 3=cant
         """
-        if facets[Facets.FRIENDLINESS] < -1:
+        if facets[Facets.FRIENDLINESS] < Quality.Low:
             return False
-        if -2 < facets[Facets.FRIENDLINESS] < 2:
-            if beliefs[Beliefs.TRUTH] > 1:
+        if Quality.VeryLow < facets[Facets.FRIENDLINESS] < Quality.VeryHigh:
+            if beliefs[Beliefs.TRUTH] > Quality.High:
                 return False
         return True
 
@@ -462,13 +468,19 @@ class Intimidator(Skill):
         1 to -1=can,subj to harmony,power,tranquility,discord
         -2 to -3=cant
         """
-        if facets[Facets.DISCORD] < -1 or facets[Facets.ASSERTIVENESS] < -1:
+        if (
+            facets[Facets.DISCORD] < Quality.Low
+            or facets[Facets.ASSERTIVENESS] < Quality.Low
+        ):
             return False
-        if -2 < facets[Facets.DISCORD] < 2 and -2 < facets[Facets.ASSERTIVENESS] < 2:
+        if (
+            Quality.VeryLow < facets[Facets.DISCORD] < Quality.VeryHigh
+            and Quality.VeryLow < facets[Facets.ASSERTIVENESS] < Quality.VeryHigh
+        ):
             if (
-                beliefs[Beliefs.POWER] < -1
-                or 1 < beliefs[Beliefs.TRANQUILITY]
-                or 1 < beliefs[Beliefs.HARMONY]
+                beliefs[Beliefs.POWER] < Quality.Low
+                or Quality.High < beliefs[Beliefs.TRANQUILITY]
+                or Quality.High < beliefs[Beliefs.HARMONY]
             ):
                 return False
 
@@ -504,7 +516,7 @@ class Liar(Skill):
     def can_get_xp(
         self, beliefs: dict[Beliefs, Quality], facets: dict[Facets, Quality]
     ) -> bool:
-        if beliefs[Beliefs.TRUTH] > 0:
+        if beliefs[Beliefs.TRUTH] > Quality.Neutral:
             return False
         else:
             return True
@@ -581,10 +593,10 @@ class Pacifier(Skill):
         1 to -1=can,subj to peace
         -2 to -3=can
         """
-        if facets[Facets.DISCORD] > 1:
+        if facets[Facets.DISCORD] > Quality.High:
             return False
-        if -2 < facets[Facets.DISCORD] < 2:
-            if beliefs[Beliefs.PEACE] < -1:
+        if Quality.VeryLow < facets[Facets.DISCORD] < Quality.VeryHigh:
+            if beliefs[Beliefs.PEACE] < Quality.Low:
                 return False
         return True
 
@@ -609,10 +621,10 @@ class Persuader(Skill):
         1 to -1=can,subj to assertiveness
         -2 to -3=cant
         """
-        if facets[Facets.ASSERTIVENESS] < -1:
+        if facets[Facets.ASSERTIVENESS] < Quality.Low:
             return False
-        if -2 < facets[Facets.ASSERTIVENESS] < 2:
-            if beliefs[Beliefs.ELOQUENCE] < -1:
+        if Quality.VeryLow < facets[Facets.ASSERTIVENESS] < Quality.VeryHigh:
+            if beliefs[Beliefs.ELOQUENCE] < Quality.Low:
                 return False
         return True
 
@@ -800,9 +812,9 @@ class WoodCutter(Skill):
         }
 
     def get_thought_type(self, beliefs: dict[Beliefs, Quality]) -> ThoughtType:
-        if beliefs[Beliefs.NATURE] > 1:
+        if beliefs[Beliefs.NATURE] > Quality.High:
             return ThoughtType.UNHAPPY
-        if beliefs[Beliefs.NATURE] < 0:
+        if beliefs[Beliefs.NATURE] < Quality.Neutral:
             return ThoughtType.HAPPY
         return ThoughtType.NEUTRAL
 
