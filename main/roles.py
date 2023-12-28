@@ -10,23 +10,23 @@ class Roles(Enum):
     BookKeeper = {Skills.RecordKeeper}
     ExpeditionLeader = {Skills.Consoler, Skills.Pacifier}
     MillitaryLeader = {
+        Skills.ArmorUser,
+        Skills.Dodger,
+        Skills.Fighter,
         Skills.Leader,
         Skills.Tactician,
-        Skills.ArmorUser,
-        Skills.Fighter,
-        Skills.Dodger,
     }
     Crafter = {
-        Skills.Cook,
         Skills.Bowyer,
-        Skills.WeaponSmith,
-        Skills.GemCutter,
         Skills.Carpenter,
+        Skills.Cook,
+        Skills.Engraver,
+        Skills.GemCutter,
+        Skills.Mason,
         Skills.StoneCarver,
         Skills.StoneCrafter,
+        Skills.WeaponSmith,
         Skills.WoodCrafter,
-        Skills.Engraver,
-        Skills.Mason,
     }
     Doctor = {Skills.BoneDoctor, Skills.Surgeon}
 
