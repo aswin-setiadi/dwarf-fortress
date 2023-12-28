@@ -106,6 +106,7 @@ class Facets(Enum):
     LOVE_PROPENSITY = 1
     HATE_PROPENSITY = 2
     ENVY_PROPENSITY = 3
+    # Cheer propensity is bad for most skills since very difficult to make the dwarf happy
     CHEER_PROPENSITY = 4
     DEPRESSION_PROPENSITY = 5
     ANGER_PROPENSITY = 6
@@ -156,12 +157,20 @@ class Facets(Enum):
 
 
 class Scores(IntEnum):
+    """
+    Qualifier for skill attributes
+    """
+
     A = 100
     B = 250
     C = 250
 
 
 class Quality(IntEnum):
+    """
+    Qualifier for Beliefs and Facets
+    """
+
     Highest = 3
     VeryHigh = 2
     High = 1
@@ -178,6 +187,10 @@ class ThoughtType(IntEnum):
 
 
 class AttributeType(IntEnum):
+    """
+    Qualifier for BodyAttributes and SoulAttributes
+    """
+
     GOOD4 = 4
     GOOD3 = 3
     GOOD2 = 2
