@@ -213,7 +213,13 @@ class AttributeType(IntEnum):
 
 
 class MentalBreakdowns(Enum):
-    """https://dwarffortresswiki.org/index.php/Mental_breakdown"""
+    """
+    https://dwarffortresswiki.org/index.php/Mental_breakdown
+    Tantrum= cancel job, throw item around, start fist fights, destroy buildings, hurt pets.
+    Will get justice and imprisoned/ flogged. If die from punishment will increase fort wide stress.
+    Oblivious= cancel job, stumble around. If repeated, can lead to Stark Raving Mad.
+    Depression= cancel job. If repeated, will get Melancholy.
+    """
 
     Tantrum = 1
     Oblivious = 2
@@ -221,7 +227,13 @@ class MentalBreakdowns(Enum):
 
 
 class Insanity(Enum):
-    """https://dwarffortresswiki.org/index.php/Insanity"""
+    """
+    https://dwarffortresswiki.org/index.php/Insanity
+    SRM= will eventually die of dehydration/ starvation.
+    Melancholy= will try to end life/ eventually starve/ dehydrate to death.
+    Berserk=  atk friend/ foe, mother can kill baby. Become enemy of civilization (will set trap/ engage military).
+    Catatonic= stare blankly until starve to death. Will override other Insanities.
+    """
 
     StarkRavingMad = 1
     Melancholy = 2
