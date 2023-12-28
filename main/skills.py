@@ -2,6 +2,7 @@ from abc import ABCMeta
 from enum import Enum
 
 from main.stats import (
+    AttributeType,
     Beliefs,
     BodyAttributes,
     Facets,
@@ -47,6 +48,14 @@ class Skill(metaclass=ABCMeta):
         Will return tuple of belief+face score (int) and if goal support or not (bool)
         """
         return (0, False)
+
+    def get_skill_attribute_score(
+        self, attributes: dict[BodyAttributes | SoulAttributes, AttributeType]
+    ) -> float:
+        score = 0
+        for atb, weight in self.attributes.items():
+            score += attributes[atb] / weight
+        return score
 
 
 class AnimalTrainer(Skill):
