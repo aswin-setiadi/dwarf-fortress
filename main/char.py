@@ -43,7 +43,7 @@ class Character:
         self,
         name: str,
         beliefs: dict[Beliefs, Quality],
-        goals: list[Goals],
+        goals: set[Goals],
         facets: dict[Facets, Quality],
         attributes: dict[BodyAttributes | SoulAttributes, AttributeType],
     ) -> None:
@@ -51,12 +51,12 @@ class Character:
         self.beliefs: dict[Beliefs, Quality] = dict(
             (x, Quality.Neutral) for x in Beliefs
         )
-        self.goals: list[Goals] = goals
+        self.goals: set[Goals] = goals
         self.facets: dict[Facets, Quality] = dict((x, Quality.Neutral) for x in Facets)
         self.attributes: dict[
             BodyAttributes | SoulAttributes, AttributeType
         ] = attributes
-        self.skills: set[Skills] = set()
+        self.skills: set[tuple[Skills, int]] = set()
         self.set_beliefs_and_facets(beliefs, facets)
         self.warn_bad_facets()
 
