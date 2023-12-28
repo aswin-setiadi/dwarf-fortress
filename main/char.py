@@ -21,6 +21,14 @@ T = TypeVar("T", BodyAttributes, SoulAttributes)
 
 
 class Character:
+    """
+    How to use:
+    - Instantiate obj
+    - Call add_skills
+    - Call get_conflicted_skills to check
+
+    """
+
     crafting_related_values = {
         Beliefs.CRAFTSMANSHIP,
         Goals.CREATE_A_GREAT_WORK_OF_ART,
@@ -143,10 +151,11 @@ class Character:
             # check beliefs+facets, if 1 clash, continue
             if skill.value.is_skill_clashes(self.beliefs, self.goals, self.facets):
                 continue
-            # TODO
-            # score skill based on supporting beliefs/ facets
-            # score skill based on supporting attributes
-            self.skills.add((skill, 0))
+            score, goal = skill.value.get_skill_score(
+                self.beliefs, self.goals, self.facets
+            )
+            attribute_score = skill.value.get_skill_attribute_score(self.attributes)
+            self.skills.add((skill, score, goal, attribute_score))
 
     # def evaluate_skill_score(self, skill: Skills) -> int:
     #     val: int = 0
