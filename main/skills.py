@@ -826,6 +826,7 @@ class WoundDresser(Skill):
 class Skills(Enum):
     # Orderlies
     Brewer = Brewer()
+    Butcher = Butcher()
     Fisherdwarf = Fisherdwarf()
     FishCleaner = FishCleaner()
     FurnaceOperator = FurnaceOperator()
