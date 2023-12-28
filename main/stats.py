@@ -71,6 +71,7 @@ class Beliefs(Enum):
     LEISURE_TIME = 28
     COMMERCE = 29
     ROMANCE = 30
+    # affect woodcutter, butcher, caging animals
     NATURE = 31
     PEACE = 32
     KNOWLEDGE = 33
@@ -157,6 +158,7 @@ class Facets(Enum):
     THOUGHTLESSNESS = 41
     ORDERLINESS = 42
     TRUST = 43
+    # enjoy company of others
     GREGARIOUSNESS = 44
     ASSERTIVENESS = 45
     ACTIVITY_LEVEL = 46
