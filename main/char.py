@@ -58,9 +58,9 @@ class Character:
         self.attributes: dict[
             BodyAttributes | SoulAttributes, AttributeType
         ] = attributes
-        self.skills: set[tuple[Skills, int]] = set()
-        self.set_beliefs_and_facets(beliefs, facets)
-        self.warn_bad_facets()
+        self.skills: set[tuple[Skills, int, bool, float]] = set()
+        self._set_beliefs_and_facets(beliefs, facets)
+        self._warn_bad_facets()
 
     def get_conflicted_skills(self) -> set[Skills]:
         conflicted_skills: set[Skills] = set()
@@ -70,7 +70,7 @@ class Character:
             logger.warning(f"can't have fishing and fishcleaning in same dwarf...")
         return conflicted_skills
 
-    def set_beliefs_and_facets(
+    def _set_beliefs_and_facets(
         self, beliefs: dict[Beliefs, Quality], facets: dict[Facets, Quality]
     ):
         for k, v in beliefs.items():
@@ -78,7 +78,7 @@ class Character:
         for k, v in facets.items():
             self.facets[k] = v
 
-    def warn_bad_facets(self):
+    def _warn_bad_facets(self):
         if self.facets[Facets.CHEER_PROPENSITY] < Quality.Neutral:
             logger.warning(
                 f"{self.name} cheer propensity <0, can't generate + thought while drinking..."
