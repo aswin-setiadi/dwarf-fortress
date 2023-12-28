@@ -241,3 +241,9 @@ class Insanity(Enum):
     Melancholy = 2
     Berserk = 3
     Catatonic = 4
+
+
+if __name__ == "__main__":
+    l = list(BodyAttributes) + list(SoulAttributes)
+    d = dict((x, Quality.Neutral) for x in l)
+    print(d)
