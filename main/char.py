@@ -70,6 +70,22 @@ class Character:
         self._set_beliefs_and_facets(beliefs, facets)
         self._warn_bad_facets()
 
+    def add_skills(self):
+        for skill in Skills:
+            if not skill.value.can_get_xp(self.beliefs, self.facets):
+                continue
+            if skill.value.get_thought_type(self.beliefs) == ThoughtType.UNHAPPY:
+                continue
+
+            # check beliefs+facets, if 1 clash, continue
+            if skill.value.is_skill_clashes(self.beliefs, self.goals, self.facets):
+                continue
+            score, goal = skill.value.get_skill_score(
+                self.beliefs, self.goals, self.facets
+            )
+            attribute_score = skill.value.get_skill_attribute_score(self.attributes)
+            self.skills.add((skill, score, goal, attribute_score))
+
     def get_conflicted_skills(self) -> set[Skills]:
         conflicted_skills: set[Skills] = set()
         if {Skills.FishCleaner, Skills.Fisherdwarf}.issubset(self.skills):
@@ -140,115 +156,3 @@ class Character:
             logger.warning(
                 f"{self.name} orderliness<0, will leave scattered cloth after change"
             )
-
-    def add_skills(self):
-        for skill in Skills:
-            if not skill.value.can_get_xp(self.beliefs, self.facets):
-                continue
-            if skill.value.get_thought_type(self.beliefs) == ThoughtType.UNHAPPY:
-                continue
-
-            # check beliefs+facets, if 1 clash, continue
-            if skill.value.is_skill_clashes(self.beliefs, self.goals, self.facets):
-                continue
-            score, goal = skill.value.get_skill_score(
-                self.beliefs, self.goals, self.facets
-            )
-            attribute_score = skill.value.get_skill_attribute_score(self.attributes)
-            self.skills.add((skill, score, goal, attribute_score))
-
-    # def evaluate_skill_score(self, skill: Skills) -> int:
-    #     val: int = 0
-    #     # 1 skill in 2 roles, the last 1 (military in this case) will hide the first
-    #     # need to evaluate attributes first then values?
-    #     # crafting
-    #     if skill in Roles.Crafter.value:
-    #         crafting_clashed_disdains = [
-    #             x for x in self.disdains if x in Character.crafting_values
-    #         ]
-    #         if crafting_clashed_disdains:
-    #             print(
-    #                 f"{self.name} disdains {crafting_clashed_disdains} clash with {skill}"
-    #             )
-    #             val = -1
-    #     # broker
-    #     if skill in Roles.Broker.value:
-    #         if Values.Commerce in self.disdains:
-    #             print(f"{self.name} disdains {Values.Commerce} clash with {skill}")
-    #             return -1
-    #     # military
-    #     if skill in Roles.MillitaryLeader.value:
-    #         military_clashed_disdains = [
-    #             x for x in self.disdains if x in Character.military_values
-    #         ]
-    #         if military_clashed_disdains:
-    #             return True
-
-    #         military_clashed_values = [
-    #             x for x in self.values if x in Character.military_disdains
-    #         ]
-    #         if military_clashed_values:
-    #             return True
-    #     return False
-
-    # def does_values_clash_with_skill(self, skill: Skills) -> bool:
-    #     # crafting
-    #     if skill in Roles.Crafter.value:
-    #         crafting_clashed_disdains = [
-    #             x for x in self.disdains if x in Character.crafting_values
-    #         ]
-    #         if crafting_clashed_disdains:
-    #             print(
-    #                 f"{self.name} disdains {crafting_clashed_disdains} clash with {skill}"
-    #             )
-    #             return True
-    #     # broker
-    #     if skill in Roles.Broker.value:
-    #         if Values.Commerce in self.disdains:
-    #             print(f"{self.name} disdains {Values.Commerce} clash with {skill}")
-    #             return True
-    #     # military
-    #     if skill in Roles.MillitaryLeader.value:
-    #         military_clashed_disdains = [
-    #             x for x in self.disdains if x in Character.military_values
-    #         ]
-    #         if military_clashed_disdains:
-    #             return True
-
-    #         military_clashed_values = [
-    #             x for x in self.values if x in Character.military_disdains
-    #         ]
-    #         if military_clashed_values:
-    #             return True
-    #     return False
-
-    # def does_value_support_skill(self, skill: Skills) -> bool:
-    #     # crafting
-    #     if skill in Roles.Crafter.value:
-    #         crafting_supported_values = [
-    #             x for x in self.values if x in Character.crafting_values
-    #         ]
-    #         if crafting_supported_values:
-    #             print(
-    #                 f"{self.name} disdains {crafting_supported_values}  support {skill}"
-    #             )
-    #             return True
-    #     # broker
-    #     if skill in Roles.Broker.value:
-    #         if Values.Commerce in self.values:
-    #             print(f"{self.name} disdains {Values.Commerce} clash with {skill}")
-    #             return True
-    #     # military
-    #     if skill in Roles.MillitaryLeader.value:
-    #         military_clashed_disdains = [
-    #             x for x in self.disdains if x in Character.military_values
-    #         ]
-    #         if military_clashed_disdains:
-    #             return True
-
-    #         military_clashed_values = [
-    #             x for x in self.values if x in Character.military_disdains
-    #         ]
-    #         if military_clashed_values:
-    #             return True
-    #     return False
