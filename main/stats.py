@@ -106,8 +106,18 @@ class Facets(Enum):
     LOVE_PROPENSITY = 1
     HATE_PROPENSITY = 2
     ENVY_PROPENSITY = 3
-    # Cheer propensity is bad for most skills since very difficult to make the dwarf happy
+    # Cheer propensity is bad for most skills since very difficult to make
+    # the dwarf happy
     CHEER_PROPENSITY = 4
+    # >0 can get mental breakdown (temporary) that will stop dwarf from working,
+    # if repeated a lot can eventually go insane
+    #
+    # Also cause melancholy (a type of insanity), the afflicted is overcome
+    # by depression and will seek out ways to end their life, considerably slowing
+    # their movement in the process. If they cannot find a cliff to jump off of,
+    # or water/magma to drown/burn up in, they will simply starve or dehydrate
+    # themselves to death. Be warned that a melancholy mother may take her baby's
+    # life along with her own, if she still carries it.
     DEPRESSION_PROPENSITY = 5
     ANGER_PROPENSITY = 6
     ANXIETY_PROPENSITY = 7
@@ -200,3 +210,26 @@ class AttributeType(IntEnum):
     BAD2 = -2
     BAD3 = -3
     BAD4 = -4
+
+
+class MentalBreakdowns(Enum):
+    """https://dwarffortresswiki.org/index.php/Mental_breakdown"""
+
+    Tantrum = 1
+    Oblivious = 2
+    Depression = 3
+
+    def __repr__(self) -> str:
+        return f"{self.name}"
+
+
+class Insanity(Enum):
+    """https://dwarffortresswiki.org/index.php/Insanity"""
+
+    StarkRavingMad = 1
+    Melancholy = 2
+    Berserk = 3
+    Catatonic = 4
+
+    def __repr__(self) -> str:
+        return f"{self.name}"
