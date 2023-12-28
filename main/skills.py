@@ -33,6 +33,7 @@ class Skill(metaclass=ABCMeta):
         goals: set[Goals],
         facets: dict[Facets, Quality],
     ) -> bool:
+        """Check if skill clashes with any beliefs/ facets"""
         return False
 
 
