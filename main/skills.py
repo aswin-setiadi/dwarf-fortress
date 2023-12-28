@@ -1,7 +1,7 @@
 from abc import ABCMeta
 from enum import Enum
 
-from main.stats import (
+from stats import (
     AttributeType,
     Beliefs,
     BodyAttributes,
