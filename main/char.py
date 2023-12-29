@@ -96,9 +96,8 @@ class Character:
             logger.warning(f"can't have fishing and fishcleaning in same dwarf...")
         return conflicted_skills
 
-    def get_suitable_roles(self) -> tuple[list[str], list[str]]:
-        roleslist1: list[str] = []
-        roleslist2: list[str] = []
+    def get_suitable_roles(self) -> list[str]:
+        roleslist: list[str] = []
         logger.info(f"printing suitable roles for {self.name}")
         for role in Roles:
             rolescore1 = 0
@@ -109,14 +108,20 @@ class Character:
                     rolescore2 += self.skills[skill][2]
                 if role == Roles.Crafter:
                     break
-            logger.info(f"{role.name}\tbfscore={rolescore1}\tatbscore={rolescore2}")
+            roleslist.append(role.name)
+            logger.info(f"{role.name:<19}\tb+f={rolescore1}\tatb={rolescore2}")
 
-        return roleslist1, roleslist2
+        return roleslist
 
-    def print_skills(self):
+    def print_skills(
+        self,
+    ):
         logger.info(f"printing skills for {self.name}")
         for k, v in self.skills.items():
-            logger.info(f"{k}\tb+f={v[0]}\tgoal aligned={v[1]}\tatb score={v[2]}")
+            if v[1]:
+                logger.info(f"{k:<19}\tb+f={v[0]}\tatb={v[2]} goal aligned")
+            else:
+                logger.info(f"{k:<19}\tb+f={v[0]}\tatb={v[2]}")
 
     def _set_beliefs_facets_and_attributes(
         self,
