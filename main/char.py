@@ -1,6 +1,5 @@
 from enum import Enum
 import logging
-from typing import TypeVar
 
 from roles import Roles
 from skills import Skills
@@ -18,7 +17,6 @@ from stats import (
 )
 
 logger = logging.getLogger(__name__)
-T = TypeVar("T", BodyAttributes, SoulAttributes)
 
 
 class Character:
@@ -59,7 +57,7 @@ class Character:
         beliefs: dict[Beliefs, Quality],
         goals: set[Goals],
         facets: dict[Facets, Quality],
-        attributes: dict[T, AttributeType],
+        attributes: dict[Enum, AttributeType],
     ) -> None:
         self.name = name
         self.beliefs: dict[Beliefs, Quality] = dict(
@@ -71,7 +69,7 @@ class Character:
             (x, AttributeType.NEUTRAL) for x in Character.atbs
         )
         self.skills: set[tuple[Skills, int, bool, float]] = set()
-        self._set_beliefs_and_facets(beliefs, facets)
+        self._set_beliefs_facets_and_attributes(beliefs, facets, attributes)
         self._warn_bad_facets()
 
     def add_skills(self):
@@ -98,13 +96,24 @@ class Character:
             logger.warning(f"can't have fishing and fishcleaning in same dwarf...")
         return conflicted_skills
 
-    def _set_beliefs_and_facets(
-        self, beliefs: dict[Beliefs, Quality], facets: dict[Facets, Quality]
+    def print_skills(self):
+        for sk in self.skills:
+            logger.info(
+                f"{sk[0].name}\tbeliefs+facets={sk[1]}\tgoal aligned={sk[2]}\tatb score={sk[3]}"
+            )
+
+    def _set_beliefs_facets_and_attributes(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        facets: dict[Facets, Quality],
+        attributes: dict[Enum, AttributeType],
     ):
         for k, v in beliefs.items():
             self.beliefs[k] = v
         for k, v in facets.items():
             self.facets[k] = v
+        for k, v in attributes.items():
+            self.attributes[k] = v
 
     def _warn_bad_facets(self):
         if self.facets[Facets.CHEER_PROPENSITY] < Quality.Neutral:
@@ -128,7 +137,7 @@ class Character:
 
         if self.facets[Facets.ANXIETY_PROPENSITY] > Quality.Neutral:
             logger.warning(
-                f"{self.name} anxiety propensity>0, easier to be {MentalBreakdowns.Oblivious}/{Insanity.StarkRavingMad}"
+                f"{self.name} anxiety propensity>0, easier to be {MentalBreakdowns.Oblivious}/ {Insanity.StarkRavingMad}"
             )
 
         if self.facets[Facets.STRESS_VULNERABILITY] == Quality.Highest:
