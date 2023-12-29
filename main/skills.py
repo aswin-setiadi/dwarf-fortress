@@ -18,6 +18,10 @@ class Skill(metaclass=ABCMeta):
     def __init__(self) -> None:
         self.attributes: dict[BodyAttributes | SoulAttributes, Scores] = {}
 
+    # https://stackoverflow.com/questions/11408148/how-to-get-derived-class-name-from-base-class
+    def name(self):
+        return self.__class__.__name__
+
     def can_get_xp(
         self, beliefs: dict[Beliefs, Quality], facets: dict[Facets, Quality]
     ) -> bool:
