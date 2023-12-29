@@ -60,10 +60,20 @@ def sort_goals():
         json.dump(new_l, f)
 
 
+def sort_atbs():
+    with open("scraps/master_list/attributes_master_list.json") as f:
+        d = json.load(f)
+
+    new_d = dict(sorted(d.items()))
+    with open("a.json", "w") as f:
+        json.dump(new_d, f)
+
+
 if __name__ == "__main__":
     # get_beliefs()
     # get_goals()
     # get_facets()
     # sort_beliefs()
     # sort_facets()
-    sort_goals()
+    # sort_goals()
+    sort_atbs()
