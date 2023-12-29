@@ -1,0 +1,740 @@
+WARNING:char:Sigun Giltfeasts emotionally_obsessive==-3, no feel when see death, still exp trauma/ fear based on other personality
+INFO:char:printing skills for Sigun Giltfeasts sorted by= bf
+INFO:char:Cook               	b+f=3	atb=-5.0 goal aligned
+INFO:char:Bowyer             	b+f=3	atb=-3.0 goal aligned
+INFO:char:WeaponSmith        	b+f=3	atb=-0.5 goal aligned
+INFO:char:GemCutter          	b+f=3	atb=-2.0 goal aligned
+INFO:char:Carpenter          	b+f=3	atb=-0.5 goal aligned
+INFO:char:StoneCarver        	b+f=3	atb=-2.0 goal aligned
+INFO:char:StoneCrafter       	b+f=3	atb=-3.0 goal aligned
+INFO:char:WoodCrafter        	b+f=3	atb=-3.0 goal aligned
+INFO:char:Engraver           	b+f=3	atb=-3.0 goal aligned
+INFO:char:Mason              	b+f=3	atb=-0.5 goal aligned
+INFO:char:ArmorUser          	b+f=1	atb=2.5
+INFO:char:Fighter            	b+f=1	atb=1.0
+INFO:char:Dodger             	b+f=1	atb=0.0
+INFO:char:Tactician          	b+f=1	atb=-10.0
+INFO:char:Leader             	b+f=1	atb=-2.5
+INFO:char:Brewer             	b+f=0	atb=2.5
+INFO:char:Butcher            	b+f=0	atb=2.5
+INFO:char:Fisherdwarf        	b+f=0	atb=1.0
+INFO:char:FishCleaner        	b+f=0	atb=0.0
+INFO:char:FurnaceOperator    	b+f=0	atb=0.5
+INFO:char:Herbalist          	b+f=0	atb=0.0
+INFO:char:Planter            	b+f=0	atb=2.5
+INFO:char:Spinner            	b+f=0	atb=1.0
+INFO:char:Thresher           	b+f=0	atb=1.0
+INFO:char:Weaver             	b+f=0	atb=-3.0
+INFO:char:WoodBurner         	b+f=0	atb=2.5
+INFO:char:WoodCutter         	b+f=0	atb=2.5
+INFO:char:Suturer            	b+f=0	atb=0.0
+INFO:char:WoundDresser       	b+f=0	atb=-1.0
+INFO:char:AnimalTrainer      	b+f=0	atb=-4.5
+INFO:char:Miner              	b+f=0	atb=2.5
+INFO:char:StoneCutter        	b+f=0	atb=0
+INFO:char:Discipline         	b+f=0	atb=0.0
+INFO:char:Appraiser          	b+f=0	atb=-7.0
+INFO:char:JudgeOfIntent      	b+f=0	atb=-4.5
+INFO:char:Negotiator         	b+f=0	atb=-1.0
+INFO:char:Organizer          	b+f=0	atb=-8.0
+INFO:char:Consoler           	b+f=0	atb=-2.5
+INFO:char:Pacifier           	b+f=0	atb=-1.0
+INFO:char:Diagnoser          	b+f=0	atb=-7.0
+INFO:char:BoneDoctor         	b+f=0	atb=1.0
+INFO:char:Surgeon            	b+f=0	atb=0.0
+INFO:char:RecordKeeper       	b+f=0	atb=-5.0
+INFO:char:Comedian           	b+f=0	atb=-3.0
+INFO:char:Conversationalist  	b+f=0	atb=-1.0
+INFO:char:Persuader          	b+f=0	atb=-1.0
+INFO:char:Concentration      	b+f=0	atb=0.0
+INFO:char:Observer           	b+f=0	atb=-2.0
+INFO:char:printing skills for Sigun Giltfeasts sorted by= atb
+INFO:char:Brewer             	b+f=0	atb=2.5
+INFO:char:Butcher            	b+f=0	atb=2.5
+INFO:char:Planter            	b+f=0	atb=2.5
+INFO:char:WoodBurner         	b+f=0	atb=2.5
+INFO:char:WoodCutter         	b+f=0	atb=2.5
+INFO:char:Miner              	b+f=0	atb=2.5
+INFO:char:ArmorUser          	b+f=1	atb=2.5
+INFO:char:Fisherdwarf        	b+f=0	atb=1.0
+INFO:char:Spinner            	b+f=0	atb=1.0
+INFO:char:Thresher           	b+f=0	atb=1.0
+INFO:char:Fighter            	b+f=1	atb=1.0
+INFO:char:BoneDoctor         	b+f=0	atb=1.0
+INFO:char:FurnaceOperator    	b+f=0	atb=0.5
+INFO:char:FishCleaner        	b+f=0	atb=0.0
+INFO:char:Herbalist          	b+f=0	atb=0.0
+INFO:char:Suturer            	b+f=0	atb=0.0
+INFO:char:StoneCutter        	b+f=0	atb=0
+INFO:char:Discipline         	b+f=0	atb=0.0
+INFO:char:Dodger             	b+f=1	atb=0.0
+INFO:char:Surgeon            	b+f=0	atb=0.0
+INFO:char:Concentration      	b+f=0	atb=0.0
+INFO:char:WeaponSmith        	b+f=3	atb=-0.5 goal aligned
+INFO:char:Carpenter          	b+f=3	atb=-0.5 goal aligned
+INFO:char:Mason              	b+f=3	atb=-0.5 goal aligned
+INFO:char:WoundDresser       	b+f=0	atb=-1.0
+INFO:char:Negotiator         	b+f=0	atb=-1.0
+INFO:char:Pacifier           	b+f=0	atb=-1.0
+INFO:char:Conversationalist  	b+f=0	atb=-1.0
+INFO:char:Persuader          	b+f=0	atb=-1.0
+INFO:char:GemCutter          	b+f=3	atb=-2.0 goal aligned
+INFO:char:StoneCarver        	b+f=3	atb=-2.0 goal aligned
+INFO:char:Observer           	b+f=0	atb=-2.0
+INFO:char:Leader             	b+f=1	atb=-2.5
+INFO:char:Consoler           	b+f=0	atb=-2.5
+INFO:char:Weaver             	b+f=0	atb=-3.0
+INFO:char:Bowyer             	b+f=3	atb=-3.0 goal aligned
+INFO:char:StoneCrafter       	b+f=3	atb=-3.0 goal aligned
+INFO:char:WoodCrafter        	b+f=3	atb=-3.0 goal aligned
+INFO:char:Engraver           	b+f=3	atb=-3.0 goal aligned
+INFO:char:Comedian           	b+f=0	atb=-3.0
+INFO:char:AnimalTrainer      	b+f=0	atb=-4.5
+INFO:char:JudgeOfIntent      	b+f=0	atb=-4.5
+INFO:char:Cook               	b+f=3	atb=-5.0 goal aligned
+INFO:char:RecordKeeper       	b+f=0	atb=-5.0
+INFO:char:Appraiser          	b+f=0	atb=-7.0
+INFO:char:Diagnoser          	b+f=0	atb=-7.0
+INFO:char:Organizer          	b+f=0	atb=-8.0
+INFO:char:Tactician          	b+f=1	atb=-10.0
+WARNING:char:can't have fishing and fishcleaning in same dwarf...
+INFO:char:printing suitable roles for Sigun Giltfeasts
+INFO:char:ChiefMedicalDoctor 	b+f=0	atb=-7.0
+INFO:char:Manager            	b+f=0	atb=-11.5
+INFO:char:Broker             	b+f=0	atb=-12.5
+INFO:char:BookKeeper         	b+f=0	atb=-5.0
+INFO:char:ExpeditionLeader   	b+f=0	atb=-3.5
+INFO:char:MillitaryLeader    	b+f=5	atb=-9.0
+INFO:char:Crafter            	b+f=3	atb=-3.0
+INFO:char:Doctor             	b+f=0	atb=1.0
+INFO:__main__:char1 ends...
+WARNING:char:Avuz Tangleglaze altruism>0, get happy thought from recovering wounded
+INFO:char:printing skills for Avuz Tangleglaze sorted by= bf
+INFO:char:Cook               	b+f=3	atb=-1.0
+INFO:char:Bowyer             	b+f=3	atb=-1.0
+INFO:char:WeaponSmith        	b+f=3	atb=-1.0
+INFO:char:GemCutter          	b+f=3	atb=0.0
+INFO:char:Carpenter          	b+f=3	atb=-1.0
+INFO:char:StoneCarver        	b+f=3	atb=-1.0
+INFO:char:StoneCrafter       	b+f=3	atb=-1.0
+INFO:char:WoodCrafter        	b+f=3	atb=-1.0
+INFO:char:Engraver           	b+f=3	atb=-1.0
+INFO:char:Mason              	b+f=3	atb=-1.0
+INFO:char:Brewer             	b+f=0	atb=0.0
+INFO:char:Butcher            	b+f=0	atb=0.0
+INFO:char:Fisherdwarf        	b+f=0	atb=-5.0
+INFO:char:FishCleaner        	b+f=0	atb=0.0
+INFO:char:FurnaceOperator    	b+f=0	atb=0.0
+INFO:char:Herbalist          	b+f=0	atb=0.0
+INFO:char:Planter            	b+f=0	atb=0.0
+INFO:char:Spinner            	b+f=0	atb=0.0
+INFO:char:Thresher           	b+f=0	atb=0.0
+INFO:char:Weaver             	b+f=0	atb=-1.0
+INFO:char:WoodBurner         	b+f=0	atb=0.0
+INFO:char:WoodCutter         	b+f=0	atb=0.0
+INFO:char:Suturer            	b+f=0	atb=-2.0
+INFO:char:WoundDresser       	b+f=0	atb=-1.0
+INFO:char:AnimalTrainer      	b+f=0	atb=-2.5
+INFO:char:Miner              	b+f=0	atb=0.0
+INFO:char:StoneCutter        	b+f=0	atb=0
+INFO:char:Discipline         	b+f=0	atb=-2.0
+INFO:char:Appraiser          	b+f=0	atb=0.0
+INFO:char:JudgeOfIntent      	b+f=0	atb=-0.5
+INFO:char:Negotiator         	b+f=0	atb=1.0
+INFO:char:Organizer          	b+f=0	atb=1.0
+INFO:char:Consoler           	b+f=0	atb=-0.5
+INFO:char:Pacifier           	b+f=0	atb=1.0
+INFO:char:Diagnoser          	b+f=0	atb=0.0
+INFO:char:BoneDoctor         	b+f=0	atb=-2.0
+INFO:char:Surgeon            	b+f=0	atb=-2.0
+INFO:char:RecordKeeper       	b+f=0	atb=-2.0
+INFO:char:Comedian           	b+f=0	atb=-1.0
+INFO:char:Conversationalist  	b+f=0	atb=1.0
+INFO:char:Intimidator        	b+f=0	atb=0.0
+INFO:char:Persuader          	b+f=0	atb=1.0
+INFO:char:Concentration      	b+f=0	atb=-5.0
+INFO:char:Observer           	b+f=0	atb=-2.0
+INFO:char:printing skills for Avuz Tangleglaze sorted by= atb
+INFO:char:Negotiator         	b+f=0	atb=1.0
+INFO:char:Organizer          	b+f=0	atb=1.0
+INFO:char:Pacifier           	b+f=0	atb=1.0
+INFO:char:Conversationalist  	b+f=0	atb=1.0
+INFO:char:Persuader          	b+f=0	atb=1.0
+INFO:char:Brewer             	b+f=0	atb=0.0
+INFO:char:Butcher            	b+f=0	atb=0.0
+INFO:char:FishCleaner        	b+f=0	atb=0.0
+INFO:char:FurnaceOperator    	b+f=0	atb=0.0
+INFO:char:Herbalist          	b+f=0	atb=0.0
+INFO:char:Planter            	b+f=0	atb=0.0
+INFO:char:Spinner            	b+f=0	atb=0.0
+INFO:char:Thresher           	b+f=0	atb=0.0
+INFO:char:WoodBurner         	b+f=0	atb=0.0
+INFO:char:WoodCutter         	b+f=0	atb=0.0
+INFO:char:Miner              	b+f=0	atb=0.0
+INFO:char:StoneCutter        	b+f=0	atb=0
+INFO:char:GemCutter          	b+f=3	atb=0.0
+INFO:char:Appraiser          	b+f=0	atb=0.0
+INFO:char:Diagnoser          	b+f=0	atb=0.0
+INFO:char:Intimidator        	b+f=0	atb=0.0
+INFO:char:JudgeOfIntent      	b+f=0	atb=-0.5
+INFO:char:Consoler           	b+f=0	atb=-0.5
+INFO:char:Weaver             	b+f=0	atb=-1.0
+INFO:char:WoundDresser       	b+f=0	atb=-1.0
+INFO:char:Cook               	b+f=3	atb=-1.0
+INFO:char:Bowyer             	b+f=3	atb=-1.0
+INFO:char:WeaponSmith        	b+f=3	atb=-1.0
+INFO:char:Carpenter          	b+f=3	atb=-1.0
+INFO:char:StoneCarver        	b+f=3	atb=-1.0
+INFO:char:StoneCrafter       	b+f=3	atb=-1.0
+INFO:char:WoodCrafter        	b+f=3	atb=-1.0
+INFO:char:Engraver           	b+f=3	atb=-1.0
+INFO:char:Mason              	b+f=3	atb=-1.0
+INFO:char:Comedian           	b+f=0	atb=-1.0
+INFO:char:Suturer            	b+f=0	atb=-2.0
+INFO:char:Discipline         	b+f=0	atb=-2.0
+INFO:char:BoneDoctor         	b+f=0	atb=-2.0
+INFO:char:Surgeon            	b+f=0	atb=-2.0
+INFO:char:RecordKeeper       	b+f=0	atb=-2.0
+INFO:char:Observer           	b+f=0	atb=-2.0
+INFO:char:AnimalTrainer      	b+f=0	atb=-2.5
+INFO:char:Fisherdwarf        	b+f=0	atb=-5.0
+INFO:char:Concentration      	b+f=0	atb=-5.0
+WARNING:char:can't have fishing and fishcleaning in same dwarf...
+INFO:char:printing suitable roles for Avuz Tangleglaze
+INFO:char:ChiefMedicalDoctor 	b+f=0	atb=0.0
+INFO:char:Manager            	b+f=0	atb=1.5
+INFO:char:Broker             	b+f=0	atb=0.5
+INFO:char:BookKeeper         	b+f=0	atb=-2.0
+INFO:char:ExpeditionLeader   	b+f=0	atb=0.5
+INFO:char:MillitaryLeader    	b+f=0	atb=0
+INFO:char:Crafter            	b+f=3	atb=-1.0
+INFO:char:Doctor             	b+f=0	atb=-4.0
+INFO:__main__:char2 ends...
+INFO:char:printing skills for Reg Whirlroofs sorted by= bf
+INFO:char:ArmorUser          	b+f=1	atb=2.5
+INFO:char:Fighter            	b+f=1	atb=2.5
+INFO:char:Dodger             	b+f=1	atb=2.5
+INFO:char:Tactician          	b+f=1	atb=-2.5
+INFO:char:Leader             	b+f=1	atb=5.5
+INFO:char:Brewer             	b+f=0	atb=2.5
+INFO:char:Butcher            	b+f=0	atb=2.5
+INFO:char:Fisherdwarf        	b+f=0	atb=4.0
+INFO:char:FishCleaner        	b+f=0	atb=2.5
+INFO:char:FurnaceOperator    	b+f=0	atb=1.5
+INFO:char:Herbalist          	b+f=0	atb=5.5
+INFO:char:Planter            	b+f=0	atb=2.5
+INFO:char:Spinner            	b+f=0	atb=2.5
+INFO:char:Thresher           	b+f=0	atb=2.5
+INFO:char:Weaver             	b+f=0	atb=2.5
+INFO:char:WoodBurner         	b+f=0	atb=2.5
+INFO:char:WoodCutter         	b+f=0	atb=2.5
+INFO:char:Suturer            	b+f=0	atb=2.5
+INFO:char:WoundDresser       	b+f=0	atb=5.5
+INFO:char:AnimalTrainer      	b+f=0	atb=10.5
+INFO:char:Miner              	b+f=0	atb=2.5
+INFO:char:StoneCutter        	b+f=0	atb=0
+INFO:char:Cook               	b+f=0	atb=1.5 goal aligned
+INFO:char:Bowyer             	b+f=0	atb=2.5 goal aligned
+INFO:char:WeaponSmith        	b+f=0	atb=2.5 goal aligned
+INFO:char:GemCutter          	b+f=0	atb=1.5 goal aligned
+INFO:char:Carpenter          	b+f=0	atb=2.5 goal aligned
+INFO:char:StoneCarver        	b+f=0	atb=2.5 goal aligned
+INFO:char:StoneCrafter       	b+f=0	atb=2.5 goal aligned
+INFO:char:WoodCrafter        	b+f=0	atb=2.5 goal aligned
+INFO:char:Engraver           	b+f=0	atb=2.5 goal aligned
+INFO:char:Mason              	b+f=0	atb=2.5 goal aligned
+INFO:char:Discipline         	b+f=0	atb=0.0
+INFO:char:Appraiser          	b+f=0	atb=0.5
+INFO:char:JudgeOfIntent      	b+f=0	atb=5.5
+INFO:char:Negotiator         	b+f=0	atb=1.0
+INFO:char:Organizer          	b+f=0	atb=-4.5
+INFO:char:Consoler           	b+f=0	atb=5.5
+INFO:char:Pacifier           	b+f=0	atb=1.0
+INFO:char:Diagnoser          	b+f=0	atb=0.5
+INFO:char:BoneDoctor         	b+f=0	atb=2.5
+INFO:char:Surgeon            	b+f=0	atb=2.5
+INFO:char:RecordKeeper       	b+f=0	atb=0.5
+INFO:char:Comedian           	b+f=0	atb=1.0
+INFO:char:Conversationalist  	b+f=0	atb=1.0
+INFO:char:Intimidator        	b+f=0	atb=1.0
+INFO:char:Persuader          	b+f=0	atb=1.0
+INFO:char:Concentration      	b+f=0	atb=3.0
+INFO:char:Observer           	b+f=0	atb=0.0
+INFO:char:printing skills for Reg Whirlroofs sorted by= atb
+INFO:char:AnimalTrainer      	b+f=0	atb=10.5
+INFO:char:Herbalist          	b+f=0	atb=5.5
+INFO:char:WoundDresser       	b+f=0	atb=5.5
+INFO:char:Leader             	b+f=1	atb=5.5
+INFO:char:JudgeOfIntent      	b+f=0	atb=5.5
+INFO:char:Consoler           	b+f=0	atb=5.5
+INFO:char:Fisherdwarf        	b+f=0	atb=4.0
+INFO:char:Concentration      	b+f=0	atb=3.0
+INFO:char:Brewer             	b+f=0	atb=2.5
+INFO:char:Butcher            	b+f=0	atb=2.5
+INFO:char:FishCleaner        	b+f=0	atb=2.5
+INFO:char:Planter            	b+f=0	atb=2.5
+INFO:char:Spinner            	b+f=0	atb=2.5
+INFO:char:Thresher           	b+f=0	atb=2.5
+INFO:char:Weaver             	b+f=0	atb=2.5
+INFO:char:WoodBurner         	b+f=0	atb=2.5
+INFO:char:WoodCutter         	b+f=0	atb=2.5
+INFO:char:Suturer            	b+f=0	atb=2.5
+INFO:char:Miner              	b+f=0	atb=2.5
+INFO:char:Bowyer             	b+f=0	atb=2.5 goal aligned
+INFO:char:WeaponSmith        	b+f=0	atb=2.5 goal aligned
+INFO:char:Carpenter          	b+f=0	atb=2.5 goal aligned
+INFO:char:StoneCarver        	b+f=0	atb=2.5 goal aligned
+INFO:char:StoneCrafter       	b+f=0	atb=2.5 goal aligned
+INFO:char:WoodCrafter        	b+f=0	atb=2.5 goal aligned
+INFO:char:Engraver           	b+f=0	atb=2.5 goal aligned
+INFO:char:Mason              	b+f=0	atb=2.5 goal aligned
+INFO:char:ArmorUser          	b+f=1	atb=2.5
+INFO:char:Fighter            	b+f=1	atb=2.5
+INFO:char:Dodger             	b+f=1	atb=2.5
+INFO:char:BoneDoctor         	b+f=0	atb=2.5
+INFO:char:Surgeon            	b+f=0	atb=2.5
+INFO:char:FurnaceOperator    	b+f=0	atb=1.5
+INFO:char:Cook               	b+f=0	atb=1.5 goal aligned
+INFO:char:GemCutter          	b+f=0	atb=1.5 goal aligned
+INFO:char:Negotiator         	b+f=0	atb=1.0
+INFO:char:Pacifier           	b+f=0	atb=1.0
+INFO:char:Comedian           	b+f=0	atb=1.0
+INFO:char:Conversationalist  	b+f=0	atb=1.0
+INFO:char:Intimidator        	b+f=0	atb=1.0
+INFO:char:Persuader          	b+f=0	atb=1.0
+INFO:char:Appraiser          	b+f=0	atb=0.5
+INFO:char:Diagnoser          	b+f=0	atb=0.5
+INFO:char:RecordKeeper       	b+f=0	atb=0.5
+INFO:char:StoneCutter        	b+f=0	atb=0
+INFO:char:Discipline         	b+f=0	atb=0.0
+INFO:char:Observer           	b+f=0	atb=0.0
+INFO:char:Tactician          	b+f=1	atb=-2.5
+INFO:char:Organizer          	b+f=0	atb=-4.5
+WARNING:char:can't have fishing and fishcleaning in same dwarf...
+INFO:char:printing suitable roles for Reg Whirlroofs
+INFO:char:ChiefMedicalDoctor 	b+f=0	atb=0.5
+INFO:char:Manager            	b+f=0	atb=2.0
+INFO:char:Broker             	b+f=0	atb=7.0
+INFO:char:BookKeeper         	b+f=0	atb=0.5
+INFO:char:ExpeditionLeader   	b+f=0	atb=6.5
+INFO:char:MillitaryLeader    	b+f=5	atb=10.5
+INFO:char:Crafter            	b+f=0	atb=2.5
+INFO:char:Doctor             	b+f=0	atb=5.0
+INFO:__main__:char3 ends...
+WARNING:char:Kulet Bridgeardent anxiety propensity>0, easier to be MentalBreakdowns.Oblivious/ Insanity.StarkRavingMad
+INFO:char:printing skills for Kulet Bridgeardent sorted by= bf
+INFO:char:Cook               	b+f=3	atb=2.0 goal aligned
+INFO:char:Bowyer             	b+f=3	atb=0.0 goal aligned
+INFO:char:WeaponSmith        	b+f=3	atb=0.0 goal aligned
+INFO:char:GemCutter          	b+f=3	atb=0.0 goal aligned
+INFO:char:Carpenter          	b+f=3	atb=0.0 goal aligned
+INFO:char:StoneCarver        	b+f=3	atb=0.0 goal aligned
+INFO:char:StoneCrafter       	b+f=3	atb=0.0 goal aligned
+INFO:char:WoodCrafter        	b+f=3	atb=0.0 goal aligned
+INFO:char:Engraver           	b+f=3	atb=0.0 goal aligned
+INFO:char:Mason              	b+f=3	atb=0.0 goal aligned
+INFO:char:Brewer             	b+f=0	atb=0.0
+INFO:char:Butcher            	b+f=0	atb=0.0
+INFO:char:Fisherdwarf        	b+f=0	atb=0.0
+INFO:char:FishCleaner        	b+f=0	atb=0.0
+INFO:char:FurnaceOperator    	b+f=0	atb=1.0
+INFO:char:Herbalist          	b+f=0	atb=0.0
+INFO:char:Planter            	b+f=0	atb=0.0
+INFO:char:Spinner            	b+f=0	atb=-1.0
+INFO:char:Thresher           	b+f=0	atb=0.0
+INFO:char:Weaver             	b+f=0	atb=0.0
+INFO:char:WoodBurner         	b+f=0	atb=0.0
+INFO:char:WoodCutter         	b+f=0	atb=1.0
+INFO:char:Suturer            	b+f=0	atb=-1.0
+INFO:char:WoundDresser       	b+f=0	atb=2.0
+INFO:char:AnimalTrainer      	b+f=0	atb=7.5
+INFO:char:Miner              	b+f=0	atb=1.0
+INFO:char:StoneCutter        	b+f=0	atb=0
+INFO:char:Discipline         	b+f=0	atb=5.0
+INFO:char:Appraiser          	b+f=0	atb=2.5
+INFO:char:JudgeOfIntent      	b+f=0	atb=8.5
+INFO:char:Negotiator         	b+f=0	atb=4.0
+INFO:char:Organizer          	b+f=0	atb=4.5
+INFO:char:Consoler           	b+f=0	atb=8.5
+INFO:char:Pacifier           	b+f=0	atb=4.0
+INFO:char:Diagnoser          	b+f=0	atb=2.5
+INFO:char:BoneDoctor         	b+f=0	atb=-1.0
+INFO:char:Surgeon            	b+f=0	atb=-1.0
+INFO:char:RecordKeeper       	b+f=0	atb=2.5
+INFO:char:Comedian           	b+f=0	atb=1.0
+INFO:char:Conversationalist  	b+f=0	atb=4.0
+INFO:char:Intimidator        	b+f=0	atb=0.0
+INFO:char:Persuader          	b+f=0	atb=4.0
+INFO:char:Concentration      	b+f=0	atb=2.0
+INFO:char:Observer           	b+f=0	atb=-2.5
+INFO:char:printing skills for Kulet Bridgeardent sorted by= atb
+INFO:char:JudgeOfIntent      	b+f=0	atb=8.5
+INFO:char:Consoler           	b+f=0	atb=8.5
+INFO:char:AnimalTrainer      	b+f=0	atb=7.5
+INFO:char:Discipline         	b+f=0	atb=5.0
+INFO:char:Organizer          	b+f=0	atb=4.5
+INFO:char:Negotiator         	b+f=0	atb=4.0
+INFO:char:Pacifier           	b+f=0	atb=4.0
+INFO:char:Conversationalist  	b+f=0	atb=4.0
+INFO:char:Persuader          	b+f=0	atb=4.0
+INFO:char:Appraiser          	b+f=0	atb=2.5
+INFO:char:Diagnoser          	b+f=0	atb=2.5
+INFO:char:RecordKeeper       	b+f=0	atb=2.5
+INFO:char:WoundDresser       	b+f=0	atb=2.0
+INFO:char:Cook               	b+f=3	atb=2.0 goal aligned
+INFO:char:Concentration      	b+f=0	atb=2.0
+INFO:char:FurnaceOperator    	b+f=0	atb=1.0
+INFO:char:WoodCutter         	b+f=0	atb=1.0
+INFO:char:Miner              	b+f=0	atb=1.0
+INFO:char:Comedian           	b+f=0	atb=1.0
+INFO:char:Brewer             	b+f=0	atb=0.0
+INFO:char:Butcher            	b+f=0	atb=0.0
+INFO:char:Fisherdwarf        	b+f=0	atb=0.0
+INFO:char:FishCleaner        	b+f=0	atb=0.0
+INFO:char:Herbalist          	b+f=0	atb=0.0
+INFO:char:Planter            	b+f=0	atb=0.0
+INFO:char:Thresher           	b+f=0	atb=0.0
+INFO:char:Weaver             	b+f=0	atb=0.0
+INFO:char:WoodBurner         	b+f=0	atb=0.0
+INFO:char:StoneCutter        	b+f=0	atb=0
+INFO:char:Bowyer             	b+f=3	atb=0.0 goal aligned
+INFO:char:WeaponSmith        	b+f=3	atb=0.0 goal aligned
+INFO:char:GemCutter          	b+f=3	atb=0.0 goal aligned
+INFO:char:Carpenter          	b+f=3	atb=0.0 goal aligned
+INFO:char:StoneCarver        	b+f=3	atb=0.0 goal aligned
+INFO:char:StoneCrafter       	b+f=3	atb=0.0 goal aligned
+INFO:char:WoodCrafter        	b+f=3	atb=0.0 goal aligned
+INFO:char:Engraver           	b+f=3	atb=0.0 goal aligned
+INFO:char:Mason              	b+f=3	atb=0.0 goal aligned
+INFO:char:Intimidator        	b+f=0	atb=0.0
+INFO:char:Spinner            	b+f=0	atb=-1.0
+INFO:char:Suturer            	b+f=0	atb=-1.0
+INFO:char:BoneDoctor         	b+f=0	atb=-1.0
+INFO:char:Surgeon            	b+f=0	atb=-1.0
+INFO:char:Observer           	b+f=0	atb=-2.5
+WARNING:char:can't have fishing and fishcleaning in same dwarf...
+INFO:char:printing suitable roles for Kulet Bridgeardent
+INFO:char:ChiefMedicalDoctor 	b+f=0	atb=2.5
+INFO:char:Manager            	b+f=0	atb=17.0
+INFO:char:Broker             	b+f=0	atb=15.0
+INFO:char:BookKeeper         	b+f=0	atb=2.5
+INFO:char:ExpeditionLeader   	b+f=0	atb=12.5
+INFO:char:MillitaryLeader    	b+f=0	atb=0
+INFO:char:Crafter            	b+f=3	atb=0.0
+INFO:char:Doctor             	b+f=0	atb=-2.0
+INFO:__main__:char4 ends...
+WARNING:char:Ubbul Cleanroof depression propensity>0, easy to get MentalBreakdowns.Depression and get Insanity.Melancholy...
+INFO:char:printing skills for Ubbul Cleanroof sorted by= bf
+INFO:char:Brewer             	b+f=0	atb=0.0
+INFO:char:Butcher            	b+f=0	atb=0.0
+INFO:char:Fisherdwarf        	b+f=0	atb=-1.0
+INFO:char:FishCleaner        	b+f=0	atb=0.0
+INFO:char:FurnaceOperator    	b+f=0	atb=0.0
+INFO:char:Herbalist          	b+f=0	atb=-1.0
+INFO:char:Planter            	b+f=0	atb=0.0
+INFO:char:Spinner            	b+f=0	atb=3.0
+INFO:char:Thresher           	b+f=0	atb=0.0
+INFO:char:Weaver             	b+f=0	atb=3.0
+INFO:char:WoodBurner         	b+f=0	atb=0.0
+INFO:char:WoodCutter         	b+f=0	atb=3.0
+INFO:char:Suturer            	b+f=0	atb=3.0
+INFO:char:WoundDresser       	b+f=0	atb=3.0
+INFO:char:AnimalTrainer      	b+f=0	atb=-1.0
+INFO:char:Miner              	b+f=0	atb=3.0
+INFO:char:StoneCutter        	b+f=0	atb=0
+INFO:char:Cook               	b+f=0	atb=0.0
+INFO:char:Bowyer             	b+f=0	atb=3.0
+INFO:char:WeaponSmith        	b+f=0	atb=3.0
+INFO:char:GemCutter          	b+f=0	atb=3.0
+INFO:char:Carpenter          	b+f=0	atb=3.0
+INFO:char:StoneCarver        	b+f=0	atb=3.0
+INFO:char:StoneCrafter       	b+f=0	atb=3.0
+INFO:char:WoodCrafter        	b+f=0	atb=3.0
+INFO:char:Engraver           	b+f=0	atb=3.0
+INFO:char:Mason              	b+f=0	atb=3.0
+INFO:char:Discipline         	b+f=0	atb=0.0
+INFO:char:Appraiser          	b+f=0	atb=-1.0
+INFO:char:JudgeOfIntent      	b+f=0	atb=0.0
+INFO:char:Negotiator         	b+f=0	atb=2.5
+INFO:char:Organizer          	b+f=0	atb=0.0
+INFO:char:Consoler           	b+f=0	atb=1.0
+INFO:char:Pacifier           	b+f=0	atb=2.5
+INFO:char:Diagnoser          	b+f=0	atb=-1.0
+INFO:char:BoneDoctor         	b+f=0	atb=3.0
+INFO:char:Surgeon            	b+f=0	atb=3.0
+INFO:char:RecordKeeper       	b+f=0	atb=-1.0
+INFO:char:Comedian           	b+f=0	atb=2.5
+INFO:char:Intimidator        	b+f=0	atb=2.5
+INFO:char:Persuader          	b+f=0	atb=2.5
+INFO:char:Concentration      	b+f=0	atb=-1.0
+INFO:char:Observer           	b+f=0	atb=7.5
+INFO:char:printing skills for Ubbul Cleanroof sorted by= atb
+INFO:char:Observer           	b+f=0	atb=7.5
+INFO:char:Spinner            	b+f=0	atb=3.0
+INFO:char:Weaver             	b+f=0	atb=3.0
+INFO:char:WoodCutter         	b+f=0	atb=3.0
+INFO:char:Suturer            	b+f=0	atb=3.0
+INFO:char:WoundDresser       	b+f=0	atb=3.0
+INFO:char:Miner              	b+f=0	atb=3.0
+INFO:char:Bowyer             	b+f=0	atb=3.0
+INFO:char:WeaponSmith        	b+f=0	atb=3.0
+INFO:char:GemCutter          	b+f=0	atb=3.0
+INFO:char:Carpenter          	b+f=0	atb=3.0
+INFO:char:StoneCarver        	b+f=0	atb=3.0
+INFO:char:StoneCrafter       	b+f=0	atb=3.0
+INFO:char:WoodCrafter        	b+f=0	atb=3.0
+INFO:char:Engraver           	b+f=0	atb=3.0
+INFO:char:Mason              	b+f=0	atb=3.0
+INFO:char:BoneDoctor         	b+f=0	atb=3.0
+INFO:char:Surgeon            	b+f=0	atb=3.0
+INFO:char:Negotiator         	b+f=0	atb=2.5
+INFO:char:Pacifier           	b+f=0	atb=2.5
+INFO:char:Comedian           	b+f=0	atb=2.5
+INFO:char:Intimidator        	b+f=0	atb=2.5
+INFO:char:Persuader          	b+f=0	atb=2.5
+INFO:char:Consoler           	b+f=0	atb=1.0
+INFO:char:Brewer             	b+f=0	atb=0.0
+INFO:char:Butcher            	b+f=0	atb=0.0
+INFO:char:FishCleaner        	b+f=0	atb=0.0
+INFO:char:FurnaceOperator    	b+f=0	atb=0.0
+INFO:char:Planter            	b+f=0	atb=0.0
+INFO:char:Thresher           	b+f=0	atb=0.0
+INFO:char:WoodBurner         	b+f=0	atb=0.0
+INFO:char:StoneCutter        	b+f=0	atb=0
+INFO:char:Cook               	b+f=0	atb=0.0
+INFO:char:Discipline         	b+f=0	atb=0.0
+INFO:char:JudgeOfIntent      	b+f=0	atb=0.0
+INFO:char:Organizer          	b+f=0	atb=0.0
+INFO:char:Fisherdwarf        	b+f=0	atb=-1.0
+INFO:char:Herbalist          	b+f=0	atb=-1.0
+INFO:char:AnimalTrainer      	b+f=0	atb=-1.0
+INFO:char:Appraiser          	b+f=0	atb=-1.0
+INFO:char:Diagnoser          	b+f=0	atb=-1.0
+INFO:char:RecordKeeper       	b+f=0	atb=-1.0
+INFO:char:Concentration      	b+f=0	atb=-1.0
+WARNING:char:can't have fishing and fishcleaning in same dwarf...
+INFO:char:printing suitable roles for Ubbul Cleanroof
+INFO:char:ChiefMedicalDoctor 	b+f=0	atb=-1.0
+INFO:char:Manager            	b+f=0	atb=3.5
+INFO:char:Broker             	b+f=0	atb=1.5
+INFO:char:BookKeeper         	b+f=0	atb=-1.0
+INFO:char:ExpeditionLeader   	b+f=0	atb=3.5
+INFO:char:MillitaryLeader    	b+f=0	atb=0
+INFO:char:Crafter            	b+f=0	atb=3.0
+INFO:char:Doctor             	b+f=0	atb=6.0
+INFO:__main__:char5 ends...
+WARNING:char:Ineth Smoothwhipped anxiety propensity>0, easier to be MentalBreakdowns.Oblivious/ Insanity.StarkRavingMad
+WARNING:char:Ineth Smoothwhipped emotionally_obsessive==-3, no feel when see death, still exp trauma/ fear based on other personality
+INFO:char:printing skills for Ineth Smoothwhipped sorted by= bf
+INFO:char:Brewer             	b+f=0	atb=0.0
+INFO:char:Butcher            	b+f=0	atb=0.0
+INFO:char:Fisherdwarf        	b+f=0	atb=5.0
+INFO:char:FishCleaner        	b+f=0	atb=0.0
+INFO:char:FurnaceOperator    	b+f=0	atb=-2.0
+INFO:char:Herbalist          	b+f=0	atb=0.0
+INFO:char:Planter            	b+f=0	atb=0.0
+INFO:char:Spinner            	b+f=0	atb=0.0
+INFO:char:Thresher           	b+f=0	atb=0.0
+INFO:char:Weaver             	b+f=0	atb=0.0
+INFO:char:WoodBurner         	b+f=0	atb=0.0
+INFO:char:WoodCutter         	b+f=0	atb=1.0
+INFO:char:Suturer            	b+f=0	atb=2.0
+INFO:char:WoundDresser       	b+f=0	atb=-1.0
+INFO:char:AnimalTrainer      	b+f=0	atb=-2.5
+INFO:char:Miner              	b+f=0	atb=1.0
+INFO:char:StoneCutter        	b+f=0	atb=0
+INFO:char:Cook               	b+f=0	atb=-2.0
+INFO:char:Bowyer             	b+f=0	atb=0.0
+INFO:char:WeaponSmith        	b+f=0	atb=0.0
+INFO:char:GemCutter          	b+f=0	atb=-2.0
+INFO:char:Carpenter          	b+f=0	atb=0.0
+INFO:char:StoneCarver        	b+f=0	atb=0.0
+INFO:char:StoneCrafter       	b+f=0	atb=0.0
+INFO:char:WoodCrafter        	b+f=0	atb=0.0
+INFO:char:Engraver           	b+f=0	atb=0.0
+INFO:char:Mason              	b+f=0	atb=0.0
+INFO:char:Discipline         	b+f=0	atb=4.5
+INFO:char:Appraiser          	b+f=0	atb=-5.0
+INFO:char:JudgeOfIntent      	b+f=0	atb=-2.5
+INFO:char:Negotiator         	b+f=0	atb=6.5
+INFO:char:Organizer          	b+f=0	atb=-5.0
+INFO:char:Consoler           	b+f=0	atb=0.5
+INFO:char:Pacifier           	b+f=0	atb=6.5
+INFO:char:Diagnoser          	b+f=0	atb=-5.0
+INFO:char:BoneDoctor         	b+f=0	atb=2.0
+INFO:char:Surgeon            	b+f=0	atb=2.0
+INFO:char:RecordKeeper       	b+f=0	atb=-3.0
+INFO:char:Comedian           	b+f=0	atb=7.5
+INFO:char:Conversationalist  	b+f=0	atb=6.5
+INFO:char:Intimidator        	b+f=0	atb=7.5
+INFO:char:Persuader          	b+f=0	atb=6.5
+INFO:char:Concentration      	b+f=0	atb=6.0
+INFO:char:Observer           	b+f=0	atb=2.0
+INFO:char:printing skills for Ineth Smoothwhipped sorted by= atb
+INFO:char:Comedian           	b+f=0	atb=7.5
+INFO:char:Intimidator        	b+f=0	atb=7.5
+INFO:char:Negotiator         	b+f=0	atb=6.5
+INFO:char:Pacifier           	b+f=0	atb=6.5
+INFO:char:Conversationalist  	b+f=0	atb=6.5
+INFO:char:Persuader          	b+f=0	atb=6.5
+INFO:char:Concentration      	b+f=0	atb=6.0
+INFO:char:Fisherdwarf        	b+f=0	atb=5.0
+INFO:char:Discipline         	b+f=0	atb=4.5
+INFO:char:Suturer            	b+f=0	atb=2.0
+INFO:char:BoneDoctor         	b+f=0	atb=2.0
+INFO:char:Surgeon            	b+f=0	atb=2.0
+INFO:char:Observer           	b+f=0	atb=2.0
+INFO:char:WoodCutter         	b+f=0	atb=1.0
+INFO:char:Miner              	b+f=0	atb=1.0
+INFO:char:Consoler           	b+f=0	atb=0.5
+INFO:char:Brewer             	b+f=0	atb=0.0
+INFO:char:Butcher            	b+f=0	atb=0.0
+INFO:char:FishCleaner        	b+f=0	atb=0.0
+INFO:char:Herbalist          	b+f=0	atb=0.0
+INFO:char:Planter            	b+f=0	atb=0.0
+INFO:char:Spinner            	b+f=0	atb=0.0
+INFO:char:Thresher           	b+f=0	atb=0.0
+INFO:char:Weaver             	b+f=0	atb=0.0
+INFO:char:WoodBurner         	b+f=0	atb=0.0
+INFO:char:StoneCutter        	b+f=0	atb=0
+INFO:char:Bowyer             	b+f=0	atb=0.0
+INFO:char:WeaponSmith        	b+f=0	atb=0.0
+INFO:char:Carpenter          	b+f=0	atb=0.0
+INFO:char:StoneCarver        	b+f=0	atb=0.0
+INFO:char:StoneCrafter       	b+f=0	atb=0.0
+INFO:char:WoodCrafter        	b+f=0	atb=0.0
+INFO:char:Engraver           	b+f=0	atb=0.0
+INFO:char:Mason              	b+f=0	atb=0.0
+INFO:char:WoundDresser       	b+f=0	atb=-1.0
+INFO:char:FurnaceOperator    	b+f=0	atb=-2.0
+INFO:char:Cook               	b+f=0	atb=-2.0
+INFO:char:GemCutter          	b+f=0	atb=-2.0
+INFO:char:AnimalTrainer      	b+f=0	atb=-2.5
+INFO:char:JudgeOfIntent      	b+f=0	atb=-2.5
+INFO:char:RecordKeeper       	b+f=0	atb=-3.0
+INFO:char:Appraiser          	b+f=0	atb=-5.0
+INFO:char:Organizer          	b+f=0	atb=-5.0
+INFO:char:Diagnoser          	b+f=0	atb=-5.0
+WARNING:char:can't have fishing and fishcleaning in same dwarf...
+INFO:char:printing suitable roles for Ineth Smoothwhipped
+INFO:char:ChiefMedicalDoctor 	b+f=0	atb=-5.0
+INFO:char:Manager            	b+f=0	atb=2.0
+INFO:char:Broker             	b+f=0	atb=-1.0
+INFO:char:BookKeeper         	b+f=0	atb=-3.0
+INFO:char:ExpeditionLeader   	b+f=0	atb=7.0
+INFO:char:MillitaryLeader    	b+f=0	atb=0
+INFO:char:Crafter            	b+f=0	atb=0.0
+INFO:char:Doctor             	b+f=0	atb=4.0
+INFO:__main__:char6 ends...
+WARNING:char:Tobul Murdersyrup pride>0, arguments may trigger - thought (subject to discord), teaching at guild hall + thought
+INFO:char:printing skills for Tobul Murdersyrup sorted by= bf
+INFO:char:Cook               	b+f=3	atb=-1.0
+INFO:char:Bowyer             	b+f=3	atb=-1.0
+INFO:char:WeaponSmith        	b+f=3	atb=-1.0
+INFO:char:GemCutter          	b+f=3	atb=0.0
+INFO:char:Carpenter          	b+f=3	atb=-1.0
+INFO:char:StoneCarver        	b+f=3	atb=-1.0
+INFO:char:StoneCrafter       	b+f=3	atb=-1.0
+INFO:char:WoodCrafter        	b+f=3	atb=-1.0
+INFO:char:Engraver           	b+f=3	atb=-1.0
+INFO:char:Mason              	b+f=3	atb=-1.0
+INFO:char:ArmorUser          	b+f=1	atb=0.0
+INFO:char:Fighter            	b+f=1	atb=0.0
+INFO:char:Dodger             	b+f=1	atb=0.0
+INFO:char:Tactician          	b+f=1	atb=1.0
+INFO:char:Leader             	b+f=1	atb=-2.0
+INFO:char:Brewer             	b+f=0	atb=0.0
+INFO:char:Butcher            	b+f=0	atb=0.0
+INFO:char:Fisherdwarf        	b+f=0	atb=-2.0
+INFO:char:FishCleaner        	b+f=0	atb=0.0
+INFO:char:FurnaceOperator    	b+f=0	atb=0.0
+INFO:char:Herbalist          	b+f=0	atb=0.0
+INFO:char:Planter            	b+f=0	atb=0.0
+INFO:char:Spinner            	b+f=0	atb=0.0
+INFO:char:Thresher           	b+f=0	atb=0.0
+INFO:char:Weaver             	b+f=0	atb=-1.0
+INFO:char:WoodBurner         	b+f=0	atb=0.0
+INFO:char:WoodCutter         	b+f=0	atb=0.0
+INFO:char:Suturer            	b+f=0	atb=0.0
+INFO:char:WoundDresser       	b+f=0	atb=0.0
+INFO:char:AnimalTrainer      	b+f=0	atb=0.0
+INFO:char:Miner              	b+f=0	atb=0.0
+INFO:char:StoneCutter        	b+f=0	atb=0
+INFO:char:Discipline         	b+f=0	atb=0.0
+INFO:char:Appraiser          	b+f=0	atb=2.0
+INFO:char:JudgeOfIntent      	b+f=0	atb=2.0
+INFO:char:Negotiator         	b+f=0	atb=-5.0
+INFO:char:Organizer          	b+f=0	atb=-1.0
+INFO:char:Consoler           	b+f=0	atb=-2.0
+INFO:char:Pacifier           	b+f=0	atb=-5.0
+INFO:char:Diagnoser          	b+f=0	atb=2.0
+INFO:char:BoneDoctor         	b+f=0	atb=0.0
+INFO:char:Surgeon            	b+f=0	atb=0.0
+INFO:char:RecordKeeper       	b+f=0	atb=0.0
+INFO:char:Comedian           	b+f=0	atb=-6.0
+INFO:char:Conversationalist  	b+f=0	atb=-5.0
+INFO:char:Intimidator        	b+f=0	atb=-5.0
+INFO:char:Persuader          	b+f=0	atb=-5.0
+INFO:char:Concentration      	b+f=0	atb=-2.0
+INFO:char:Observer           	b+f=0	atb=2.0
+INFO:char:printing skills for Tobul Murdersyrup sorted by= atb
+INFO:char:Appraiser          	b+f=0	atb=2.0
+INFO:char:JudgeOfIntent      	b+f=0	atb=2.0
+INFO:char:Diagnoser          	b+f=0	atb=2.0
+INFO:char:Observer           	b+f=0	atb=2.0
+INFO:char:Tactician          	b+f=1	atb=1.0
+INFO:char:Brewer             	b+f=0	atb=0.0
+INFO:char:Butcher            	b+f=0	atb=0.0
+INFO:char:FishCleaner        	b+f=0	atb=0.0
+INFO:char:FurnaceOperator    	b+f=0	atb=0.0
+INFO:char:Herbalist          	b+f=0	atb=0.0
+INFO:char:Planter            	b+f=0	atb=0.0
+INFO:char:Spinner            	b+f=0	atb=0.0
+INFO:char:Thresher           	b+f=0	atb=0.0
+INFO:char:WoodBurner         	b+f=0	atb=0.0
+INFO:char:WoodCutter         	b+f=0	atb=0.0
+INFO:char:Suturer            	b+f=0	atb=0.0
+INFO:char:WoundDresser       	b+f=0	atb=0.0
+INFO:char:AnimalTrainer      	b+f=0	atb=0.0
+INFO:char:Miner              	b+f=0	atb=0.0
+INFO:char:StoneCutter        	b+f=0	atb=0
+INFO:char:GemCutter          	b+f=3	atb=0.0
+INFO:char:Discipline         	b+f=0	atb=0.0
+INFO:char:ArmorUser          	b+f=1	atb=0.0
+INFO:char:Fighter            	b+f=1	atb=0.0
+INFO:char:Dodger             	b+f=1	atb=0.0
+INFO:char:BoneDoctor         	b+f=0	atb=0.0
+INFO:char:Surgeon            	b+f=0	atb=0.0
+INFO:char:RecordKeeper       	b+f=0	atb=0.0
+INFO:char:Weaver             	b+f=0	atb=-1.0
+INFO:char:Cook               	b+f=3	atb=-1.0
+INFO:char:Bowyer             	b+f=3	atb=-1.0
+INFO:char:WeaponSmith        	b+f=3	atb=-1.0
+INFO:char:Carpenter          	b+f=3	atb=-1.0
+INFO:char:StoneCarver        	b+f=3	atb=-1.0
+INFO:char:StoneCrafter       	b+f=3	atb=-1.0
+INFO:char:WoodCrafter        	b+f=3	atb=-1.0
+INFO:char:Engraver           	b+f=3	atb=-1.0
+INFO:char:Mason              	b+f=3	atb=-1.0
+INFO:char:Organizer          	b+f=0	atb=-1.0
+INFO:char:Fisherdwarf        	b+f=0	atb=-2.0
+INFO:char:Leader             	b+f=1	atb=-2.0
+INFO:char:Consoler           	b+f=0	atb=-2.0
+INFO:char:Concentration      	b+f=0	atb=-2.0
+INFO:char:Negotiator         	b+f=0	atb=-5.0
+INFO:char:Pacifier           	b+f=0	atb=-5.0
+INFO:char:Conversationalist  	b+f=0	atb=-5.0
+INFO:char:Intimidator        	b+f=0	atb=-5.0
+INFO:char:Persuader          	b+f=0	atb=-5.0
+INFO:char:Comedian           	b+f=0	atb=-6.0
+WARNING:char:can't have fishing and fishcleaning in same dwarf...
+INFO:char:printing suitable roles for Tobul Murdersyrup
+INFO:char:ChiefMedicalDoctor 	b+f=0	atb=2.0
+INFO:char:Manager            	b+f=0	atb=-8.0
+INFO:char:Broker             	b+f=0	atb=-1.0
+INFO:char:BookKeeper         	b+f=0	atb=0.0
+INFO:char:ExpeditionLeader   	b+f=0	atb=-7.0
+INFO:char:MillitaryLeader    	b+f=5	atb=-1.0
+INFO:char:Crafter            	b+f=3	atb=-1.0
+INFO:char:Doctor             	b+f=0	atb=0.0
+INFO:__main__:char7 ends...
