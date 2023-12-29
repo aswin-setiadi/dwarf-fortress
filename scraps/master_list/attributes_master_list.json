@@ -1,15 +1,4 @@
 {
-    "Strength": [
-        "1000.GOOD4| unbelievably strong",
-        "750.GOOD3| mighty",
-        "500.GOOD2| very strong",
-        "250.GOOD1| strong",
-        "0.NEUTRAL| (no description)",
-        "-250.BAD1| weak",
-        "-500.BAD2| very weak",
-        "-750.BAD3| unquestionably weak",
-        "-1000.BAD4| unfathomably weak"
-    ],
     "Agility": [
         "1000.GOOD4| amazingly agile",
         "750.GOOD3| extremely agile",
@@ -21,16 +10,16 @@
         "-750.BAD3| totally clumsy",
         "-1000.BAD4| abysmally clumsy"
     ],
-    "Toughness": [
-        "1000.GOOD4| basically unbreakable",
-        "750.GOOD3| incredibly tough",
-        "500.GOOD2| quite durable",
-        "250.GOOD1| tough",
+    "DiseaseResistance": [
+        "1000.GOOD4| virtually never sick",
+        "750.GOOD3| almost never sick",
+        "500.GOOD2| very rarely sick",
+        "250.GOOD1| rarely sick",
         "0.NEUTRAL| (no description)",
-        "-250.BAD1| flimsy",
-        "-500.BAD2| very flimsy",
-        "-750.BAD3| remarkably flimsy",
-        "-1000.BAD4| shockingly fragile"
+        "-250.BAD1| susceptible to disease",
+        "-500.BAD2| quite susceptible to disease",
+        "-750.BAD3| really susceptible to disease",
+        "-1000.BAD4| stunningly susceptible to disease"
     ],
     "Endurance": [
         "1000.GOOD4| absolutely inexhaustible",
@@ -54,16 +43,27 @@
         "-750.BAD3| really slow to heal",
         "-1000.BAD4| shockingly slow to heal"
     ],
-    "DiseaseResistance": [
-        "1000.GOOD4| virtually never sick",
-        "750.GOOD3| almost never sick",
-        "500.GOOD2| very rarely sick",
-        "250.GOOD1| rarely sick",
+    "Strength": [
+        "1000.GOOD4| unbelievably strong",
+        "750.GOOD3| mighty",
+        "500.GOOD2| very strong",
+        "250.GOOD1| strong",
         "0.NEUTRAL| (no description)",
-        "-250.BAD1| susceptible to disease",
-        "-500.BAD2| quite susceptible to disease",
-        "-750.BAD3| really susceptible to disease",
-        "-1000.BAD4| stunningly susceptible to disease"
+        "-250.BAD1| weak",
+        "-500.BAD2| very weak",
+        "-750.BAD3| unquestionably weak",
+        "-1000.BAD4| unfathomably weak"
+    ],
+    "Toughness": [
+        "1000.GOOD4| basically unbreakable",
+        "750.GOOD3| incredibly tough",
+        "500.GOOD2| quite durable",
+        "250.GOOD1| tough",
+        "0.NEUTRAL| (no description)",
+        "-250.BAD1| flimsy",
+        "-500.BAD2| very flimsy",
+        "-750.BAD3| remarkably flimsy",
+        "-1000.BAD4| shockingly fragile"
     ],
     "AnalyticalAbility": [
         "1000.GOOD4| awesome intellectual powers",
@@ -76,28 +76,6 @@
         "-750.BAD3| a lousy intellect",
         "-1000.BAD4| a stunning lack of analytical ability"
     ],
-    "Fcous": [
-        "1000.GOOD4| unbreakable focus",
-        "750.GOOD3| a great ability to focus",
-        "500.GOOD2| very good focus",
-        "250.GOOD1| the ability to focus",
-        "0.NEUTRAL| (no description)",
-        "-250.BAD1| poor focus",
-        "-500.BAD2| quite poor focus",
-        "-750.BAD3| really poor focus",
-        "-1000.BAD4| the absolute inability to focus"
-    ],
-    "Willpower": [
-        "1000.GOOD4| an unbreakable will",
-        "750.GOOD3| an iron will",
-        "500.GOOD2| a lot of willpower",
-        "250.GOOD1| willpower",
-        "0.NEUTRAL| (no description)",
-        "-250.BAD1| little willpower",
-        "-500.BAD2| a large deficit of willpower",
-        "-750.BAD3| next to no willpower",
-        "-1000.BAD4| absolutely no willpower"
-    ],
     "Creativity": [
         "1000.GOOD4| a boundless creative imagination",
         "750.GOOD3| great creativity",
@@ -108,6 +86,28 @@
         "-500.BAD2| poor creativity",
         "-750.BAD3| lousy creativity",
         "-1000.BAD4| next to no creative talent"
+    ],
+    "Empathy": [
+        "1000.GOOD4| an absolutely remarkable sense of others' emotions",
+        "750.GOOD3| a great sense of empathy",
+        "500.GOOD2| a very good sense of empathy",
+        "250.GOOD1| an ability to read emotions fairly well",
+        "0.NEUTRAL| (no description)",
+        "-250.BAD1| poor empathy",
+        "-500.BAD2| a very bad sense of empathy",
+        "-750.BAD3| next to no empathy",
+        "-1000.BAD4| the utter inability to judge others' emotions"
+    ],
+    "Focus": [
+        "1000.GOOD4| unbreakable focus",
+        "750.GOOD3| a great ability to focus",
+        "500.GOOD2| very good focus",
+        "250.GOOD1| the ability to focus",
+        "0.NEUTRAL| (no description)",
+        "-250.BAD1| poor focus",
+        "-500.BAD2| quite poor focus",
+        "-750.BAD3| really poor focus",
+        "-1000.BAD4| the absolute inability to focus"
     ],
     "Intuition": [
         "1000.GOOD4| uncanny intuition",
@@ -120,16 +120,27 @@
         "-750.BAD3| lousy intuition",
         "-1000.BAD4| horrible intuition"
     ],
-    "Patience": [
-        "1000.GOOD4| absolutely boundless patience",
-        "750.GOOD3| a deep well of patience",
-        "500.GOOD2| a great deal of patience",
-        "250.GOOD1| a sum of patience",
+    "KinesthesicSense": [
+        "1000.GOOD4| an astounding feel for the position of [his/her] own body",
+        "750.GOOD3| a great kinesthetic sense",
+        "500.GOOD2| a very good sense of the position of [his/her] own body",
+        "250.GOOD1| a good kinesthetic sense",
         "0.NEUTRAL| (no description)",
-        "-250.BAD1| a shortage of patience",
-        "-500.BAD2| little patience",
-        "-750.BAD3| very little patience",
-        "-1000.BAD4| no patience at all"
+        "-250.BAD1| a meager kinesthetic sense",
+        "-500.BAD2| a poor kinesthetic sense",
+        "-750.BAD3| a very clumsy kinesthetic sense",
+        "-1000.BAD4| an unbelievably atrocious sense of the position of [his/her] own body"
+    ],
+    "LinguisticAbility": [
+        "1000.GOOD4| an astonishing ability with languages and words",
+        "750.GOOD3| a great affinity for language",
+        "500.GOOD2| a natural inclination toward language",
+        "250.GOOD1| a way with words",
+        "0.NEUTRAL| (no description)",
+        "-250.BAD1| a little difficulty with words",
+        "-500.BAD2| little linguistic ability",
+        "-750.BAD3| very little linguistic ability",
+        "-1000.BAD4| difficulty with words and language"
     ],
     "Memory": [
         "1000.GOOD4| an astonishing memory",
@@ -141,5 +152,60 @@
         "-500.BAD2| a poor memory",
         "-750.BAD3| a really bad memory",
         "-1000.BAD4| little memory to speak of"
+    ],
+    "Musicality": [
+        "1000.GOOD4| an astonishing knack for music",
+        "750.GOOD3| a great musical sense",
+        "500.GOOD2| a natural ability with music",
+        "250.GOOD1| a feel for music",
+        "0.NEUTRAL| (no description)",
+        "-250.BAD1| an iffy sense for music",
+        "-500.BAD2| little natural inclination toward music",
+        "-750.BAD3| next to no natural musical ability",
+        "-1000.BAD4| absolutely no feel for music at all"
+    ],
+    "Patience": [
+        "1000.GOOD4| absolutely boundless patience",
+        "750.GOOD3| a deep well of patience",
+        "500.GOOD2| a great deal of patience",
+        "250.GOOD1| a sum of patience",
+        "0.NEUTRAL| (no description)",
+        "-250.BAD1| a shortage of patience",
+        "-500.BAD2| little patience",
+        "-750.BAD3| very little patience",
+        "-1000.BAD4| no patience at all"
+    ],
+    "SocialAwareness": [
+        "1000.GOOD4| a shockingly profound feel for social relationships",
+        "750.GOOD3| a great feel for social relationships",
+        "500.GOOD2| a very good feel for social relationships",
+        "250.GOOD1| a good feel for social relationships",
+        "0.NEUTRAL| (no description)",
+        "-250.BAD1| a meager ability with social relationships",
+        "-500.BAD2| a poor ability to manage or understand social relationships",
+        "-750.BAD3| a lack of understanding of social relationships",
+        "-1000.BAD4| an absolute inability to understand social relationships"
+    ],
+    "SpatialSense": [
+        "1000.GOOD4| a stunning feel for spatial relationships",
+        "750.GOOD3| an amazing spatial sense",
+        "500.GOOD2| a great feel for the surrounding space",
+        "250.GOOD1| a good spatial sense",
+        "0.NEUTRAL| (no description)",
+        "-250.BAD1| a questionable spatial sense",
+        "-500.BAD2| poor spatial senses",
+        "-750.BAD3| an atrocious spatial sense",
+        "-1000.BAD4| no sense for spatial relationships"
+    ],
+    "Willpower": [
+        "1000.GOOD4| an unbreakable will",
+        "750.GOOD3| an iron will",
+        "500.GOOD2| a lot of willpower",
+        "250.GOOD1| willpower",
+        "0.NEUTRAL| (no description)",
+        "-250.BAD1| little willpower",
+        "-500.BAD2| a large deficit of willpower",
+        "-750.BAD3| next to no willpower",
+        "-1000.BAD4| absolutely no willpower"
     ]
 }
