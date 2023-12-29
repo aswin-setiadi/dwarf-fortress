@@ -68,7 +68,7 @@ class Character:
         self.attributes: dict[Enum, AttributeType] = dict(
             (x, AttributeType.NEUTRAL) for x in Character.atbs
         )
-        self.skills: set[tuple[Skills, int, bool, float]] = set()
+        self.skills: dict[Enum, tuple[int, bool, float]] = {}
         self._set_beliefs_facets_and_attributes(beliefs, facets, attributes)
         self._warn_bad_facets()
 
@@ -86,21 +86,37 @@ class Character:
                 self.beliefs, self.goals, self.facets
             )
             attribute_score = skill.value.get_skill_attribute_score(self.attributes)
-            self.skills.add((skill, score, goal, attribute_score))
+            self.skills[skill] = (score, goal, attribute_score)
 
-    def get_conflicted_skills(self) -> set[Skills]:
-        conflicted_skills: set[Skills] = set()
+    def get_conflicted_skills(self) -> set[str]:
+        conflicted_skills: set[str] = set()
         if {Skills.FishCleaner, Skills.Fisherdwarf}.issubset(self.skills):
-            conflicted_skills.add(Skills.FishCleaner)
-            conflicted_skills.add(Skills.Fisherdwarf)
+            conflicted_skills.add(Skills.FishCleaner.value.name())
+            conflicted_skills.add(Skills.Fisherdwarf.value.name())
             logger.warning(f"can't have fishing and fishcleaning in same dwarf...")
         return conflicted_skills
 
+    def get_suitable_roles(self) -> tuple[list[str], list[str]]:
+        roleslist1: list[str] = []
+        roleslist2: list[str] = []
+        logger.info(f"printing suitable roles for {self.name}")
+        for role in Roles:
+            rolescore1 = 0
+            rolescore2 = 0
+            for skill in role.value:
+                if skill in self.skills.keys():
+                    rolescore1 += self.skills[skill][0]
+                    rolescore2 += self.skills[skill][2]
+                if role == Roles.Crafter:
+                    break
+            logger.info(f"{role.name}\tbfscore={rolescore1}\tatbscore={rolescore2}")
+
+        return roleslist1, roleslist2
+
     def print_skills(self):
-        for sk in self.skills:
-            logger.info(
-                f"{sk[0]}\tb+f={sk[1]}\tgoal aligned={sk[2]}\tatb score={sk[3]}"
-            )
+        logger.info(f"printing skills for {self.name}")
+        for k, v in self.skills.items():
+            logger.info(f"{k}\tb+f={v[0]}\tgoal aligned={v[1]}\tatb score={v[2]}")
 
     def _set_beliefs_facets_and_attributes(
         self,
