@@ -1,3 +1,4 @@
+from enum import Enum
 import logging
 from typing import TypeVar
 
@@ -58,7 +59,7 @@ class Character:
         beliefs: dict[Beliefs, Quality],
         goals: set[Goals],
         facets: dict[Facets, Quality],
-        attributes: dict[BodyAttributes | SoulAttributes, AttributeType],
+        attributes: dict[T, AttributeType],
     ) -> None:
         self.name = name
         self.beliefs: dict[Beliefs, Quality] = dict(
@@ -66,9 +67,9 @@ class Character:
         )
         self.goals: set[Goals] = goals
         self.facets: dict[Facets, Quality] = dict((x, Quality.Neutral) for x in Facets)
-        self.attributes: dict[
-            BodyAttributes | SoulAttributes, AttributeType
-        ] = attributes
+        self.attributes: dict[Enum, AttributeType] = dict(
+            (x, AttributeType.NEUTRAL) for x in Character.atbs
+        )
         self.skills: set[tuple[Skills, int, bool, float]] = set()
         self._set_beliefs_and_facets(beliefs, facets)
         self._warn_bad_facets()
