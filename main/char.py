@@ -48,6 +48,9 @@ class Character:
         Facets.DEPRESSION_PROPENSITY,
         Facets.ANXIETY_PROPENSITY,
     }
+    atbs: list[BodyAttributes | SoulAttributes] = list(BodyAttributes) + list(
+        SoulAttributes
+    )
 
     def __init__(
         self,
