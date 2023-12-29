@@ -78,8 +78,41 @@ def main():
             json.dump(res, f)
 
     # scrape_beliefs()
-    scrape_goals()
-    scrape_facets()
+    # scrape_goals()
+    # scrape_facets()
+
+
+def scrape_atbs():
+    metas = [
+        ("GOOD4", "1000"),
+        ("GOOD3", "750"),
+        ("GOOD2", "500"),
+        ("GOOD1", "250"),
+        ("NEUTRAL", "0"),
+        ("BAD1", "-250"),
+        ("BAD2", "-500"),
+        ("BAD3", "-750"),
+        ("BAD4", "-1000"),
+    ]
+    URL = "https://dwarffortresswiki.org/index.php/Attribute"
+    page = requests.get(URL)
+    soup = BeautifulSoup(page.content, "html.parser")
+    results = soup.find_all("table", {"class": "wikitable"})
+    d = {}
+    index = 0
+    for res in results[:13]:
+        trs = res.find_all("tr")
+        l: list[str] = []
+        count = 0
+        for tr in trs[1:]:
+            td = tr.find_all("td")[1]
+            tpl = metas[count % 9]
+            l.append(f"{tpl[1]}.{tpl[0]}| {td.text.strip()}")
+            count += 1
+        d[index] = l
+        index += 1
+    with open("scraps/attributes_master_list.json", "w") as f:
+        json.dump(d, f)
 
 
 def coba():
@@ -92,4 +125,5 @@ def coba():
 
 
 if __name__ == "__main__":
-    main()
+    # main()
+    scrape_atbs()
