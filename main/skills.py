@@ -49,9 +49,7 @@ class Skill(metaclass=ABCMeta):
         """
         return (0, False)
 
-    def get_skill_attribute_score(
-        self, attributes: dict[BodyAttributes | SoulAttributes, AttributeType]
-    ) -> float:
+    def get_skill_attribute_score(self, attributes: dict[Enum, AttributeType]) -> float:
         score = 0
         for atb, weight in self.attributes.items():
             score += attributes[atb] / weight
@@ -1465,6 +1463,13 @@ class Skills(Enum):
 
     def __call__(self):
         self.value
+
+    # no effect when print with f
+    # def __repr__(self) -> str:
+    #     return f"{self.name}"
+
+    def __str__(self) -> str:
+        return f"{self.name}"
 
 
 if __name__ == "__main__":
