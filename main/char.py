@@ -99,7 +99,7 @@ class Character:
     def print_skills(self):
         for sk in self.skills:
             logger.info(
-                f"{sk[0].name}\tbeliefs+facets={sk[1]}\tgoal aligned={sk[2]}\tatb score={sk[3]}"
+                f"{sk[0]}\tb+f={sk[1]}\tgoal aligned={sk[2]}\tatb score={sk[3]}"
             )
 
     def _set_beliefs_facets_and_attributes(
