@@ -9,7 +9,7 @@ class Roles(Enum):
     Broker = {Skills.JudgeOfIntent, Skills.Appraiser, Skills.Negotiator}
     BookKeeper = {Skills.RecordKeeper}
     ExpeditionLeader = {Skills.Consoler, Skills.Pacifier}
-    MillitaryLeader = {
+    MilitaryLeader = {
         Skills.ArmorUser,
         Skills.Dodger,
         Skills.Fighter,
@@ -42,5 +42,5 @@ class Roles(Enum):
 if __name__ == "__main__":
     # print(Roles.Broker.value)  # will print tuple of Skills for Broker
     # print(list(Roles))
-    res = Roles.get_role_attributes(Roles.MillitaryLeader)
+    res = Roles.get_role_attributes(Roles.MilitaryLeader)
     print(res)
