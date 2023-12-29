@@ -1,4 +1,6 @@
 from enum import Enum, IntEnum
+import json
+from typing import Literal
 
 
 # descriptions in overview (green and orange) can changer over dwarf lifetime
@@ -243,7 +245,33 @@ class Insanity(Enum):
     Catatonic = 4
 
 
+def create_belief_master_list(personality: Literal["beliefs", "facets"] = "beliefs"):
+    metas = [
+        ("3", Quality.Highest.name),
+        ("2", Quality.VeryHigh.name),
+        ("1", Quality.High.name),
+        ("0", Quality.Neutral.name),
+        ("-1", Quality.Low.name),
+        ("-2", Quality.VeryLow.name),
+        ("-3", Quality.Lowest.name),
+    ]
+    with open(f"scraps/{personality}_sorted.json") as f:
+        d = json.load(f)
+    new_d = {}
+    count = 0
+    for k, v in d.items():
+        tmp: list[str] = []
+        for item in v:
+            index = count % 7
+            tmp.append(f"{metas[index][0]}.{metas[index][1]}| {item}")
+            count += 1
+        new_d[k] = tmp
+    with open(f"scraps/{personality}_master_list.json", "w") as f:
+        json.dump(new_d, f)
+
+
 if __name__ == "__main__":
     l = list(BodyAttributes) + list(SoulAttributes)
     d = dict((x, Quality.Neutral) for x in l)
     print(d)
+    create_belief_master_list(personality="beliefs")

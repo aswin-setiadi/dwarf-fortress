@@ -1,0 +1,299 @@
+{
+    "ARTWORK": [
+        "3.Highest| believes that the creation and appreciation of artwork is one of the highest ideals",
+        "2.VeryHigh| greatly respects artists and their works",
+        "1.High| values artwork",
+        "0.Neutral| doesn't care about art one way or another",
+        "-1.Low| finds artwork boring",
+        "-2.VeryLow| sees the whole pursuit of art as silly",
+        "-3.Lowest| finds art offensive and would have it destroyed whenever possible"
+    ],
+    "COMMERCE": [
+        "3.Highest| sees engaging in commerce as a high ideal in life",
+        "2.VeryHigh| really respects commerce and those that engage in trade",
+        "1.High| respects commerce",
+        "0.Neutral| doesn't particularly respect commerce",
+        "-1.Low| is somewhat put off by trade and commerce",
+        "-2.VeryLow| finds those that engage in trade and commerce to be fairly disgusting",
+        "-3.Lowest| holds the view that commerce is a vile obscenity"
+    ],
+    "COMPETITION": [
+        "3.Highest| holds the idea of competition among the most important values and would encourage it wherever possible",
+        "2.VeryHigh| views competition as a crucial driving force in the world",
+        "1.High| sees competition as reasonably important",
+        "0.Neutral| doesn't have strong views on competition",
+        "-1.Low| sees competition as wasteful and silly",
+        "-2.VeryLow| deeply dislikes competition",
+        "-3.Lowest| finds the very idea of competition obscene"
+    ],
+    "COOPERATION": [
+        "3.Highest| places cooperation as one of the highest ideals",
+        "2.VeryHigh| sees cooperation as very important in life",
+        "1.High| values cooperation",
+        "0.Neutral| doesn't see cooperation as valuable",
+        "-1.Low| dislikes cooperation",
+        "-2.VeryLow| views cooperation as a low ideal not worthy of any respect",
+        "-3.Lowest| is thoroughly disgusted by cooperation"
+    ],
+    "CRAFTSMANSHIP": [
+        "3.Highest| holds crafts[man]ship to be of the highest ideals and celebrates talented artisans and their masterworks",
+        "2.VeryHigh| has a great deal of respect for worthy crafts[man]ship",
+        "1.High| values good crafts[man]ship",
+        "0.Neutral| doesn't particularly care about crafts[man]ship",
+        "-1.Low| considers crafts[man]ship to be relatively worthless",
+        "-2.VeryLow| sees the pursuit of good crafts[man]ship as a total waste",
+        "-3.Lowest| views crafts[man]ship with disgust and would desecrate a so-called masterwork or two if [he/she] could get away with it"
+    ],
+    "CUNNING": [
+        "3.Highest| holds well-laid plans and shrewd deceptions in the highest regard",
+        "2.VeryHigh| greatly respects the shrewd and guileful",
+        "1.High| values cunning",
+        "0.Neutral| does not really value cunning and guile",
+        "-1.Low| sees guile and cunning as indirect and somewhat worthless",
+        "-2.VeryLow| holds shrewd and crafty individuals in the lowest esteem",
+        "-3.Lowest| is utterly disgusted by guile and cunning"
+    ],
+    "DECORUM": [
+        "3.Highest| views decorum as a high ideal and is deeply offended by those that fail to maintain it",
+        "2.VeryHigh| greatly respects those that observe decorum and maintain their dignity",
+        "1.High| values decorum, dignity and proper behavior",
+        "0.Neutral| doesn't care very much about decorum",
+        "-1.Low| finds maintaining decorum a silly, fumbling waste of time",
+        "-2.VeryLow| sees those that attempt to maintain dignified and proper behavior as vain and offensive",
+        "-3.Lowest| is affronted by the whole notion of maintaining decorum and finds so-called dignified people disgusting"
+    ],
+    "ELOQUENCE": [
+        "3.Highest| believes that artful speech and eloquent expression are some of the highest ideals",
+        "2.VeryHigh| deeply respects eloquent speakers",
+        "1.High| values eloquence",
+        "0.Neutral| doesn't value eloquence so much",
+        "-1.Low| finds eloquence and artful speech off-putting",
+        "-2.VeryLow| finds [him/her]self somewhat disgusted with eloquent speakers",
+        "-3.Lowest| sees artful speech and eloquence as a wasteful form of deliberate deception and treats it as such"
+    ],
+    "FAIRNESS": [
+        "3.Highest| holds fairness as one of the highest ideals and despises cheating of any kind",
+        "2.VeryHigh| has great respect for fairness",
+        "1.High| respects fair-dealing and fair-play",
+        "0.Neutral| does not care about fairness",
+        "-1.Low| sees life as unfair and doesn't mind it that way",
+        "-2.VeryLow| finds the idea of fair-dealing foolish and cheats when [he/she] finds it profitable",
+        "-3.Lowest| is disgusted by the idea of fairness and will freely cheat anybody at any time"
+    ],
+    "FAMILY": [
+        "3.Highest| sees family as one of the most important things in life",
+        "2.VeryHigh| values family greatly",
+        "1.High| values family",
+        "0.Neutral| does not care about family one way or the other",
+        "-1.Low| is put off by family",
+        "-2.VeryLow| lacks any respect for family",
+        "-3.Lowest| finds the idea of family loathsome"
+    ],
+    "FRIENDSHIP": [
+        "3.Highest| believes friendship is a key to the ideal life",
+        "2.VeryHigh| sees friendship as one of the finer things in life",
+        "1.High| thinks friendship is important",
+        "0.Neutral| does not care about friendship",
+        "-1.Low| finds friendship burdensome",
+        "-2.VeryLow| is completely put off by the idea of friends",
+        "-3.Lowest| finds the whole idea of friendship disgusting"
+    ],
+    "HARD_WORK": [
+        "3.Highest| believes that hard work is one of the highest ideals and a key to the good life",
+        "2.VeryHigh| deeply respects those that work hard at their labors",
+        "1.High| values hard work",
+        "0.Neutral| doesn't really see the point of working hard",
+        "-1.Low| sees working hard as a foolish waste of time",
+        "-2.VeryLow| thinks working hard is an abject idiocy",
+        "-3.Lowest| finds the proposition that one should work hard in life utterly abhorrent"
+    ],
+    "HARMONY": [
+        "3.Highest| would have the world operate in complete harmony without the least bit of strife or disorder",
+        "2.VeryHigh| strongly believes that a peaceful and ordered society without dissent is best",
+        "1.High| values a harmonious existence",
+        "0.Neutral| sees equal parts of harmony and discord as part of life",
+        "-1.Low| doesn't respect a society that has settled into harmony without debate and strife",
+        "-2.VeryLow| can't fathom why anyone would want to live in an orderly and harmonious society",
+        "-3.Lowest| believes deeply that chaos and disorder are the truest expressions of life and would disrupt harmony wherever it is found"
+    ],
+    "INDEPENDENCE": [
+        "3.Highest| believes that freedom and independence are completely non-negotiable and would fight to defend them",
+        "2.VeryHigh| treasures independence",
+        "1.High| values independence",
+        "0.Neutral| doesn't really value independence one way or another",
+        "-1.Low| finds the ideas of independence and freedom somewhat foolish",
+        "-2.VeryLow| sees freedom and independence as completely worthless",
+        "-3.Lowest| hates freedom and would crush the independent spirit wherever it is found"
+    ],
+    "INTROSPECTION": [
+        "3.Highest| feels that introspection and all forms of self-examination are the keys to a good life and worthy of respect",
+        "2.VeryHigh| deeply values introspection",
+        "1.High| sees introspection as important",
+        "0.Neutral| doesn't really see the value in self-examination",
+        "-1.Low| finds introspection to be a waste of time",
+        "-2.VeryLow| thinks that introspection is valueless and those that waste time in self-examination are deluded fools",
+        "-3.Lowest| finds the whole idea of introspection completely offensive and contrary to the ideals of a life well-lived"
+    ],
+    "KNOWLEDGE": [
+        "3.Highest| finds the quest for knowledge to be of the very highest value",
+        "2.VeryHigh| views the pursuit of knowledge as deeply important",
+        "1.High| values knowledge",
+        "0.Neutral| doesn't see the attainment of knowledge as important",
+        "-1.Low| finds the pursuit of knowledge to be a waste of effort",
+        "-2.VeryLow| thinks the quest for knowledge is a delusional fantasy",
+        "-3.Lowest| sees the attainment and preservation of knowledge as an offensive enterprise engaged in by arrogant fools"
+    ],
+    "LAW": [
+        "3.Highest| is an absolute believer in the rule of law",
+        "2.VeryHigh| has a great deal of respect for the law",
+        "1.High| respects the law",
+        "0.Neutral| doesn't feel strongly about the law",
+        "-1.Low| does not respect the law",
+        "-2.VeryLow| disdains the law",
+        "-3.Lowest| finds the idea of laws abhorrent"
+    ],
+    "LEISURE_TIME": [
+        "3.Highest| believes that it would be a fine thing if all time were leisure time",
+        "2.VeryHigh| treasures leisure time and thinks it is very important in life",
+        "1.High| values leisure time",
+        "0.Neutral| doesn't think one way or the other about leisure time",
+        "-1.Low| finds leisure time wasteful",
+        "-2.VeryLow| is offended by leisure time and leisurely living",
+        "-3.Lowest| believes that those that take leisure time are evil and finds the whole idea disgusting"
+    ],
+    "LOYALTY": [
+        "3.Highest| has the highest regard for loyalty",
+        "2.VeryHigh| greatly prizes loyalty",
+        "1.High| values loyalty",
+        "0.Neutral| doesn't particularly value loyalty",
+        "-1.Low| views loyalty unfavorably",
+        "-2.VeryLow| disdains loyalty",
+        "-3.Lowest| is disgusted by the idea of loyalty"
+    ],
+    "MARTIAL_PROWESS": [
+        "3.Highest| believes that martial prowess defines the good character of an individual",
+        "2.VeryHigh| deeply respects skill at arms",
+        "1.High| values martial prowess",
+        "0.Neutral| does not really value skills related to fighting",
+        "-1.Low| finds those that develop skill with weapons and fighting distasteful",
+        "-2.VeryLow| thinks that the pursuit of the skills of warfare and fighting is a low pursuit indeed",
+        "-3.Lowest| abhors those that pursue the mastery of weapons and skill with fighting"
+    ],
+    "MERRIMENT": [
+        "3.Highest| believes that little is better in life than a good party",
+        "2.VeryHigh| truly values merrymaking and parties",
+        "1.High| finds merrymaking and partying worthwhile activities",
+        "0.Neutral| doesn't really value merrymaking",
+        "-1.Low| sees merrymaking as a waste",
+        "-2.VeryLow| is disgusted by merrymakers",
+        "-3.Lowest| is appalled by merrymaking, parties and other such worthless activities"
+    ],
+    "NATURE": [
+        "3.Highest| holds nature to be of greater value than most aspects of civilization",
+        "2.VeryHigh| has a deep respect for animals, plants and the natural world",
+        "1.High| values nature",
+        "0.Neutral| doesn't care about nature one way or another",
+        "-1.Low| finds nature somewhat disturbing",
+        "-2.VeryLow| has a deep dislike of the natural world",
+        "-3.Lowest| would just as soon have nature and the great outdoors burned to ashes and converted into a great mining pit"
+    ],
+    "PEACE": [
+        "3.Highest| believes the idea of war is utterly repellent and would have peace at all costs",
+        "2.VeryHigh| believes that peace is always preferable to war",
+        "1.High| values peace over war",
+        "0.Neutral| doesn't particularly care between war and peace",
+        "-1.Low| sees war as a useful means to an end",
+        "-2.VeryLow| believes war is preferable to peace in general",
+        "-3.Lowest| thinks that the world should be engaged in perpetual warfare"
+    ],
+    "PERSEVERANCE": [
+        "3.Highest| believes that perseverance is one of the greatest qualities somebody can have",
+        "2.VeryHigh| greatly respects individuals that persevere through their trials and labors",
+        "1.High| respects perseverance",
+        "0.Neutral| doesn't think much about the idea of perseverance",
+        "-1.Low| sees perseverance in the face of adversity as bull-headed and foolish",
+        "-2.VeryLow| thinks there is something deeply wrong with people that persevere through adversity",
+        "-3.Lowest| finds the notion that one would persevere through adversity completely abhorrent"
+    ],
+    "POWER": [
+        "3.Highest| believes that the acquisition of power over others is the ideal goal in life and worthy of the highest respect",
+        "2.VeryHigh| sees power over others as something to strive for",
+        "1.High| respects power",
+        "0.Neutral| doesn't find power particularly praiseworthy",
+        "-1.Low| has a negative view of those who exercise power over others",
+        "-2.VeryLow| hates those who wield power over others",
+        "-3.Lowest| finds the acquisition and use of power abhorrent and would have all masters toppled"
+    ],
+    "ROMANCE": [
+        "3.Highest| sees romance as one of the highest ideals",
+        "2.VeryHigh| thinks romance is very important in life",
+        "1.High| values romance",
+        "0.Neutral| doesn't care one way or the other about romance",
+        "-1.Low| finds romance distasteful",
+        "-2.VeryLow| is somewhat disgusted by romance",
+        "-3.Lowest| finds even the abstract idea of romance repellent"
+    ],
+    "SACRIFICE": [
+        "3.Highest| finds sacrifice to be one of the highest ideals",
+        "2.VeryHigh| believes that those who sacrifice for others should be deeply respected",
+        "1.High| values sacrifice",
+        "0.Neutral| doesn't particularly respect sacrifice as a virtue",
+        "-1.Low| sees sacrifice as wasteful and foolish",
+        "-2.VeryLow| finds sacrifice to be the height of folly",
+        "-3.Lowest| thinks that the entire concept of sacrifice for others is truly disgusting"
+    ],
+    "SELF_CONTROL": [
+        "3.Highest| believes that self-mastery and the denial of impulses are some of the highest ideals",
+        "2.VeryHigh| finds moderation and self-control to be very important",
+        "1.High| values self-control",
+        "0.Neutral| doesn't particularly value self-control",
+        "-1.Low| finds those that deny their impulses somewhat stiff",
+        "-2.VeryLow| sees the denial of impulses as a vain and foolish pursuit",
+        "-3.Lowest| has abandoned any attempt at self-control and finds the whole concept deeply offensive"
+    ],
+    "SKILL": [
+        "3.Highest| believes that the mastery of a skill is one of the highest pursuits",
+        "2.VeryHigh| really respects those that take the time to master a skill",
+        "1.High| respects the development of skill",
+        "0.Neutral| doesn't care if others take the time to master skills",
+        "-1.Low| finds the pursuit of skill mastery off-putting",
+        "-2.VeryLow| believes that the time taken to master a skill is a horrible waste",
+        "-3.Lowest| sees the whole idea of taking time to master a skill as appalling"
+    ],
+    "STOICISM": [
+        "3.Highest| views any show of emotion as offensive",
+        "2.VeryHigh| thinks it is of the utmost importance to present a bold face and never grouse, complain or even show emotion",
+        "1.High| believes it is important to conceal emotions and refrain from complaining",
+        "0.Neutral| doesn't see much value in being stoic",
+        "-1.Low| sees no value in holding back complaints and concealing emotions",
+        "-2.VeryLow| feels that those who attempt to conceal their emotions are vain and foolish",
+        "-3.Lowest| sees concealment of emotions as a betrayal and tries [his/her] best never to associate with such secretive fools"
+    ],
+    "TRADITION": [
+        "3.Highest| holds the maintenance of tradition as one of the highest ideals",
+        "2.VeryHigh| is a firm believer in the value of tradition",
+        "1.High| values tradition",
+        "0.Neutral| doesn't have any strong feelings about tradition",
+        "-1.Low| disregards tradition",
+        "-2.VeryLow| finds the following of tradition foolish and limiting",
+        "-3.Lowest| is disgusted by tradition and would flout any [he/she] encounters if given a chance"
+    ],
+    "TRANQUILITY": [
+        "3.Highest| views tranquility as one of the highest ideals",
+        "2.VeryHigh| strongly values tranquility and quiet",
+        "1.High| values tranquility and a peaceful day",
+        "0.Neutral| doesn't have a preference between tranquility and tumult",
+        "-1.Low| prefers a noisy, bustling life to boring days without activity",
+        "-2.VeryLow| is greatly disturbed by quiet and a peaceful existence",
+        "-3.Lowest| is disgusted by tranquility and would that the world would constantly churn with noise and activity"
+    ],
+    "TRUTH": [
+        "3.Highest| believes the truth is inviolable regardless of the cost",
+        "2.VeryHigh| believes that honesty is a high ideal",
+        "1.High| values honesty",
+        "0.Neutral| does not particularly value the truth",
+        "-1.Low| finds blind honesty foolish",
+        "-2.VeryLow| sees lying as an important means to an end",
+        "-3.Lowest| is repelled by the idea of honesty and lies without compunction"
+    ]
+}
