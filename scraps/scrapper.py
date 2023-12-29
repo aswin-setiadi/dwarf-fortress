@@ -100,7 +100,7 @@ def scrape_atbs():
     results = soup.find_all("table", {"class": "wikitable"})
     d = {}
     index = 0
-    for res in results[:13]:
+    for res in results[:19]:
         trs = res.find_all("tr")
         l: list[str] = []
         count = 0
