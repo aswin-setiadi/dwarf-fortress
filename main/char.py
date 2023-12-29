@@ -1,5 +1,6 @@
 from enum import Enum
 import logging
+from typing import Literal
 
 from roles import Roles
 from skills import Skills
@@ -113,11 +114,16 @@ class Character:
 
         return roleslist
 
-    def print_skills(
-        self,
-    ):
-        logger.info(f"printing skills for {self.name}")
-        for k, v in self.skills.items():
+    def print_skills(self, sort_by: Literal["bf", "atb"]):
+        logger.info(f"printing skills for {self.name} sorted by= {sort_by}")
+        l = [(k, v) for k, v in self.skills.items()]
+        if sort_by == "bf":
+            l.sort(key=lambda x: x[1][0], reverse=True)
+        else:
+            l.sort(key=lambda x: x[1][2], reverse=True)
+        for item in l:
+            k = item[0]
+            v = item[1]
             if v[1]:
                 logger.info(f"{k:<19}\tb+f={v[0]}\tatb={v[2]} goal aligned")
             else:
