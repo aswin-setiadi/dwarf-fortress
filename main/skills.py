@@ -60,6 +60,37 @@ class Skill(metaclass=ABCMeta):
         return score
 
 
+class CraftSkill(Skill):
+    def is_skill_clashes(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> bool:
+        if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
+            return True
+        else:
+            return False
+
+    def get_skill_score(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> tuple[int, bool]:
+        goal = (
+            False
+            if {Goals.CRAFT_A_MASTERWORK, Goals.CREATE_A_GREAT_WORK_OF_ART}.isdisjoint(
+                goals
+            )
+            else True
+        )
+        score = 0
+        if beliefs[Beliefs.CRAFTSMANSHIP] > Quality.Neutral:
+            score += beliefs[Beliefs.CRAFTSMANSHIP]
+        return (score, goal)
+
+
 class AnimalTrainer(Skill):
     def __init__(self) -> None:
         self.attributes = {
@@ -147,7 +178,7 @@ class BoneDoctor(Skill):
         }
 
 
-class Bowyer(Skill):
+class Bowyer(CraftSkill):
     """
     Produces wooden crossbows.
     Although crossbows can also be created from metal by a weaponsmith in a forge,
@@ -167,35 +198,6 @@ class Bowyer(Skill):
             SoulAttributes.Creativity: Scores.C,
             BodyAttributes.Agility: Scores.A,
         }
-
-    def is_skill_clashes(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> bool:
-        if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
-            return True
-        else:
-            return False
-
-    def get_skill_score(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> tuple[int, bool]:
-        goal = (
-            False
-            if {Goals.CRAFT_A_MASTERWORK, Goals.CREATE_A_GREAT_WORK_OF_ART}.isdisjoint(
-                goals
-            )
-            else True
-        )
-        score = 0
-        if beliefs[Beliefs.CRAFTSMANSHIP] > Quality.Neutral:
-            score += beliefs[Beliefs.CRAFTSMANSHIP]
-        return (score, goal)
 
 
 class Brewer(Skill):
@@ -224,7 +226,7 @@ class Butcher(Skill):
         return ThoughtType.NEUTRAL
 
 
-class Carpenter(Skill):
+class Carpenter(CraftSkill):
     """
     Produces wooden bed bin barrel, etc.
     """
@@ -237,35 +239,6 @@ class Carpenter(Skill):
             BodyAttributes.Strength: Scores.A,
             BodyAttributes.Agility: Scores.B,
         }
-
-    def is_skill_clashes(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> bool:
-        if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
-            return True
-        else:
-            return False
-
-    def get_skill_score(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> tuple[int, bool]:
-        goal = (
-            False
-            if {Goals.CRAFT_A_MASTERWORK, Goals.CREATE_A_GREAT_WORK_OF_ART}.isdisjoint(
-                goals
-            )
-            else True
-        )
-        score = 0
-        if beliefs[Beliefs.CRAFTSMANSHIP] > Quality.Neutral:
-            score += beliefs[Beliefs.CRAFTSMANSHIP]
-        return (score, goal)
 
 
 class Comedian(Skill):
@@ -407,35 +380,6 @@ class Cook(Skill):
             BodyAttributes.Agility: Scores.A,
         }
 
-    def is_skill_clashes(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> bool:
-        if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
-            return True
-        else:
-            return False
-
-    def get_skill_score(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> tuple[int, bool]:
-        goal = (
-            False
-            if {Goals.CRAFT_A_MASTERWORK, Goals.CREATE_A_GREAT_WORK_OF_ART}.isdisjoint(
-                goals
-            )
-            else True
-        )
-        score = 0
-        if beliefs[Beliefs.CRAFTSMANSHIP] > Quality.Neutral:
-            score += beliefs[Beliefs.CRAFTSMANSHIP]
-        return (score, goal)
-
 
 class Diagnoser(Skill):
     def __init__(self) -> None:
@@ -518,7 +462,7 @@ class Dodger(Skill):
         return (score, goal)
 
 
-class Engraver(Skill):
+class Engraver(CraftSkill):
     """
     Any constructed wall or floor or smoothed natural surface can be engraved;
     soil cannot be smoothed or engraved. Engraving increases the value of a wall
@@ -546,35 +490,6 @@ class Engraver(Skill):
             SoulAttributes.Creativity: Scores.C,
             BodyAttributes.Agility: Scores.A,
         }
-
-    def is_skill_clashes(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> bool:
-        if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
-            return True
-        else:
-            return False
-
-    def get_skill_score(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> tuple[int, bool]:
-        goal = (
-            False
-            if {Goals.CRAFT_A_MASTERWORK, Goals.CREATE_A_GREAT_WORK_OF_ART}.isdisjoint(
-                goals
-            )
-            else True
-        )
-        score = 0
-        if beliefs[Beliefs.CRAFTSMANSHIP] > Quality.Neutral:
-            score += beliefs[Beliefs.CRAFTSMANSHIP]
-        return (score, goal)
 
 
 class Fighter(Skill):
@@ -700,7 +615,7 @@ class FurnaceOperator(Skill):
         }
 
 
-class GemCutter(Skill):
+class GemCutter(CraftSkill):
     def __init__(self) -> None:
         self.attributes = {
             SoulAttributes.Kinesthesic: Scores.A,
@@ -708,35 +623,6 @@ class GemCutter(Skill):
             SoulAttributes.AnalyticalAbility: Scores.C,
             BodyAttributes.Agility: Scores.A,
         }
-
-    def is_skill_clashes(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> bool:
-        if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
-            return True
-        else:
-            return False
-
-    def get_skill_score(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> tuple[int, bool]:
-        goal = (
-            False
-            if {Goals.CRAFT_A_MASTERWORK, Goals.CREATE_A_GREAT_WORK_OF_ART}.isdisjoint(
-                goals
-            )
-            else True
-        )
-        score = 0
-        if beliefs[Beliefs.CRAFTSMANSHIP] > Quality.Neutral:
-            score += beliefs[Beliefs.CRAFTSMANSHIP]
-        return (score, goal)
 
 
 class Herbalist(Skill):
@@ -881,7 +767,7 @@ class Liar(Skill):
             return True
 
 
-class Mason(Skill):
+class Mason(CraftSkill):
     def __init__(self) -> None:
         self.attributes = {
             SoulAttributes.Kinesthesic: Scores.A,
@@ -891,35 +777,6 @@ class Mason(Skill):
             BodyAttributes.Agility: Scores.B,
             BodyAttributes.Endurance: Scores.C,
         }
-
-    def is_skill_clashes(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> bool:
-        if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
-            return True
-        else:
-            return False
-
-    def get_skill_score(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> tuple[int, bool]:
-        goal = (
-            False
-            if {Goals.CRAFT_A_MASTERWORK, Goals.CREATE_A_GREAT_WORK_OF_ART}.isdisjoint(
-                goals
-            )
-            else True
-        )
-        score = 0
-        if beliefs[Beliefs.CRAFTSMANSHIP] > Quality.Neutral:
-            score += beliefs[Beliefs.CRAFTSMANSHIP]
-        return (score, goal)
 
 
 class Miner(Skill):
@@ -1051,7 +908,7 @@ class Spinner(Skill):
         }
 
 
-class StoneCarver(Skill):
+class StoneCarver(CraftSkill):
     """
     Produces stone furniture(table chair door), slab for tomb
     not sure order correct or not cause missing in attributes wiki
@@ -1068,37 +925,8 @@ class StoneCarver(Skill):
             BodyAttributes.Strength: Scores.C,
         }
 
-    def is_skill_clashes(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> bool:
-        if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
-            return True
-        else:
-            return False
 
-    def get_skill_score(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> tuple[int, bool]:
-        goal = (
-            False
-            if {Goals.CRAFT_A_MASTERWORK, Goals.CREATE_A_GREAT_WORK_OF_ART}.isdisjoint(
-                goals
-            )
-            else True
-        )
-        score = 0
-        if beliefs[Beliefs.CRAFTSMANSHIP] > Quality.Neutral:
-            score += beliefs[Beliefs.CRAFTSMANSHIP]
-        return (score, goal)
-
-
-class StoneCrafter(Skill):
+class StoneCrafter(CraftSkill):
     """
     Stone mug, crafts, instruments, toys, jugs, pots, etc
     """
@@ -1110,35 +938,6 @@ class StoneCrafter(Skill):
             SoulAttributes.Creativity: Scores.C,
             BodyAttributes.Agility: Scores.A,
         }
-
-    def is_skill_clashes(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> bool:
-        if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
-            return True
-        else:
-            return False
-
-    def get_skill_score(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> tuple[int, bool]:
-        goal = (
-            False
-            if {Goals.CRAFT_A_MASTERWORK, Goals.CREATE_A_GREAT_WORK_OF_ART}.isdisjoint(
-                goals
-            )
-            else True
-        )
-        score = 0
-        if beliefs[Beliefs.CRAFTSMANSHIP] > Quality.Neutral:
-            score += beliefs[Beliefs.CRAFTSMANSHIP]
-        return (score, goal)
 
 
 class StoneCutter(Skill):
@@ -1240,7 +1039,7 @@ class Thresher(Skill):
         }
 
 
-class WeaponSmith(Skill):
+class WeaponSmith(CraftSkill):
     def __init__(self) -> None:
         self.attributes = {
             SoulAttributes.Kinesthesic: Scores.A,
@@ -1250,35 +1049,6 @@ class WeaponSmith(Skill):
             BodyAttributes.Agility: Scores.B,
             BodyAttributes.Endurance: Scores.C,
         }
-
-    def is_skill_clashes(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> bool:
-        if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
-            return True
-        else:
-            return False
-
-    def get_skill_score(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> tuple[int, bool]:
-        goal = (
-            False
-            if {Goals.CRAFT_A_MASTERWORK, Goals.CREATE_A_GREAT_WORK_OF_ART}.isdisjoint(
-                goals
-            )
-            else True
-        )
-        score = 0
-        if beliefs[Beliefs.CRAFTSMANSHIP] > Quality.Neutral:
-            score += beliefs[Beliefs.CRAFTSMANSHIP]
-        return (score, goal)
 
 
 class Weaver(Skill):
@@ -1301,7 +1071,7 @@ class WoodBurner(Skill):
         }
 
 
-class WoodCrafter(Skill):
+class WoodCrafter(CraftSkill):
     """
     Wooden mug, crafts, instruments, toys, jugs, pots, etc
     """
@@ -1313,35 +1083,6 @@ class WoodCrafter(Skill):
             SoulAttributes.Creativity: Scores.C,
             BodyAttributes.Agility: Scores.A,
         }
-
-    def is_skill_clashes(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> bool:
-        if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
-            return True
-        else:
-            return False
-
-    def get_skill_score(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> tuple[int, bool]:
-        goal = (
-            False
-            if {Goals.CRAFT_A_MASTERWORK, Goals.CREATE_A_GREAT_WORK_OF_ART}.isdisjoint(
-                goals
-            )
-            else True
-        )
-        score = 0
-        if beliefs[Beliefs.CRAFTSMANSHIP] > Quality.Neutral:
-            score += beliefs[Beliefs.CRAFTSMANSHIP]
-        return (score, goal)
 
 
 class WoodCutter(Skill):
