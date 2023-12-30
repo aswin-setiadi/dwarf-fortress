@@ -39,6 +39,7 @@ class SoulAttributes(Enum):
 class Beliefs(Enum):
     """
     - Under Personality-> Values
+    - Dictates needs.
     - Memory can change beliefs and facets overtime.
     - Dictates needs and frequency of them.
     """
@@ -99,6 +100,7 @@ class Goals(Enum):
 
 class Facets(Enum):
     """
+    - Dictates thoughts and social interactions.
     - Memory can change beliefs and facets overtime.
     - Conflicting facets currently gives unknown effect.
     - 2 dwarves with conflicting facets (i.e. 1 value helping, others hate helping),
