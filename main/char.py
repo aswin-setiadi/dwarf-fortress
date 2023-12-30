@@ -24,8 +24,10 @@ class Character:
     """
     How to use:
     - Instantiate obj
+    - Assign facets, beliefs, goals
     - Call add_skills
     - Call get_conflicted_skills to check
+    - Call get_suitable roles to check roles
 
     """
 
@@ -81,7 +83,9 @@ class Character:
                 continue
 
             # check beliefs+facets, if 1 clash, continue
-            if skill.value.is_skill_clashes(self.beliefs, self.goals, self.facets):
+            if skill.value.is_skill_clashes(
+                self.beliefs, self.goals, self.facets, self.name
+            ):
                 continue
             score, goal = skill.value.get_skill_score(
                 self.beliefs, self.goals, self.facets
