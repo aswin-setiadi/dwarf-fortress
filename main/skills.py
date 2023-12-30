@@ -1,5 +1,6 @@
 from abc import ABCMeta
 from enum import Enum
+import logging
 
 from stats import (
     AttributeType,
@@ -12,6 +13,8 @@ from stats import (
     SoulAttributes,
     ThoughtType,
 )
+
+logger = logging.getLogger(__name__)
 
 
 class Skill(metaclass=ABCMeta):
@@ -37,6 +40,7 @@ class Skill(metaclass=ABCMeta):
         beliefs: dict[Beliefs, Quality],
         goals: set[Goals],
         facets: dict[Facets, Quality],
+        name: str,
     ) -> bool:
         """Check if skill clashes with any beliefs/ facets"""
         return False
@@ -66,8 +70,10 @@ class CraftSkill(Skill):
         beliefs: dict[Beliefs, Quality],
         goals: set[Goals],
         facets: dict[Facets, Quality],
+        name: str,
     ) -> bool:
         if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
+            logger.warning(f"{name} {Beliefs.CRAFTSMANSHIP} < {Quality.Neutral}")
             return True
         else:
             return False
@@ -88,6 +94,64 @@ class CraftSkill(Skill):
         score = 0
         if beliefs[Beliefs.CRAFTSMANSHIP] > Quality.Neutral:
             score += beliefs[Beliefs.CRAFTSMANSHIP]
+        return (score, goal)
+
+
+class MilitarySkill(Skill):
+    def is_skill_clashes(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+        name: str,
+    ) -> bool:
+        if beliefs[Beliefs.MARTIAL_PROWESS] < Quality.Neutral:
+            logger.warning(f"{name} {Beliefs.MARTIAL_PROWESS} > {Quality.Neutral}")
+            return True
+            # or beliefs[Beliefs.STOICISM] < Quality.Neutral
+        if beliefs[Beliefs.PEACE] > Quality.Neutral:
+            logger.warning(f"{name} {Beliefs.PEACE} > {Quality.Neutral}")
+            return True
+            # or beliefs[Beliefs.FAMILY] == Quality.Highest
+            # or beliefs[Beliefs.FRIENDSHIP] == Quality.Highest
+        if facets[Facets.BRAVERY] < Quality.Neutral:
+            logger.warning(f"{name} {Facets.BRAVERY} < {Quality.Neutral}")
+            return True
+        if facets[Facets.STRESS_VULNERABILITY] > Quality.Neutral:
+            logger.warning(f"{name} {Facets.STRESS_VULNERABILITY} > {Quality.Neutral}")
+            return True
+        if facets[Facets.DEPRESSION_PROPENSITY] > Quality.Neutral:
+            logger.warning(f"{name} {Facets.DEPRESSION_PROPENSITY} > {Quality.Neutral}")
+            return True
+        if facets[Facets.ANXIETY_PROPENSITY] > Quality.Neutral:
+            logger.warning(f"{name} {Facets.ANXIETY_PROPENSITY} > {Quality.Neutral}")
+            return True
+        if Goals.BRING_PEACE_TO_THE_WORLD in goals:
+            logger.warning(f"{name}'s goal {Goals.BRING_PEACE_TO_THE_WORLD} conflicts.")
+            return True
+
+        return False
+
+    def get_skill_score(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+    ) -> tuple[int, bool]:
+        goal = True if Goals.BECOME_A_LEGENDARY_WARRIOR in goals else False
+        score = 0
+        if beliefs[Beliefs.MARTIAL_PROWESS] > Quality.Neutral:
+            score += beliefs[Beliefs.MARTIAL_PROWESS]
+        if beliefs[Beliefs.PEACE] < Quality.Neutral:
+            score -= beliefs[Beliefs.PEACE]
+        if facets[Facets.BRAVERY] > Quality.Neutral:
+            score += facets[Facets.BRAVERY]
+        if facets[Facets.STRESS_VULNERABILITY] < Quality.Neutral:
+            score -= facets[Facets.STRESS_VULNERABILITY]
+        if facets[Facets.DEPRESSION_PROPENSITY] < Quality.Neutral:
+            score -= facets[Facets.DEPRESSION_PROPENSITY]
+        if facets[Facets.ANXIETY_PROPENSITY] < Quality.Neutral:
+            score -= facets[Facets.ANXIETY_PROPENSITY]
         return (score, goal)
 
 
@@ -112,7 +176,7 @@ class Appraiser(Skill):
         }
 
 
-class ArmorUser(Skill):
+class ArmorUser(MilitarySkill):
     def __init__(self) -> None:
         self.attributes = {
             SoulAttributes.Kinesthesic: Scores.A,
@@ -121,50 +185,6 @@ class ArmorUser(Skill):
             BodyAttributes.Toughness: Scores.B,
             BodyAttributes.Endurance: Scores.C,
         }
-
-    def is_skill_clashes(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> bool:
-        if (
-            beliefs[Beliefs.MARTIAL_PROWESS] < Quality.Neutral
-            # or beliefs[Beliefs.STOICISM] < Quality.Neutral
-            or beliefs[Beliefs.PEACE] > Quality.Neutral
-            # or beliefs[Beliefs.FAMILY] == Quality.Highest
-            # or beliefs[Beliefs.FRIENDSHIP] == Quality.Highest
-            or facets[Facets.BRAVERY] < Quality.Neutral
-            or facets[Facets.STRESS_VULNERABILITY] > Quality.Neutral
-            or facets[Facets.DEPRESSION_PROPENSITY] > Quality.Neutral
-            or facets[Facets.ANXIETY_PROPENSITY] > Quality.Neutral
-            or Goals.BRING_PEACE_TO_THE_WORLD in goals
-        ):
-            return True
-        else:
-            return False
-
-    def get_skill_score(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> tuple[int, bool]:
-        goal = True if Goals.BECOME_A_LEGENDARY_WARRIOR in goals else False
-        score = 0
-        if beliefs[Beliefs.MARTIAL_PROWESS] > Quality.Neutral:
-            score += beliefs[Beliefs.MARTIAL_PROWESS]
-        if beliefs[Beliefs.PEACE] < Quality.Neutral:
-            score -= beliefs[Beliefs.PEACE]
-        if facets[Facets.BRAVERY] > Quality.Neutral:
-            score += facets[Facets.BRAVERY]
-        if facets[Facets.STRESS_VULNERABILITY] < Quality.Neutral:
-            score -= facets[Facets.STRESS_VULNERABILITY]
-        if facets[Facets.DEPRESSION_PROPENSITY] < Quality.Neutral:
-            score -= facets[Facets.DEPRESSION_PROPENSITY]
-        if facets[Facets.ANXIETY_PROPENSITY] < Quality.Neutral:
-            score -= facets[Facets.ANXIETY_PROPENSITY]
-        return (score, goal)
 
 
 class BoneDoctor(Skill):
@@ -406,7 +426,7 @@ class Discipline(Skill):
         }
 
 
-class Dodger(Skill):
+class Dodger(MilitarySkill):
     def __init__(self) -> None:
         self.attributes = {
             SoulAttributes.Kinesthesic: Scores.A,
@@ -416,50 +436,6 @@ class Dodger(Skill):
             BodyAttributes.Toughness: Scores.B,
             BodyAttributes.Endurance: Scores.B,
         }
-
-    def is_skill_clashes(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> bool:
-        if (
-            beliefs[Beliefs.MARTIAL_PROWESS] < Quality.Neutral
-            # or beliefs[Beliefs.STOICISM] < Quality.Neutral
-            or beliefs[Beliefs.PEACE] > Quality.Neutral
-            # or beliefs[Beliefs.FAMILY] == Quality.Highest
-            # or beliefs[Beliefs.FRIENDSHIP] == Quality.Highest
-            or facets[Facets.BRAVERY] < Quality.Neutral
-            or facets[Facets.STRESS_VULNERABILITY] > Quality.Neutral
-            or facets[Facets.DEPRESSION_PROPENSITY] > Quality.Neutral
-            or facets[Facets.ANXIETY_PROPENSITY] > Quality.Neutral
-            or Goals.BRING_PEACE_TO_THE_WORLD in goals
-        ):
-            return True
-        else:
-            return False
-
-    def get_skill_score(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> tuple[int, bool]:
-        goal = True if Goals.BECOME_A_LEGENDARY_WARRIOR in goals else False
-        score = 0
-        if beliefs[Beliefs.MARTIAL_PROWESS] > Quality.Neutral:
-            score += beliefs[Beliefs.MARTIAL_PROWESS]
-        if beliefs[Beliefs.PEACE] < Quality.Neutral:
-            score -= beliefs[Beliefs.PEACE]
-        if facets[Facets.BRAVERY] > Quality.Neutral:
-            score += facets[Facets.BRAVERY]
-        if facets[Facets.STRESS_VULNERABILITY] < Quality.Neutral:
-            score -= facets[Facets.STRESS_VULNERABILITY]
-        if facets[Facets.DEPRESSION_PROPENSITY] < Quality.Neutral:
-            score -= facets[Facets.DEPRESSION_PROPENSITY]
-        if facets[Facets.ANXIETY_PROPENSITY] < Quality.Neutral:
-            score -= facets[Facets.ANXIETY_PROPENSITY]
-        return (score, goal)
 
 
 class Engraver(CraftSkill):
@@ -492,7 +468,7 @@ class Engraver(CraftSkill):
         }
 
 
-class Fighter(Skill):
+class Fighter(MilitarySkill):
     def __init__(self) -> None:
         self.attributes = {
             SoulAttributes.Kinesthesic: Scores.A,
@@ -502,50 +478,6 @@ class Fighter(Skill):
             BodyAttributes.Strength: Scores.B,
             BodyAttributes.Toughness: Scores.C,
         }
-
-    def is_skill_clashes(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> bool:
-        if (
-            beliefs[Beliefs.MARTIAL_PROWESS] < Quality.Neutral
-            # or beliefs[Beliefs.STOICISM] < Quality.Neutral
-            or beliefs[Beliefs.PEACE] > Quality.Neutral
-            # or beliefs[Beliefs.FAMILY] == Quality.Highest
-            # or beliefs[Beliefs.FRIENDSHIP] == Quality.Highest
-            or facets[Facets.BRAVERY] < Quality.Neutral
-            or facets[Facets.STRESS_VULNERABILITY] > Quality.Neutral
-            or facets[Facets.DEPRESSION_PROPENSITY] > Quality.Neutral
-            or facets[Facets.ANXIETY_PROPENSITY] > Quality.Neutral
-            or Goals.BRING_PEACE_TO_THE_WORLD in goals
-        ):
-            return True
-        else:
-            return False
-
-    def get_skill_score(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> tuple[int, bool]:
-        goal = True if Goals.BECOME_A_LEGENDARY_WARRIOR in goals else False
-        score = 0
-        if beliefs[Beliefs.MARTIAL_PROWESS] > Quality.Neutral:
-            score += beliefs[Beliefs.MARTIAL_PROWESS]
-        if beliefs[Beliefs.PEACE] < Quality.Neutral:
-            score -= beliefs[Beliefs.PEACE]
-        if facets[Facets.BRAVERY] > Quality.Neutral:
-            score += facets[Facets.BRAVERY]
-        if facets[Facets.STRESS_VULNERABILITY] < Quality.Neutral:
-            score -= facets[Facets.STRESS_VULNERABILITY]
-        if facets[Facets.DEPRESSION_PROPENSITY] < Quality.Neutral:
-            score -= facets[Facets.DEPRESSION_PROPENSITY]
-        if facets[Facets.ANXIETY_PROPENSITY] < Quality.Neutral:
-            score -= facets[Facets.ANXIETY_PROPENSITY]
-        return (score, goal)
 
 
 class FishCleaner(Skill):
@@ -697,57 +629,13 @@ class JudgeOfIntent(Skill):
         }
 
 
-class Leader(Skill):
+class Leader(MilitarySkill):
     def __init__(self) -> None:
         self.attributes = {
             SoulAttributes.Empathy: Scores.A,
             SoulAttributes.SocialAwareness: Scores.B,
             SoulAttributes.Language: Scores.C,
         }
-
-    def is_skill_clashes(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> bool:
-        if (
-            beliefs[Beliefs.MARTIAL_PROWESS] < Quality.Neutral
-            # or beliefs[Beliefs.STOICISM] < Quality.Neutral
-            or beliefs[Beliefs.PEACE] > Quality.Neutral
-            # or beliefs[Beliefs.FAMILY] == Quality.Highest
-            # or beliefs[Beliefs.FRIENDSHIP] == Quality.Highest
-            or facets[Facets.BRAVERY] < Quality.Neutral
-            or facets[Facets.STRESS_VULNERABILITY] > Quality.Neutral
-            or facets[Facets.DEPRESSION_PROPENSITY] > Quality.Neutral
-            or facets[Facets.ANXIETY_PROPENSITY] > Quality.Neutral
-            or Goals.BRING_PEACE_TO_THE_WORLD in goals
-        ):
-            return True
-        else:
-            return False
-
-    def get_skill_score(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> tuple[int, bool]:
-        goal = True if Goals.BECOME_A_LEGENDARY_WARRIOR in goals else False
-        score = 0
-        if beliefs[Beliefs.MARTIAL_PROWESS] > Quality.Neutral:
-            score += beliefs[Beliefs.MARTIAL_PROWESS]
-        if beliefs[Beliefs.PEACE] < Quality.Neutral:
-            score -= beliefs[Beliefs.PEACE]
-        if facets[Facets.BRAVERY] > Quality.Neutral:
-            score += facets[Facets.BRAVERY]
-        if facets[Facets.STRESS_VULNERABILITY] < Quality.Neutral:
-            score -= facets[Facets.STRESS_VULNERABILITY]
-        if facets[Facets.DEPRESSION_PROPENSITY] < Quality.Neutral:
-            score -= facets[Facets.DEPRESSION_PROPENSITY]
-        if facets[Facets.ANXIETY_PROPENSITY] < Quality.Neutral:
-            score -= facets[Facets.ANXIETY_PROPENSITY]
-        return (score, goal)
 
 
 class Liar(Skill):
@@ -976,57 +864,13 @@ class Suturer(Skill):
         }
 
 
-class Tactician(Skill):
+class Tactician(MilitarySkill):
     def __init__(self) -> None:
         self.attributes = {
             SoulAttributes.AnalyticalAbility: Scores.A,
             SoulAttributes.Creativity: Scores.B,
             SoulAttributes.Intuition: Scores.C,
         }
-
-    def is_skill_clashes(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> bool:
-        if (
-            beliefs[Beliefs.MARTIAL_PROWESS] < Quality.Neutral
-            # or beliefs[Beliefs.STOICISM] < Quality.Neutral
-            or beliefs[Beliefs.PEACE] > Quality.Neutral
-            # or beliefs[Beliefs.FAMILY] == Quality.Highest
-            # or beliefs[Beliefs.FRIENDSHIP] == Quality.Highest
-            or facets[Facets.BRAVERY] < Quality.Neutral
-            or facets[Facets.STRESS_VULNERABILITY] > Quality.Neutral
-            or facets[Facets.DEPRESSION_PROPENSITY] > Quality.Neutral
-            or facets[Facets.ANXIETY_PROPENSITY] > Quality.Neutral
-            or Goals.BRING_PEACE_TO_THE_WORLD in goals
-        ):
-            return True
-        else:
-            return False
-
-    def get_skill_score(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        goals: set[Goals],
-        facets: dict[Facets, Quality],
-    ) -> tuple[int, bool]:
-        goal = True if Goals.BECOME_A_LEGENDARY_WARRIOR in goals else False
-        score = 0
-        if beliefs[Beliefs.MARTIAL_PROWESS] > Quality.Neutral:
-            score += beliefs[Beliefs.MARTIAL_PROWESS]
-        if beliefs[Beliefs.PEACE] < Quality.Neutral:
-            score -= beliefs[Beliefs.PEACE]
-        if facets[Facets.BRAVERY] > Quality.Neutral:
-            score += facets[Facets.BRAVERY]
-        if facets[Facets.STRESS_VULNERABILITY] < Quality.Neutral:
-            score -= facets[Facets.STRESS_VULNERABILITY]
-        if facets[Facets.DEPRESSION_PROPENSITY] < Quality.Neutral:
-            score -= facets[Facets.DEPRESSION_PROPENSITY]
-        if facets[Facets.ANXIETY_PROPENSITY] < Quality.Neutral:
-            score -= facets[Facets.ANXIETY_PROPENSITY]
-        return (score, goal)
 
 
 class Thresher(Skill):
