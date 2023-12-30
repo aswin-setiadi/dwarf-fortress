@@ -79,6 +79,9 @@ class Beliefs(Enum):
     PEACE = 32
     KNOWLEDGE = 33
 
+    def __repr__(self) -> str:
+        return f"{self.name}"
+
 
 class Goals(Enum):
     START_A_FAMILY = 1
@@ -96,6 +99,9 @@ class Goals(Enum):
     BATHE_WORLD_IN_CHAOS = 13
     STAY_ALIVE = 14
     MAINTAIN_ENTITY_STATUS = 15
+
+    def __repr__(self) -> str:
+        return f"{self.name}"
 
 
 class Facets(Enum):
@@ -194,6 +200,9 @@ class Quality(IntEnum):
     Low = -1
     VeryLow = -2
     Lowest = -3
+
+    def __repr__(self) -> str:
+        return f"{self.name}"
 
 
 class ThoughtType(IntEnum):
