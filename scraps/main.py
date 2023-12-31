@@ -1,4 +1,6 @@
+import itertools
 import json
+from typing import Literal
 
 
 def get_beliefs():
@@ -69,6 +71,18 @@ def sort_atbs():
         json.dump(new_d, f)
 
 
+def print_master_list(v: Literal["attributes", "beliefs", "facets"]):
+    with open(f"scraps/master_list/{v}_master_list.json") as f:
+        d = json.load(f)
+        for k, v in itertools.islice(d.items(), 4, None):
+            print(f"def set_{k.lower()}(self, v: Quality):")
+            print('\t"""')
+            for item in v:
+                print(f"\t{item}")
+            print('\t"""')
+            print(f"\tself.facets[Facets.{k}]=v")
+
+
 if __name__ == "__main__":
     # get_beliefs()
     # get_goals()
@@ -76,4 +90,5 @@ if __name__ == "__main__":
     # sort_beliefs()
     # sort_facets()
     # sort_goals()
-    sort_atbs()
+    # sort_atbs()
+    print_master_list(v="facets")
