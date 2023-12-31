@@ -398,40 +398,316 @@ class Character:
         """
         self.attributes[SoulAttributes.Willpower] = v
 
-    # def set_(self, v: AttributeType):
-    #     """
+    def set_craftsmanship(self, v: Quality):
+        """3.Highest| holds crafts[man]ship to be of the highest ideals and celebrates talented artisans and their masterworks\n
+        2.VeryHigh| has a great deal of respect for worthy crafts[man]ship\n
+        1.High| values good crafts[man]ship\n
+        0.Neutral| doesn't particularly care about crafts[man]ship\n
+        -1.Low| considers crafts[man]ship to be relatively worthless\n
+        -2.VeryLow| sees the pursuit of good crafts[man]ship as a total waste\n
+        -3.Lowest| views crafts[man]ship with disgust and would desecrate a so-called masterwork or two if [he/she] could get away with it\n
+        """
+        self.beliefs[Beliefs.CRAFTSMANSHIP] = v
 
-    #     """
-    #     self.attributes[Beliefs.]=v
-    # def set_(self, v: AttributeType):
-    #     """
+    def set_cunning(self, v: Quality):
+        """3.Highest| holds well-laid plans and shrewd deceptions in the highest regard\n
+        2.VeryHigh| greatly respects the shrewd and guileful\n
+        1.High| values cunning\n
+        0.Neutral| does not really value cunning and guile\n
+        -1.Low| sees guile and cunning as indirect and somewhat worthless\n
+        -2.VeryLow| holds shrewd and crafty individuals in the lowest esteem\n
+        -3.Lowest| is utterly disgusted by guile and cunning\n"""
+        self.beliefs[Beliefs.CUNNING] = v
 
-    #     """
-    #     self.attributes[Beliefs.]=v
+    def set_decorum(self, v: Quality):
+        """3.Highest| views decorum as a high ideal and is deeply offended by those that fail to maintain it\n
+        2.VeryHigh| greatly respects those that observe decorum and maintain their dignity\n
+        1.High| values decorum, dignity and proper behavior\n
+        0.Neutral| doesn't care very much about decorum\n
+        -1.Low| finds maintaining decorum a silly, fumbling waste of time\n
+        -2.VeryLow| sees those that attempt to maintain dignified and proper behavior as vain and offensive\n
+        -3.Lowest| is affronted by the whole notion of maintaining decorum and finds so-called dignified people disgusting\n
+        """
+        self.beliefs[Beliefs.DECORUM] = v
 
-    # def set_(self, v: AttributeType):
-    #     """
+    def set_eloquence(self, v: Quality):
+        """3.Highest| believes that artful speech and eloquent expression are some of the highest ideals\n
+        2.VeryHigh| deeply respects eloquent speakers\n
+        1.High| values eloquence\n
+        0.Neutral| doesn't value eloquence so much\n
+        -1.Low| finds eloquence and artful speech off-putting\n
+        -2.VeryLow| finds [him/her]self somewhat disgusted with eloquent speakers\n
+        -3.Lowest| sees artful speech and eloquence as a wasteful form of deliberate deception and treats it as such\n
+        """
+        self.beliefs[Beliefs.ELOQUENCE] = v
 
-    #     """
-    #     self.attributes[Beliefs.]=v
+    def set_fairness(self, v: Quality):
+        """3.Highest| holds fairness as one of the highest ideals and despises cheating of any kind\n
+        2.VeryHigh| has great respect for fairness\n
+        1.High| respects fair-dealing and fair-play\n
+        0.Neutral| does not care about fairness\n
+        -1.Low| sees life as unfair and doesn't mind it that way\n
+        -2.VeryLow| finds the idea of fair-dealing foolish and cheats when [he/she] finds it profitable\n
+        -3.Lowest| is disgusted by the idea of fairness and will freely cheat anybody at any time\n
+        """
+        self.beliefs[Beliefs.FAIRNESS] = v
 
-    # def set_(self, v: AttributeType):
-    #     """
+    def set_family(self, v: Quality):
+        """3.Highest| sees family as one of the most important things in life\n
+        2.VeryHigh| values family greatly\n
+        1.High| values family\n
+        0.Neutral| does not care about family one way or the other\n
+        -1.Low| is put off by family\n
+        -2.VeryLow| lacks any respect for family\n
+        -3.Lowest| finds the idea of family loathsome\n"""
+        self.beliefs[Beliefs.FAMILY] = v
 
-    #     """
-    #     self.attributes[Beliefs.]=v
+    def set_friendship(self, v: Quality):
+        """3.Highest| believes friendship is a key to the ideal life\n
+        2.VeryHigh| sees friendship as one of the finer things in life\n
+        1.High| thinks friendship is important\n
+        0.Neutral| does not care about friendship\n
+        -1.Low| finds friendship burdensome\n
+        -2.VeryLow| is completely put off by the idea of friends\n
+        -3.Lowest| finds the whole idea of friendship disgusting\n"""
+        self.beliefs[Beliefs.FRIENDSHIP] = v
 
-    # def set_(self, v: AttributeType):
-    #     """
+    def set_hard_work(self, v: Quality):
+        """3.Highest| believes that hard work is one of the highest ideals and a key to the good life\n
+        2.VeryHigh| deeply respects those that work hard at their labors\n
+        1.High| values hard work\n
+        0.Neutral| doesn't really see the point of working hard\n
+        -1.Low| sees working hard as a foolish waste of time\n
+        -2.VeryLow| thinks working hard is an abject idiocy\n
+        -3.Lowest| finds the proposition that one should work hard in life utterly abhorrent\n
+        """
+        self.beliefs[Beliefs.HARD_WORK] = v
 
-    #     """
-    #     self.attributes[Beliefs.]=v
+    def set_harmony(self, v: Quality):
+        """3.Highest| would have the world operate in complete harmony without the least bit of strife or disorder\n
+        2.VeryHigh| strongly believes that a peaceful and ordered society without dissent is best\n
+        1.High| values a harmonious existence\n
+        0.Neutral| sees equal parts of harmony and discord as part of life\n
+        -1.Low| doesn't respect a society that has settled into harmony without debate and strife\n
+        -2.VeryLow| can't fathom why anyone would want to live in an orderly and harmonious society\n
+        -3.Lowest| believes deeply that chaos and disorder are the truest expressions of life and would disrupt harmony wherever it is found\n
+        """
+        self.beliefs[Beliefs.HARMONY] = v
 
-    # def set_(self, v: AttributeType):
-    #     """
+    def set_independence(self, v: Quality):
+        """3.Highest| believes that freedom and independence are completely non-negotiable and would fight to defend them\n
+        2.VeryHigh| treasures independence\n
+        1.High| values independence\n
+        0.Neutral| doesn't really value independence one way or another\n
+        -1.Low| finds the ideas of independence and freedom somewhat foolish\n
+        -2.VeryLow| sees freedom and independence as completely worthless\n
+        -3.Lowest| hates freedom and would crush the independent spirit wherever it is found\n
+        """
+        self.beliefs[Beliefs.INDEPENDENCE] = v
 
-    #     """
-    #     self.attributes[Beliefs.]=v
+    def set_introspection(self, v: Quality):
+        """3.Highest| feels that introspection and all forms of self-examination are the keys to a good life and worthy of respect\n
+        2.VeryHigh| deeply values introspection\n
+        1.High| sees introspection as important\n
+        0.Neutral| doesn't really see the value in self-examination\n
+        -1.Low| finds introspection to be a waste of time\n
+        -2.VeryLow| thinks that introspection is valueless and those that waste time in self-examination are deluded fools\n
+        -3.Lowest| finds the whole idea of introspection completely offensive and contrary to the ideals of a life well-lived\n
+        """
+        self.beliefs[Beliefs.INTROSPECTION] = v
+
+    def set_knowledge(self, v: Quality):
+        """3.Highest| finds the quest for knowledge to be of the very highest value\n
+        2.VeryHigh| views the pursuit of knowledge as deeply important\n
+        1.High| values knowledge\n
+        0.Neutral| doesn't see the attainment of knowledge as important\n
+        -1.Low| finds the pursuit of knowledge to be a waste of effort\n
+        -2.VeryLow| thinks the quest for knowledge is a delusional fantasy\n
+        -3.Lowest| sees the attainment and preservation of knowledge as an offensive enterprise engaged in by arrogant fools\n
+        """
+        self.beliefs[Beliefs.KNOWLEDGE] = v
+
+    def set_law(self, v: Quality):
+        """3.Highest| is an absolute believer in the rule of law\n
+        2.VeryHigh| has a great deal of respect for the law\n
+        1.High| respects the law\n
+        0.Neutral| doesn't feel strongly about the law\n
+        -1.Low| does not respect the law\n
+        -2.VeryLow| disdains the law\n
+        -3.Lowest| finds the idea of laws abhorrent\n"""
+        self.beliefs[Beliefs.LAW] = v
+
+    def set_leisure_time(self, v: Quality):
+        """3.Highest| believes that it would be a fine thing if all time were leisure time\n
+        2.VeryHigh| treasures leisure time and thinks it is very important in life\n
+        1.High| values leisure time\n
+        0.Neutral| doesn't think one way or the other about leisure time\n
+        -1.Low| finds leisure time wasteful\n
+        -2.VeryLow| is offended by leisure time and leisurely living\n
+        -3.Lowest| believes that those that take leisure time are evil and finds the whole idea disgusting\n
+        """
+        self.beliefs[Beliefs.LEISURE_TIME] = v
+
+    def set_loyalty(self, v: Quality):
+        """3.Highest| has the highest regard for loyalty\n
+        2.VeryHigh| greatly prizes loyalty\n
+        1.High| values loyalty\n
+        0.Neutral| doesn't particularly value loyalty\n
+        -1.Low| views loyalty unfavorably\n
+        -2.VeryLow| disdains loyalty\n
+        -3.Lowest| is disgusted by the idea of loyalty\n"""
+        self.beliefs[Beliefs.LOYALTY] = v
+
+    def set_martial_prowess(self, v: Quality):
+        """3.Highest| believes that martial prowess defines the good character of an individual\n
+        2.VeryHigh| deeply respects skill at arms\n
+        1.High| values martial prowess\n
+        0.Neutral| does not really value skills related to fighting\n
+        -1.Low| finds those that develop skill with weapons and fighting distasteful\n
+        -2.VeryLow| thinks that the pursuit of the skills of warfare and fighting is a low pursuit indeed\n
+        -3.Lowest| abhors those that pursue the mastery of weapons and skill with fighting\n
+        """
+        self.beliefs[Beliefs.MARTIAL_PROWESS] = v
+
+    def set_merriment(self, v: Quality):
+        """3.Highest| believes that little is better in life than a good party\n
+        2.VeryHigh| truly values merrymaking and parties\n
+        1.High| finds merrymaking and partying worthwhile activities\n
+        0.Neutral| doesn't really value merrymaking\n
+        -1.Low| sees merrymaking as a waste\n
+        -2.VeryLow| is disgusted by merrymakers\n
+        -3.Lowest| is appalled by merrymaking, parties and other such worthless activities\n
+        """
+        self.beliefs[Beliefs.MERRIMENT] = v
+
+    def set_nature(self, v: Quality):
+        """3.Highest| holds nature to be of greater value than most aspects of civilization\n
+        2.VeryHigh| has a deep respect for animals, plants and the natural world\n
+        1.High| values nature\n
+        0.Neutral| doesn't care about nature one way or another\n
+        -1.Low| finds nature somewhat disturbing\n
+        -2.VeryLow| has a deep dislike of the natural world\n
+        -3.Lowest| would just as soon have nature and the great outdoors burned to ashes and converted into a great mining pit\n
+        """
+        self.beliefs[Beliefs.NATURE] = v
+
+    def set_peace(self, v: Quality):
+        """3.Highest| believes the idea of war is utterly repellent and would have peace at all costs\n
+        2.VeryHigh| believes that peace is always preferable to war\n
+        1.High| values peace over war\n
+        0.Neutral| doesn't particularly care between war and peace\n
+        -1.Low| sees war as a useful means to an end\n
+        -2.VeryLow| believes war is preferable to peace in general\n
+        -3.Lowest| thinks that the world should be engaged in perpetual warfare\n"""
+        self.beliefs[Beliefs.PEACE] = v
+
+    def set_perseverance(self, v: Quality):
+        """3.Highest| believes that perseverance is one of the greatest qualities somebody can have\n
+        2.VeryHigh| greatly respects individuals that persevere through their trials and labors\n
+        1.High| respects perseverance\n
+        0.Neutral| doesn't think much about the idea of perseverance\n
+        -1.Low| sees perseverance in the face of adversity as bull-headed and foolish\n
+        -2.VeryLow| thinks there is something deeply wrong with people that persevere through adversity\n
+        -3.Lowest| finds the notion that one would persevere through adversity completely abhorrent\n
+        """
+        self.beliefs[Beliefs.PERSEVERANCE] = v
+
+    def set_power(self, v: Quality):
+        """3.Highest| believes that the acquisition of power over others is the ideal goal in life and worthy of the highest respect\n
+        2.VeryHigh| sees power over others as something to strive for\n
+        1.High| respects power\n
+        0.Neutral| doesn't find power particularly praiseworthy\n
+        -1.Low| has a negative view of those who exercise power over others\n
+        -2.VeryLow| hates those who wield power over others\n
+        -3.Lowest| finds the acquisition and use of power abhorrent and would have all masters toppled\n
+        """
+        self.beliefs[Beliefs.POWER] = v
+
+    def set_romance(self, v: Quality):
+        """3.Highest| sees romance as one of the highest ideals\n
+        2.VeryHigh| thinks romance is very important in life\n
+        1.High| values romance\n
+        0.Neutral| doesn't care one way or the other about romance\n
+        -1.Low| finds romance distasteful\n
+        -2.VeryLow| is somewhat disgusted by romance\n
+        -3.Lowest| finds even the abstract idea of romance repellent\n"""
+        self.beliefs[Beliefs.ROMANCE] = v
+
+    def set_sacrifice(self, v: Quality):
+        """3.Highest| finds sacrifice to be one of the highest ideals\n
+        2.VeryHigh| believes that those who sacrifice for others should be deeply respected\n
+        1.High| values sacrifice\n
+        0.Neutral| doesn't particularly respect sacrifice as a virtue\n
+        -1.Low| sees sacrifice as wasteful and foolish\n
+        -2.VeryLow| finds sacrifice to be the height of folly\n
+        -3.Lowest| thinks that the entire concept of sacrifice for others is truly disgusting\n
+        """
+        self.beliefs[Beliefs.SACRIFICE] = v
+
+    def set_self_control(self, v: Quality):
+        """3.Highest| believes that self-mastery and the denial of impulses are some of the highest ideals\n
+        2.VeryHigh| finds moderation and self-control to be very important\n
+        1.High| values self-control\n
+        0.Neutral| doesn't particularly value self-control\n
+        -1.Low| finds those that deny their impulses somewhat stiff\n
+        -2.VeryLow| sees the denial of impulses as a vain and foolish pursuit\n
+        -3.Lowest| has abandoned any attempt at self-control and finds the whole concept deeply offensive\n
+        """
+        self.beliefs[Beliefs.SELF_CONTROL] = v
+
+    def set_skill_belief(self, v: Quality):
+        """3.Highest| believes that the mastery of a skill is one of the highest pursuits\n
+        2.VeryHigh| really respects those that take the time to master a skill\n
+        1.High| respects the development of skill\n
+        0.Neutral| doesn't care if others take the time to master skills\n
+        -1.Low| finds the pursuit of skill mastery off-putting\n
+        -2.VeryLow| believes that the time taken to master a skill is a horrible waste\n
+        -3.Lowest| sees the whole idea of taking time to master a skill as appalling\n
+        """
+        self.beliefs[Beliefs.SKILL] = v
+
+    def set_stoicism(self, v: Quality):
+        """3.Highest| views any show of emotion as offensive\n
+        2.VeryHigh| thinks it is of the utmost importance to present a bold face and never grouse, complain or even show emotion\n
+        1.High| believes it is important to conceal emotions and refrain from complaining\n
+        0.Neutral| doesn't see much value in being stoic\n
+        -1.Low| sees no value in holding back complaints and concealing emotions\n
+        -2.VeryLow| feels that those who attempt to conceal their emotions are vain and foolish\n
+        -3.Lowest| sees concealment of emotions as a betrayal and tries [his/her] best never to associate with such secretive fools\n
+        """
+        self.beliefs[Beliefs.STOICISM] = v
+
+    def set_tradition(self, v: Quality):
+        """3.Highest| holds the maintenance of tradition as one of the highest ideals\n
+        2.VeryHigh| is a firm believer in the value of tradition\n
+        1.High| values tradition\n
+        0.Neutral| doesn't have any strong feelings about tradition\n
+        -1.Low| disregards tradition\n
+        -2.VeryLow| finds the following of tradition foolish and limiting\n
+        -3.Lowest| is disgusted by tradition and would flout any [he/she] encounters if given a chance\n
+        """
+        self.beliefs[Beliefs.TRADITION] = v
+
+    def set_tranquility(self, v: Quality):
+        """3.Highest| views tranquility as one of the highest ideals\n
+        2.VeryHigh| strongly values tranquility and quiet\n
+        1.High| values tranquility and a peaceful day\n
+        0.Neutral| doesn't have a preference between tranquility and tumult\n
+        -1.Low| prefers a noisy, bustling life to boring days without activity\n
+        -2.VeryLow| is greatly disturbed by quiet and a peaceful existence\n
+        -3.Lowest| is disgusted by tranquility and would that the world would constantly churn with noise and activity\n
+        """
+        self.beliefs[Beliefs.TRANQUILITY] = v
+
+    def set_truth(self, v: Quality):
+        """3.Highest| believes the truth is inviolable regardless of the cost\n
+        2.VeryHigh| believes that honesty is a high ideal\n
+        1.High| values honesty\n
+        0.Neutral| does not particularly value the truth\n
+        -1.Low| finds blind honesty foolish\n
+        -2.VeryLow| sees lying as an important means to an end\n
+        -3.Lowest| is repelled by the idea of honesty and lies without compunction\n"""
+        self.beliefs[Beliefs.TRUTH] = v
 
     def _set_beliefs_facets_and_attributes(
         self,
