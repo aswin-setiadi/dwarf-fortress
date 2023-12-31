@@ -57,11 +57,17 @@ class Character:
     def __init__(
         self,
         name: str,
-        beliefs: dict[Beliefs, Quality],
         goals: set[Goals],
-        facets: dict[Facets, Quality],
-        attributes: dict[Enum, AttributeType],
     ) -> None:
+        """
+        Character class
+        name= name of char
+        attributes= dict, with BodyAttributes/ SoulAttributes as key and AttributeType as value
+        beliefs= dict, with Beliefs class as key and Quality as value
+        facets= dict, with Facets class as key and Quality as value
+        goals= set of Goals
+        skills= dict, with Skills as key and tuple(bf_score, is_goal_aligned, atb_score) as value
+        """
         self.name = name
         self.beliefs: dict[Beliefs, Quality] = dict(
             (x, Quality.Neutral) for x in Beliefs
@@ -73,8 +79,6 @@ class Character:
             (x, AttributeType.NEUTRAL) for x in Character.atbs
         )
         self.skills: dict[Enum, tuple[int, bool, float]] = {}
-        self._set_beliefs_facets_and_attributes(beliefs, facets, attributes)
-        self._warn_bad_facets()
 
     def add_skills(self):
         for skill in Skills:
@@ -1260,19 +1264,6 @@ class Character:
         -3.Lowest| cuts any corners possible when working on a project, regardless of the consequences, rather than wasting effort or resources
         """
         self.facets[Facets.WASTEFULNESS] = v
-
-    def _set_beliefs_facets_and_attributes(
-        self,
-        beliefs: dict[Beliefs, Quality],
-        facets: dict[Facets, Quality],
-        attributes: dict[Enum, AttributeType],
-    ):
-        for k, v in beliefs.items():
-            self.beliefs[k] = v
-        for k, v in facets.items():
-            self.facets[k] = v
-        for k, v in attributes.items():
-            self.attributes[k] = v
 
     def _warn_bad_facets(self):
         if self.facets[Facets.CHEER_PROPENSITY] < Quality.Neutral:
