@@ -79,6 +79,7 @@ def print_master_list(v: Literal["attributes", "beliefs", "facets"]):
             print('\t"""')
             for item in v:
                 print(f"\t{item}")
+                print()
             print('\t"""')
             print(f"\tself.facets[Facets.{k}]=v")
 
