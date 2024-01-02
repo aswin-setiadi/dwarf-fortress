@@ -152,15 +152,15 @@ class Character:
         self.attributes[BodyAttributes.Agility] = v
 
     def set_disease_resistance(self, v: AttributeType):
-        """ "1000.GOOD4| virtually never sick",\n
-        "750.GOOD3| almost never sick",\n
-        "500.GOOD2| very rarely sick",\n
-        "250.GOOD1| rarely sick",\n
-        "0.NEUTRAL| (no description)",\n
-        "-250.BAD1| susceptible to disease",\n
-        "-500.BAD2| quite susceptible to disease",\n
-        "-750.BAD3| really susceptible to disease",\n
-        "-1000.BAD4| stunningly susceptible to disease"
+        """1000.GOOD4| virtually never sick\n
+        750.GOOD3| almost never sick\n
+        500.GOOD2| very rarely sick\n
+        250.GOOD1| rarely sick\n
+        0.NEUTRAL| (no description)\n
+        -250.BAD1| susceptible to disease\n
+        -500.BAD2| quite susceptible to disease\n
+        -750.BAD3| really susceptible to disease\n
+        -1000.BAD4| stunningly susceptible to disease
         """
         self.attributes[BodyAttributes.DiseaseResistance] = v
 
@@ -221,184 +221,287 @@ class Character:
         self.attributes[BodyAttributes.Toughness] = v
 
     def set_analytical_ability(self, v: AttributeType):
-        """
-        "1000.GOOD4| awesome intellectual powers",
-        "750.GOOD3| great analytical abilities",
-        "500.GOOD2| a sharp intellect",
-        "250.GOOD1| a good intellect",
-        "0.NEUTRAL| (no description)",
-        "-250.BAD1| poor analytical abilities",
-        "-500.BAD2| very bad analytical abilities",
-        "-750.BAD3| a lousy intellect",
-        "-1000.BAD4| a stunning lack of analytical ability"
+        """1000.GOOD4| awesome intellectual powers
+
+        750.GOOD3| great analytical abilities
+
+        500.GOOD2| a sharp intellect
+
+        250.GOOD1| a good intellect
+
+        0.NEUTRAL| (no description)
+
+        -250.BAD1| poor analytical abilities
+
+        -500.BAD2| very bad analytical abilities
+
+        -750.BAD3| a lousy intellect
+
+        -1000.BAD4| a stunning lack of analytical ability
         """
         self.attributes[SoulAttributes.AnalyticalAbility] = v
 
     def set_creativity(self, v: AttributeType):
         """
-        "1000.GOOD4| a boundless creative imagination",
-        "750.GOOD3| great creativity",
-        "500.GOOD2| very good creativity",
-        "250.GOOD1| good creativity",
-        "0.NEUTRAL| (no description)",
-        "-250.BAD1| meager creativity",
-        "-500.BAD2| poor creativity",
-        "-750.BAD3| lousy creativity",
-        "-1000.BAD4| next to no creative talent"
+        1000.GOOD4| a boundless creative imagination
+
+        750.GOOD3| great creativity
+
+        500.GOOD2| very good creativity
+
+        250.GOOD1| good creativity
+
+        0.NEUTRAL| (no description)
+
+        -250.BAD1| meager creativity
+
+        -500.BAD2| poor creativity
+
+        -750.BAD3| lousy creativity
+
+        -1000.BAD4| next to no creative talent
         """
         self.attributes[SoulAttributes.Creativity] = v
 
     def set_empath(self, v: AttributeType):
         """
-        "1000.GOOD4| an absolutely remarkable sense of others' emotions",
-        "750.GOOD3| a great sense of empathy",
-        "500.GOOD2| a very good sense of empathy",
-        "250.GOOD1| an ability to read emotions fairly well",
-        "0.NEUTRAL| (no description)",
-        "-250.BAD1| poor empathy",
-        "-500.BAD2| a very bad sense of empathy",
-        "-750.BAD3| next to no empathy",
-        "-1000.BAD4| the utter inability to judge others' emotions"
+        1000.GOOD4| an absolutely remarkable sense of others' emotions
+
+        750.GOOD3| a great sense of empathy
+
+        500.GOOD2| a very good sense of empathy
+
+        250.GOOD1| an ability to read emotions fairly well
+
+        0.NEUTRAL| (no description)
+
+        -250.BAD1| poor empathy
+
+        -500.BAD2| a very bad sense of empathy
+
+        -750.BAD3| next to no empathy
+
+        -1000.BAD4| the utter inability to judge others' emotions
         """
         self.attributes[SoulAttributes.Empathy] = v
 
     def set_focus(self, v: AttributeType):
         """
-        "1000.GOOD4| unbreakable focus",
-        "750.GOOD3| a great ability to focus",
-        "500.GOOD2| very good focus",
-        "250.GOOD1| the ability to focus",
-        "0.NEUTRAL| (no description)",
-        "-250.BAD1| poor focus",
-        "-500.BAD2| quite poor focus",
-        "-750.BAD3| really poor focus",
-        "-1000.BAD4| the absolute inability to focus"
+        1000.GOOD4| unbreakable focus
+
+        750.GOOD3| a great ability to focus
+
+        500.GOOD2| very good focus
+
+        250.GOOD1| the ability to focus
+
+        0.NEUTRAL| (no description)
+
+        -250.BAD1| poor focus
+
+        -500.BAD2| quite poor focus
+
+        -750.BAD3| really poor focus
+
+        -1000.BAD4| the absolute inability to focus
         """
         self.attributes[SoulAttributes.Focus] = v
 
     def set_intuition(self, v: AttributeType):
         """
-        "1000.GOOD4| uncanny intuition",
-        "750.GOOD3| great intuition",
-        "500.GOOD2| very good intuition",
-        "250.GOOD1| good intuition",
-        "0.NEUTRAL| (no description)",
-        "-250.BAD1| bad intuition",
-        "-500.BAD2| very bad intuition",
-        "-750.BAD3| lousy intuition",
-        "-1000.BAD4| horrible intuition"
+        1000.GOOD4| uncanny intuition
+
+        750.GOOD3| great intuition
+
+        500.GOOD2| very good intuition
+
+        250.GOOD1| good intuition
+
+        0.NEUTRAL| (no description)
+
+        -250.BAD1| bad intuition
+
+        -500.BAD2| very bad intuition
+
+        -750.BAD3| lousy intuition
+
+        -1000.BAD4| horrible intuition
         """
         self.attributes[SoulAttributes.Intuition] = v
 
     def set_kinesthesic_sense(self, v: AttributeType):
         """
-        "1000.GOOD4| an astounding feel for the position of [his/her] own body",
-        "750.GOOD3| a great kinesthetic sense",
-        "500.GOOD2| a very good sense of the position of [his/her] own body",
-        "250.GOOD1| a good kinesthetic sense",
-        "0.NEUTRAL| (no description)",
-        "-250.BAD1| a meager kinesthetic sense",
-        "-500.BAD2| a poor kinesthetic sense",
-        "-750.BAD3| a very clumsy kinesthetic sense",
-        "-1000.BAD4| an unbelievably atrocious sense of the position of [his/her] own body"
+        1000.GOOD4| an astounding feel for the position of [his/her] own body
+
+        750.GOOD3| a great kinesthetic sense
+
+        500.GOOD2| a very good sense of the position of [his/her] own body
+
+        250.GOOD1| a good kinesthetic sense
+
+        0.NEUTRAL| (no description)
+
+        -250.BAD1| a meager kinesthetic sense
+
+        -500.BAD2| a poor kinesthetic sense
+
+        -750.BAD3| a very clumsy kinesthetic sense
+
+        -1000.BAD4| an unbelievably atrocious sense of the position of [his/her] own body
         """
         self.attributes[SoulAttributes.Kinesthesic] = v
 
     def set_linguistic_ability(self, v: AttributeType):
         """
-        "1000.GOOD4| an astonishing ability with languages and words",
-        "750.GOOD3| a great affinity for language",
-        "500.GOOD2| a natural inclination toward language",
-        "250.GOOD1| a way with words",
-        "0.NEUTRAL| (no description)",
-        "-250.BAD1| a little difficulty with words",
-        "-500.BAD2| little linguistic ability",
-        "-750.BAD3| very little linguistic ability",
-        "-1000.BAD4| difficulty with words and language"
+        1000.GOOD4| an astonishing ability with languages and words
+
+        750.GOOD3| a great affinity for language
+
+        500.GOOD2| a natural inclination toward language
+
+        250.GOOD1| a way with words
+
+        0.NEUTRAL| (no description)
+
+        -250.BAD1| a little difficulty with words
+
+        -500.BAD2| little linguistic ability
+
+        -750.BAD3| very little linguistic ability
+
+        -1000.BAD4| difficulty with words and language
         """
         self.attributes[SoulAttributes.Language] = v
 
     def set_memory(self, v: AttributeType):
         """
-        "1000.GOOD4| an astonishing memory",
-        "750.GOOD3| an amazing memory",
-        "500.GOOD2| a great memory",
-        "250.GOOD1| a good memory",
-        "0.NEUTRAL| (no description)",
-        "-250.BAD1| an iffy memory",
-        "-500.BAD2| a poor memory",
-        "-750.BAD3| a really bad memory",
-        "-1000.BAD4| little memory to speak of"
+        1000.GOOD4| an astonishing memory
+
+        750.GOOD3| an amazing memory
+
+        500.GOOD2| a great memory
+
+        250.GOOD1| a good memory
+
+        0.NEUTRAL| (no description)
+
+        -250.BAD1| an iffy memory
+
+        -500.BAD2| a poor memory
+
+        -750.BAD3| a really bad memory
+
+        -1000.BAD4| little memory to speak of
         """
         self.attributes[SoulAttributes.Memory] = v
 
     def set_musical_ability(self, v: AttributeType):
         """
-        "1000.GOOD4| an astonishing knack for music",
-        "750.GOOD3| a great musical sense",
-        "500.GOOD2| a natural ability with music",
-        "250.GOOD1| a feel for music",
-        "0.NEUTRAL| (no description)",
-        "-250.BAD1| an iffy sense for music",
-        "-500.BAD2| little natural inclination toward music",
-        "-750.BAD3| next to no natural musical ability",
-        "-1000.BAD4| absolutely no feel for music at all"
+        1000.GOOD4| an astonishing knack for music
+
+        750.GOOD3| a great musical sense
+
+        500.GOOD2| a natural ability with music
+
+        250.GOOD1| a feel for music
+
+        0.NEUTRAL| (no description)
+
+        -250.BAD1| an iffy sense for music
+
+        -500.BAD2| little natural inclination toward music
+
+        -750.BAD3| next to no natural musical ability
+
+        -1000.BAD4| absolutely no feel for music at all
         """
         self.attributes[SoulAttributes.Music] = v
 
     def set_patience(self, v: AttributeType):
         """
-        "1000.GOOD4| absolutely boundless patience",
-        "750.GOOD3| a deep well of patience",
-        "500.GOOD2| a great deal of patience",
-        "250.GOOD1| a sum of patience",
-        "0.NEUTRAL| (no description)",
-        "-250.BAD1| a shortage of patience",
-        "-500.BAD2| little patience",
-        "-750.BAD3| very little patience",
-        "-1000.BAD4| no patience at all"
+        1000.GOOD4| absolutely boundless patience
+
+        750.GOOD3| a deep well of patience
+
+        500.GOOD2| a great deal of patience
+
+        250.GOOD1| a sum of patience
+
+        0.NEUTRAL| (no description)
+
+        -250.BAD1| a shortage of patience
+
+        -500.BAD2| little patience
+
+        -750.BAD3| very little patience
+
+        -1000.BAD4| no patience at all
         """
         self.attributes[SoulAttributes.Patience] = v
 
     def set_social_awareness(self, v: AttributeType):
         """
-        "1000.GOOD4| a shockingly profound feel for social relationships",
-        "750.GOOD3| a great feel for social relationships",
-        "500.GOOD2| a very good feel for social relationships",
-        "250.GOOD1| a good feel for social relationships",
-        "0.NEUTRAL| (no description)",
-        "-250.BAD1| a meager ability with social relationships",
-        "-500.BAD2| a poor ability to manage or understand social relationships",
-        "-750.BAD3| a lack of understanding of social relationships",
-        "-1000.BAD4| an absolute inability to understand social relationships"
+        1000.GOOD4| a shockingly profound feel for social relationships
+
+        750.GOOD3| a great feel for social relationships
+
+        500.GOOD2| a very good feel for social relationships
+
+        250.GOOD1| a good feel for social relationships
+
+        0.NEUTRAL| (no description)
+
+        -250.BAD1| a meager ability with social relationships
+
+        -500.BAD2| a poor ability to manage or understand social relationships
+
+        -750.BAD3| a lack of understanding of social relationships
+
+        -1000.BAD4| an absolute inability to understand social relationships
         """
         self.attributes[SoulAttributes.SocialAwareness] = v
 
     def set_spatial_sense(self, v: AttributeType):
         """
-        "1000.GOOD4| a stunning feel for spatial relationships",
-        "750.GOOD3| an amazing spatial sense",
-        "500.GOOD2| a great feel for the surrounding space",
-        "250.GOOD1| a good spatial sense",
-        "0.NEUTRAL| (no description)",
-        "-250.BAD1| a questionable spatial sense",
-        "-500.BAD2| poor spatial senses",
-        "-750.BAD3| an atrocious spatial sense",
-        "-1000.BAD4| no sense for spatial relationships"
+        1000.GOOD4| a stunning feel for spatial relationships
+
+        750.GOOD3| an amazing spatial sense
+
+        500.GOOD2| a great feel for the surrounding space
+
+        250.GOOD1| a good spatial sense
+
+        0.NEUTRAL| (no description)
+
+        -250.BAD1| a questionable spatial sense
+
+        -500.BAD2| poor spatial senses
+
+        -750.BAD3| an atrocious spatial sense
+
+        -1000.BAD4| no sense for spatial relationships
         """
         self.attributes[SoulAttributes.SpatialSense] = v
 
     def set_willpower(self, v: AttributeType):
         """
-        "1000.GOOD4| an unbreakable will",
-        "750.GOOD3| an iron will",
-        "500.GOOD2| a lot of willpower",
-        "250.GOOD1| willpower",
-        "0.NEUTRAL| (no description)",
-        "-250.BAD1| little willpower",
-        "-500.BAD2| a large deficit of willpower",
-        "-750.BAD3| next to no willpower",
-        "-1000.BAD4| absolutely no willpower"
+        1000.GOOD4| an unbreakable will
+
+        750.GOOD3| an iron will
+
+        500.GOOD2| a lot of willpower
+
+        250.GOOD1| willpower
+
+        0.NEUTRAL| (no description)
+
+        -250.BAD1| little willpower
+
+        -500.BAD2| a large deficit of willpower
+
+        -750.BAD3| next to no willpower
+
+        -1000.BAD4| absolutely no willpower
         """
         self.attributes[SoulAttributes.Willpower] = v
 
