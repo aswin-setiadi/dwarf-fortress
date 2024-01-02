@@ -76,7 +76,7 @@ class Character:
         self.facets: dict[Facets, Quality] = dict((x, Quality.Neutral) for x in Facets)
         # use Enum to represent both BodyAttributes and SoulAttributes
         self.attributes: dict[Enum, AttributeType] = dict(
-            (x, AttributeType.NEUTRAL) for x in Character.atbs
+            (x, AttributeType.n) for x in Character.atbs
         )
         self.skills: dict[Enum, tuple[int, bool, float]] = {}
 
