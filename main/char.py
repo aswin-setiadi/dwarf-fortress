@@ -556,7 +556,7 @@ class Character:
         """
         self.beliefs[Beliefs.COMPETITION] = v
 
-    def set_cooperation(self, v:Quality):
+    def set_cooperation(self, v: Quality):
         """3.Highest| places cooperation as one of the highest ideals
 
         2.VeryHigh| sees cooperation as very important in life
@@ -570,7 +570,7 @@ class Character:
         -2.VeryLow| views cooperation as a low ideal not worthy of any respect
 
         -3.Lowest| is thoroughly disgusted by cooperation"""
-        self.beliefs[Beliefs.COOPERATION]=v
+        self.beliefs[Beliefs.COOPERATION] = v
 
     def set_craftsmanship(self, v: Quality):
         """3.Highest| holds crafts[man]ship to be of the highest ideals and celebrates talented artisans and their masterworks\n
@@ -882,6 +882,71 @@ class Character:
         -2.VeryLow| sees lying as an important means to an end\n
         -3.Lowest| is repelled by the idea of honesty and lies without compunction\n"""
         self.beliefs[Beliefs.TRUTH] = v
+
+    def set_abstract_inclined(self, v: Quality):
+        """3.Highest| eschews practical concerns for philosophical discussion, puzzles, riddles and the world of ideas
+
+        2.VeryHigh| strongly prefers discussions of ideas and abstract concepts over handling specific practical issues
+
+        1.High| has a tendency to consider ideas and abstractions over practical applications
+
+        0.Neutral| (no description)
+
+        -1.Low| likes to keep things practical, without delving too deeply into the abstract
+
+        -2.VeryLow| dislikes abstract discussions and would much rather focus on practical examples
+
+        -3.Lowest| is concerned only with matters practical to the situation at hand, with absolutely no inclination toward abstract discussion
+        """
+        self.facets[Facets.ABSTRACT_INCLINED] = v
+
+    def set_activity_level(self, v: Quality):
+        """3.Highest| is driven by a bouncing frenetic energy
+
+        2.VeryHigh| lives at a high-energy kinetic pace
+
+        1.High| lives a fast-paced life
+
+        0.Neutral| (no description)
+
+        -1.Low| likes to take it easy
+
+        -2.VeryLow| lives at a slow-going and leisurely pace
+
+        -3.Lowest| has an utterly languid pace of easy living, calm and slow"""
+        self.facets[Facets.ACTIVITY_LEVEL] = v
+
+    def set_altruism(self, v: Quality):
+        """3.Highest| is truly fulfilled by assisting those in need
+
+        2.VeryHigh| finds helping others very emotionally rewarding
+
+        1.High| finds helping others emotionally rewarding
+
+        0.Neutral| (no description)
+
+        -1.Low| does not go out of [his/her] way to help others
+
+        -2.VeryLow| dislikes helping others
+
+        -3.Lowest| feels helping others is an imposition on [his/her] time"""
+        self.facets[Facets.ALTRUISM] = v
+
+    def set_ambition(self, v: Quality):
+        """3.Highest| has a relentless drive, completely consumed by ambition
+
+        2.VeryHigh| is very ambitious, always looking for a way to better [his/her] situation
+
+        1.High| is quite ambitious
+
+        0.Neutral| (no description)
+
+        -1.Low| isn't particularly ambitious
+
+        -2.VeryLow| is not driven and rarely feels the need to pursue even a modest success
+
+        -3.Lowest| has no ambition whatsoever"""
+        self.facets[Facets.AMBITION] = v
 
     def set_anger_propensity(self, v: Quality):
         """
