@@ -57,6 +57,7 @@ class Character:
     def __init__(
         self,
         name: str,
+        gender: Literal["male", "female"],
         goals: set[Goals],
     ) -> None:
         """
@@ -69,6 +70,7 @@ class Character:
         skills= dict, with Skills as key and tuple(bf_score, is_goal_aligned, atb_score) as value
         """
         self.name = name
+        self.gender: Literal["male", "female"] = gender
         self.beliefs: dict[Beliefs, Quality] = dict(
             (x, Quality.Neutral) for x in Beliefs
         )
@@ -504,6 +506,71 @@ class Character:
         -1000.BAD4| absolutely no willpower
         """
         self.attributes[SoulAttributes.Willpower] = v
+
+    def set_artwork(self, v: Quality):
+        """3.Highest| believes that the creation and appreciation of artwork is one of the highest ideals
+
+        2.VeryHigh| greatly respects artists and their works
+
+        1.High| values artwork
+
+        0.Neutral| doesn't care about art one way or another
+
+        -1.Low| finds artwork boring
+
+        -2.VeryLow| sees the whole pursuit of art as silly
+
+        -3.Lowest| finds art offensive and would have it destroyed whenever possible"""
+        self.beliefs[Beliefs.ARTWORK] = v
+
+    def set_commerce(self, v: Quality):
+        """3.Highest| sees engaging in commerce as a high ideal in life
+        2.VeryHigh| really respects commerce and those that engage in trade
+
+        1.High| respects commerce
+
+        0.Neutral| doesn't particularly respect commerce
+
+        -1.Low| is somewhat put off by trade and commerce
+
+        -2.VeryLow| finds those that engage in trade and commerce to be fairly disgusting
+
+        -3.Lowest| holds the view that commerce is a vile obscenity
+        """
+        self.beliefs[Beliefs.COMMERCE] = v
+
+    def set_competition(self, v: Quality):
+        """3.Highest| holds the idea of competition among the most important values and would encourage it wherever possible
+
+        2.VeryHigh| views competition as a crucial driving force in the world
+
+        1.High| sees competition as reasonably important
+
+        0.Neutral| doesn't have strong views on competition
+
+        -1.Low| sees competition as wasteful and silly
+
+        -2.VeryLow| deeply dislikes competition
+
+        -3.Lowest| finds the very idea of competition obscene
+        """
+        self.beliefs[Beliefs.COMPETITION] = v
+
+    def set_cooperation(self, v:Quality):
+        """3.Highest| places cooperation as one of the highest ideals
+
+        2.VeryHigh| sees cooperation as very important in life
+
+        1.High| values cooperation
+
+        0.Neutral| doesn't see cooperation as valuable
+
+        -1.Low| dislikes cooperation
+
+        -2.VeryLow| views cooperation as a low ideal not worthy of any respect
+
+        -3.Lowest| is thoroughly disgusted by cooperation"""
+        self.beliefs[Beliefs.COOPERATION]=v
 
     def set_craftsmanship(self, v: Quality):
         """3.Highest| holds crafts[man]ship to be of the highest ideals and celebrates talented artisans and their masterworks\n
