@@ -9,7 +9,8 @@ from stats import (
     Quality,
 )
 
-logging.basicConfig(filename="char.log", filemode="a", level=logging.INFO)
+# logging.basicConfig(filename="char.log", filemode="a", level=logging.INFO)
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
@@ -352,41 +353,135 @@ def instantiate_char6() -> Character:
     return char
 
 
-def main():
-    chars: list[Character] = []
-    chars.append(instantiate_char0())
-    # chars.append(instantiate_char1())
-    chars.append(instantiate_char2())
-    chars.append(instantiate_char3())
-    chars.append(instantiate_char4())
-    chars.append(instantiate_char5())
-    chars.append(instantiate_char6())
+def instantiate_char7() -> Character:
+    char = Character(
+        name="Degel Coveredpapers", gender="male", goals={Goals.CRAFT_A_MASTERWORK}
+    )
+    char.set_disease_resistance(AT.g3)
+    char.set_strength(AT.g3)
+    char.set_endurance(AT.b1)
+
+    char.set_willpower(AT.g3)
+    char.set_kinesthesic_sense(AT.g1)
+    char.set_social_awareness(AT.b1)
+    char.set_empath(AT.b1)
+    char.set_focus(AT.b2)
+
+    char.set_bravery(Quality.Low)
+    char.set_stress_vulnerability(Quality.High)
+
+    char.set_martial_prowess(Quality.VeryHigh)
+    char.set_tranquility(Quality.High)
+    char.set_romance(Quality.Low)
+    char.set_truth(Quality.High)
+    return char
+
+
+def instantiate_char8() -> Character:
+    char = Character(
+        name="Urdim Pillarwhims",
+        gender="female",
+        goals={Goals.CREATE_A_GREAT_WORK_OF_ART},
+    )
+    char.set_endurance(AT.g2)
+    char.set_recuperation(AT.g1)
+    char.set_disease_resistance(AT.g1)
+
+    char.set_patience(AT.g3)
+    char.set_analytical_ability(AT.g1)
+    char.set_kinesthesic_sense(AT.g1)
+    char.set_creativity(AT.b1)
+    char.set_intuition(AT.b2)
+    char.set_linguistic_ability(AT.b2)
+    char.set_willpower(AT.b2)
+    char.set_privacy(Quality.VeryHigh)
+    char.set_bravery(Quality.Low)
+
+    char.set_craftsmanship(Quality.Low)
+    char.set_stoicism(Quality.High)
+    return char
+
+
+def instantiate_char9() -> Character:
+    char = Character(
+        name="Kogan Channelequal",
+        gender="female",
+        goals={Goals.CREATE_A_GREAT_WORK_OF_ART},
+    )
+    char.set_toughness(AT.g2)
+    char.set_recuperation(AT.g1)
+    char.set_agility(AT.b2)
+
+    char.set_willpower(AT.g3)
+    char.set_musical_ability(AT.g3)
+    char.set_social_awareness(AT.g1)
+    char.set_creativity(AT.b1)
+    char.set_analytical_ability(AT.b1)
+    char.set_memory(AT.b2)
+
+    char.set_stress_vulnerability(Quality.Low)
+    char.set_confidence(Quality.Low)
+
+    char.set_introspection(Quality.High)
+    char.set_truth(Quality.High)
+    char.set_merriment(Quality.Low)
+    char.set_family(Quality.Neutral)
+    return char
+
+
+def instantiate_char10() -> Character:
+    char = Character(
+        name="Degel Coveredpapers", gender="male", goals={Goals.CRAFT_A_MASTERWORK}
+    )
+    return char
+
+
+def instantiate_char11() -> Character:
+    char = Character(
+        name="Degel Coveredpapers", gender="male", goals={Goals.CRAFT_A_MASTERWORK}
+    )
+    return char
+
+
+def instantiate_char12() -> Character:
+    char = Character(
+        name="Degel Coveredpapers", gender="male", goals={Goals.CRAFT_A_MASTERWORK}
+    )
+    return char
+
+
+def instantiate_chartemplate() -> Character:
+    char = Character(name="", gender="", goals={})
+    return char
+
+
+def print_skill_table(chars: list[Character]):
     for char in chars:
         print(f"{char.name}={char.goals}")
         char.add_skills()
-    names = [f"{x.name.split()[0]:<11}".ljust(8) for x in chars]
+    names = [f"|{x.name.split()[0]:<11}".ljust(8) for x in chars]
     namestr = "".join(names)
     for skill in Skills:
         if skill.name == "Brewer":
-            print("Orderlies".ljust(21, "#") + namestr)
+            print("Orderlies".ljust(19, "#") + namestr)
         elif skill.name == "Bowyer":
-            print("Crafting".ljust(21, "#") + namestr)
+            print("Crafting".ljust(19, "#") + namestr)
         elif skill.name == "Discipline":
-            print("Military".ljust(21, "#") + namestr)
+            print("Military".ljust(19, "#") + namestr)
         elif skill.name == "Appraiser":
-            print("Broker".ljust(21, "#") + namestr)
+            print("Broker".ljust(19, "#") + namestr)
         elif skill.name == "Organizer":
-            print("Manager/ ExpeditionLeader".ljust(21, "#") + namestr)
+            print("Manager/ ExpeditionLeader".ljust(19, "#") + namestr)
         elif skill.name == "Diagnoser":
-            print("CMD".ljust(21, "#") + namestr)
+            print("CMD".ljust(19, "#") + namestr)
         elif skill.name == "BoneDoctor":
-            print("Doctor".ljust(21, "#") + namestr)
+            print("Doctor".ljust(19, "#") + namestr)
         elif skill.name == "RecordKeeper":
-            print("BookKeeper".ljust(21, "#") + namestr)
+            print("BookKeeper".ljust(19, "#") + namestr)
         elif skill.name == "Comedian":
-            print("SocialSkills".ljust(21, "#") + namestr)
+            print("SocialSkills".ljust(19, "#") + namestr)
         elif skill.name == "Concentration":
-            print("Misc.".ljust(21, "#") + namestr)
+            print("Misc.".ljust(19, "#") + namestr)
         l: list[str] = []
         for char in chars:
             if skill in char.skills.keys():
@@ -396,10 +491,26 @@ def main():
                 else:
                     tmp = f"{t[0]} F {t[2]}"
                 tmp = f"{tmp:<10}"
-                l.append(tmp)
+            else:
+                tmp = f"None".ljust(10)
+            l.append(tmp)
         s = "|".join(l)
         print(f"{skill:<19}= {s}")
 
+
+def main():
+    chars: list[Character] = []
+    # chars.append(instantiate_char0())
+    # chars.append(instantiate_char1())
+    # chars.append(instantiate_char2())
+    # chars.append(instantiate_char3())
+    # chars.append(instantiate_char4())
+    # chars.append(instantiate_char5())
+    # chars.append(instantiate_char6())
+    chars = [instantiate_char7(), instantiate_char8(), instantiate_char9()]
+    print_skill_table(chars)
+
+    # need engraver
     skill_assignment = {
         "Kubuk": {
             "skills": [
@@ -470,6 +581,12 @@ def main():
             ],
             "roles": [Roles.Manager, Roles.ExpeditionLeader],
         },
+        "Degel": {
+            "skills": [(Skills.ArmorSmith, 2), (Skills.FurnaceOperator, 0)],
+            "roles": [],
+        },
+        "Urdim": {"Skills": [(Skills.GemCutter, 3), "GemSetter,3"]},
+        "Kogan": {"Skills": ["TemplePerformer (music g3)", "GemSetter,3"]},
     }
 
 
