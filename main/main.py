@@ -62,8 +62,12 @@ def instantiate_char1() -> Character:
     char = Character(
         name="Rigoth Paddleblazes", gender="male", goals={Goals.CRAFT_A_MASTERWORK}
     )
-    char.set_disease_resistance(AT.g1)
-    char.set_recuperation(AT.g1)
+    char.set_disease_resistance(AT.g3)
+    char.set_recuperation(AT.g3)
+    char.set_strength(AT.g2)
+    char.set_endurance(AT.b1)
+    char.set_toughness(AT.b2)
+
     char.set_focus(AT.g2)
     char.set_linguistic_ability(AT.b1)
     char.set_creativity(AT.b2)
