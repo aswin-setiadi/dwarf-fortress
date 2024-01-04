@@ -176,6 +176,18 @@ class Appraiser(Skill):
         }
 
 
+class ArmorSmith(CraftSkill):
+    def __init__(self) -> None:
+        self.attributes = {
+            SoulAttributes.Kinesthesic: Scores.A,
+            SoulAttributes.SpatialSense: Scores.B,
+            SoulAttributes.Creativity: Scores.C,
+            BodyAttributes.Strength: Scores.A,
+            BodyAttributes.Agility: Scores.B,
+            BodyAttributes.Endurance: Scores.C,
+        }
+
+
 class ArmorUser(MilitarySkill):
     def __init__(self) -> None:
         self.attributes = {
@@ -1000,6 +1012,7 @@ class Skills(Enum):
     Cook = Cook()
     Bowyer = Bowyer()
     WeaponSmith = WeaponSmith()
+    ArmorSmith = ArmorSmith()
     GemCutter = GemCutter()
     Carpenter = Carpenter()
     StoneCarver = StoneCarver()
