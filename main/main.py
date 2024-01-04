@@ -431,22 +431,70 @@ def instantiate_char9() -> Character:
 
 def instantiate_char10() -> Character:
     char = Character(
-        name="Degel Coveredpapers", gender="male", goals={Goals.CRAFT_A_MASTERWORK}
+        name="Kadol Bladerags", gender="male", goals={Goals.MASTER_A_SKILL}
     )
+    char.set_toughness(AT.g2)
+
+    char.set_intuition(AT.g1)
+    char.set_patience(AT.b2)
+
+    char.set_altruism(Quality.Low)
+    char.set_anger_propensity(Quality.Low)
+    char.set_friendliness(Quality.High)
+    char.set_hate_propensity(Quality.High)
+    char.set_imagination(Quality.Low)
+    char.set_activity_level(Quality.High)
+    char.set_gratitude(Quality.Low)
+
     return char
 
 
 def instantiate_char11() -> Character:
     char = Character(
-        name="Degel Coveredpapers", gender="male", goals={Goals.CRAFT_A_MASTERWORK}
+        name="Meng SystemHatchets", gender="female", goals={Goals.CRAFT_A_MASTERWORK}
     )
+    char.set_toughness(AT.g1)
+    char.set_endurance(AT.b1)
+    char.set_recuperation(AT.b3)
+
+    char.set_linguistic_ability(AT.g2)
+    char.set_focus(AT.g1)
+    char.set_analytical_ability(AT.g1)
+    char.set_musical_ability(AT.b1)
+    char.set_patience(AT.b2)
+
+    char.set_humor(Quality.High)
+    char.set_anxiety_propensity(Quality.High)
+    char.set_friendliness(Quality.High)
+    char.set_thoughtlessness(Quality.High)
+
+    char.set_sacrifice(Quality.VeryLow)
+    char.set_tranquility(Quality.Low)
+
     return char
 
 
 def instantiate_char12() -> Character:
     char = Character(
-        name="Degel Coveredpapers", gender="male", goals={Goals.CRAFT_A_MASTERWORK}
+        name="Rith Blamelesschamber",
+        gender="male",
+        goals={Goals.CREATE_A_GREAT_WORK_OF_ART},
     )
+    char.set_endurance(AT.g3)
+    char.set_recuperation(AT.b1)
+    char.set_toughness(AT.b1)
+
+    char.set_creativity(AT.g3)
+    char.set_spatial_sense(AT.g3)
+    char.set_focus(AT.g2)
+    char.set_analytical_ability(AT.b1)
+    char.set_willpower(AT.b2)
+    char.set_empath(AT.b3)
+
+    char.set_immoderation(Quality.VeryHigh)
+    char.set_stress_vulnerability(Quality.Low)
+
+    char.set_family(Quality.Lowest)
     return char
 
 
@@ -456,9 +504,6 @@ def instantiate_chartemplate() -> Character:
 
 
 def print_skill_table(chars: list[Character]):
-    for char in chars:
-        print(f"{char.name}={char.goals}")
-        char.add_skills()
     names = [f"|{x.name.split()[0]:<11}".ljust(8) for x in chars]
     namestr = "".join(names)
     for skill in Skills:
@@ -508,6 +553,9 @@ def main():
     # chars.append(instantiate_char5())
     # chars.append(instantiate_char6())
     chars = [instantiate_char7(), instantiate_char8(), instantiate_char9()]
+    for char in chars:
+        print(f"{char.name}={char.goals}")
+        char.add_skills()
     print_skill_table(chars)
 
     # need engraver
@@ -520,7 +568,12 @@ def main():
                 (Skills.WoundDresser, 2),
                 (Skills.Suturer, 2),
             ],
-            "roles": [Roles.BookKeeper, "WoodCutter", "Fishing", "Performer"],
+            "roles": [
+                Roles.BookKeeper,
+                "WoodCutter",
+                "Fishing",
+            ],
+            "goal": "family",
         },
         "Rigoth": {
             "skills": [
@@ -531,7 +584,7 @@ def main():
                 (Skills.Leader, 1),
                 (Skills.StoneCarver, 2),
             ],
-            "roles": [Roles.MilitaryLeader, "Miner"],
+            "roles": [Roles.MilitaryLeader, "Miner1"],
         },
         "Kosoth": {
             "skills": [
@@ -550,7 +603,8 @@ def main():
                 (Skills.Persuader, 2),
                 (Skills.Weaver, 2),
             ],
-            "roles": [Roles.Broker, "Hauler", "TavernKeeper"],
+            "roles": [Roles.Broker, "Hauler1", "TavernKeeper"],
+            "goal": "skill",
         },
         "Cilob": {
             "skills": [
@@ -583,10 +637,26 @@ def main():
         },
         "Degel": {
             "skills": [(Skills.ArmorSmith, 2), (Skills.FurnaceOperator, 0)],
-            "roles": [],
+            "roles": ["Hauler3"],
         },
-        "Urdim": {"Skills": [(Skills.GemCutter, 3), "GemSetter,3"]},
-        "Kogan": {"Skills": ["TemplePerformer (music g3)", "GemSetter,3"]},
+        "Urdim": {
+            "skills": [(Skills.GemCutter, 3), "GemSetter,3"],
+            "roles": ["Hauler2"],
+        },
+        "Kogan": {
+            "skills": ["Poet (music atb g3)"],
+            "roles": ["hauler4", "TavernPerfomer"],
+        },
+        "Kadol": {
+            "skills": [(Skills.StoneCrafter, 6), "Shearer 5"],
+            "roles": ["Militia", "Miner2"],
+            "goal": "skill",
+        },
+        "Meng": {"skills": ["Musician 12"], "roles": ["TemplePerformer", "Hauler6"]},
+        "Rith": {
+            "skills": ["Musician 12"],
+            "roles": ["TavernPerformer", "Militia", "Miner3"],
+        },
     }
 
 
