@@ -176,6 +176,16 @@ class Appraiser(Skill):
         }
 
 
+class Archer(MilitarySkill):
+    def __init__(self) -> None:
+        self.attributes = {
+            BodyAttributes.Agility: Scores.A,
+            SoulAttributes.SpatialSense: Scores.A,
+            SoulAttributes.Kinesthesic: Scores.B,
+            SoulAttributes.Focus: Scores.C,
+        }
+
+
 class ArmorSmith(CraftSkill):
     def __init__(self) -> None:
         self.attributes = {
@@ -410,6 +420,16 @@ class Cook(Skill):
             SoulAttributes.AnalyticalAbility: Scores.B,
             SoulAttributes.Creativity: Scores.C,
             BodyAttributes.Agility: Scores.A,
+        }
+
+
+class Crossbowman(MilitarySkill):
+    def __init__(self) -> None:
+        self.attributes = {
+            BodyAttributes.Agility: Scores.A,
+            SoulAttributes.SpatialSense: Scores.A,
+            SoulAttributes.Kinesthesic: Scores.B,
+            SoulAttributes.Focus: Scores.C,
         }
 
 
@@ -1029,6 +1049,9 @@ class Skills(Enum):
     # Army
     Tactician = Tactician()
     Leader = Leader()
+    # Hunter
+    Archer = Archer()
+    Crossbowman = Crossbowman()
 
     # Broker
     Appraiser = Appraiser()
