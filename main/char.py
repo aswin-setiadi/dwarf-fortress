@@ -1330,6 +1330,7 @@ class Character:
 
     def set_greed(self, v: Quality):
         """
+        Greed might affect item attachment rate, according to Litast
         3.Highest| is as avaricious as they come, obsessed with acquiring wealth
 
         2.VeryHigh| is very greedy
@@ -1767,6 +1768,11 @@ class Character:
 
     def set_vengeful(self, v: Quality):
         """
+        Higher value might trigger more vengeful thoughts when joining an existing conflict?
+        1 dwarf have low vengeful but thought 3 vengeful when fighting kea
+        according to Litast Lucidess from dsicord, it is negative and stressful thought
+        Toy said it is -ve thought, also a short term stressor, purple is on higher end of -ve stress spectrum
+
         3.Highest| is vengeful and never forgets or forgives past grievances
 
         2.VeryHigh| has little time for forgiveness and will generally seek retribution
