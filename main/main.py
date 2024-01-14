@@ -8,6 +8,7 @@ from stats import (
     AttributeType as AT,
     Quality,
 )
+from utils import print_skill_table
 
 # logging.basicConfig(filename="char.log", filemode="a", level=logging.INFO)
 logging.basicConfig(level=logging.INFO)
@@ -498,49 +499,150 @@ def instantiate_char12() -> Character:
     return char
 
 
+def instantiate_char13() -> Character:
+    char = Character(
+        name="Avuz Roadboarded", gender="female", goals={Goals.START_A_FAMILY}
+    )
+    char.set_agility(AT.g1)
+    char.set_endurance(AT.b2)
+
+    char.set_kinesthesic_sense(AT.g1)
+    char.set_linguistic_ability(AT.g1)
+    char.set_creativity(AT.b1)
+    char.set_empath(AT.b2)
+    char.set_memory(AT.b2)
+
+    char.set_stress_vulnerability(Quality.Low)
+
+    return char
+
+
+def instantiate_char14() -> Character:
+    char = Character(
+        name="Edzul Salvestokes", gender="female", goals={Goals.MASTER_A_SKILL}
+    )
+    char.set_recuperation(AT.b1)
+
+    char.set_creativity(AT.g2)
+    char.set_spatial_sense(AT.b1)
+    char.set_linguistic_ability(AT.b2)
+
+    char.set_stress_vulnerability(Quality.High)
+
+    return char
+
+
+def instantiate_char15() -> Character:
+    char = Character(
+        name="Fath Swordpracticed",
+        gender="female",
+        goals={Goals.CREATE_A_GREAT_WORK_OF_ART},
+    )
+    char.set_strength(AT.g1)
+
+    char.set_kinesthesic_sense(AT.g1)
+    char.set_memory(AT.g1)
+    char.set_willpower(AT.b1)
+
+    char.set_cheer_propensity(Quality.Low)
+    char.set_excitement_seeking(Quality.Low)
+    char.set_anxiety_propensity(Quality.High)
+    char.set_stress_vulnerability(Quality.Low)
+    char.set_immoderation(Quality.High)
+    char.set_bravery(Quality.High)
+
+    char.set_cunning(Quality.Low)
+    char.set_craftsmanship(Quality.Low)
+    return char
+
+
+def instantiate_char16() -> Character:
+    char = Character(
+        name="Shorast Enjoyarmors", gender="female", goals={Goals.MASTER_A_SKILL}
+    )
+    char.set_intuition(AT.g3)
+    char.set_musical_ability(AT.g1)
+    char.set_willpower(AT.g1)
+    char.set_anger_propensity(Quality.High)
+    char.set_violent(Quality.High)
+
+    char.set_perseverance_belief(Quality.High)
+    char.set_tradition(Quality.Low)
+    return char
+
+
+def instantiate_char17() -> Character:
+    char = Character(
+        name="Zulban Kindnesscrafts",
+        gender="female",
+        goals={Goals.CREATE_A_GREAT_WORK_OF_ART},
+    )
+    char.set_endurance(AT.g1)
+    char.set_creativity(AT.g2)
+    char.set_spatial_sense(AT.b1)
+    char.set_patience(AT.b1)
+
+    char.set_humor(Quality.Highest)
+    char.set_stress_vulnerability(Quality.Low)
+    char.set_anxiety_propensity(Quality.Low)
+
+    char.set_perseverance_belief(Quality.VeryLow)
+    char.set_family(Quality.VeryLow)
+    char.set_fairness(Quality.Neutral)
+
+    return char
+
+
+def instantiate_char18() -> Character:
+    char = Character(
+        name="Zon Fanciedhelms", gender="female", goals={Goals.START_A_FAMILY}
+    )
+    char.set_strength(AT.g1)
+    char.set_agility(AT.b1)
+
+    char.set_linguistic_ability(AT.g2)
+    char.set_musical_ability(AT.g2)
+    char.set_willpower(AT.g1)
+    char.set_patience(AT.b2)
+    char.set_analytical_ability(AT.b2)
+
+    char.set_stress_vulnerability(Quality.High)
+    char.set_cheer_propensity(Quality.High)
+    char.set_cruelty(Quality.Low)
+
+    char.set_eloquence(Quality.Highest)
+    char.set_martial_prowess(Quality.Low)
+    char.set_tranquility(Quality.High)
+    return char
+
+
+def instantiate_char19() -> Character:
+    char = Character(
+        name="Meng Websaves", gender="female", goals={Goals.START_A_FAMILY}
+    )
+    char.set_agility(AT.g2)
+    char.set_endurance(AT.g2)
+
+    char.set_memory(AT.g1)
+    char.set_kinesthesic_sense(AT.g1)
+    char.set_patience(AT.g1)
+    char.set_spatial_sense(AT.b2)
+    char.set_analytical_ability(AT.b2)
+
+    char.set_cruelty(Quality.VeryLow)
+    char.set_excitement_seeking(Quality.VeryHigh)
+    char.set_stress_vulnerability(Quality.Low)
+    char.set_politeness(Quality.Low)
+    char.set_bravery(Quality.Low)
+
+    char.set_merriment(Quality.VeryHigh)
+    return char
+
+
 def instantiate_chartemplate() -> Character:
     char = Character(name="", gender="", goals={})
     return char
 
-
-def print_skill_table(chars: list[Character]):
-    names = [f"|{x.name.split()[0]:<11}".ljust(8) for x in chars]
-    namestr = "".join(names)
-    for skill in Skills:
-        if skill.name == "Brewer":
-            print("Orderlies".ljust(19, "#") + namestr)
-        elif skill.name == "Bowyer":
-            print("Crafting".ljust(19, "#") + namestr)
-        elif skill.name == "Discipline":
-            print("Military".ljust(19, "#") + namestr)
-        elif skill.name == "Appraiser":
-            print("Broker".ljust(19, "#") + namestr)
-        elif skill.name == "Organizer":
-            print("Manager/ ExpeditionLeader".ljust(19, "#") + namestr)
-        elif skill.name == "Diagnoser":
-            print("CMD".ljust(19, "#") + namestr)
-        elif skill.name == "BoneDoctor":
-            print("Doctor".ljust(19, "#") + namestr)
-        elif skill.name == "RecordKeeper":
-            print("BookKeeper".ljust(19, "#") + namestr)
-        elif skill.name == "Comedian":
-            print("SocialSkills".ljust(19, "#") + namestr)
-        elif skill.name == "Concentration":
-            print("Misc.".ljust(19, "#") + namestr)
-        l: list[str] = []
-        for char in chars:
-            if skill in char.skills.keys():
-                t = char.skills[skill]
-                if t[1]:
-                    tmp = f"{t[0]} T {t[2]}"
-                else:
-                    tmp = f"{t[0]} F {t[2]}"
-                tmp = f"{tmp:<10}"
-            else:
-                tmp = f"None".ljust(10)
-            l.append(tmp)
-        s = "|".join(l)
-        print(f"{skill:<19}= {s}")
 
 
 def main():
@@ -552,7 +654,20 @@ def main():
     # chars.append(instantiate_char4())
     # chars.append(instantiate_char5())
     # chars.append(instantiate_char6())
-    chars = [instantiate_char7(), instantiate_char8(), instantiate_char9()]
+    # chars.append(instantiate_char7())
+    # chars.append(instantiate_char8())
+    # chars.append(instantiate_char9())
+    # chars.append(instantiate_char10())
+    # chars.append(instantiate_char11())
+    # chars.append(instantiate_char12())
+    # chars.append(instantiate_char13())
+    # chars.append(instantiate_char14())
+    # chars.append(instantiate_char15())
+    chars.append(instantiate_char16())
+    chars.append(instantiate_char17())
+    chars.append(instantiate_char18())
+    chars.append(instantiate_char19())
+    # chars = [instantiate_char7(), instantiate_char8(), instantiate_char9()]
     for char in chars:
         print(f"{char.name}={char.goals}")
         char.add_skills()
@@ -593,7 +708,7 @@ def main():
                 (Skills.Mason, 3),
                 (Skills.Bowyer, 3),
             ],
-            "roles": [],
+            "roles": ["stonecutter"],
         },
         "Urist": {
             "skills": [
@@ -623,7 +738,7 @@ def main():
                 (Skills.BoneDoctor, 2),
                 (Skills.Surgeon, 2),
             ],
-            "roles": [],
+            "roles": ["Archer1"],
         },
         "Sigun": {
             "skills": [
@@ -637,11 +752,11 @@ def main():
         },
         "Degel": {
             "skills": [(Skills.ArmorSmith, 2), (Skills.FurnaceOperator, 0)],
-            "roles": ["Hauler3"],
+            "roles": [],
         },
         "Urdim": {
             "skills": [(Skills.GemCutter, 3), "GemSetter,3"],
-            "roles": ["Hauler2"],
+            "roles": ["Miner", "Militia"],
         },
         "Kogan": {
             "skills": ["Poet (music atb g3)"],
@@ -649,15 +764,64 @@ def main():
         },
         "Kadol": {
             "skills": [(Skills.StoneCrafter, 6), "Shearer 5"],
-            "roles": ["Militia", "Miner2"],
+            "roles": ["Militia", "Miner3"],
             "goal": "skill",
         },
-        "Meng": {"skills": ["Musician 12"], "roles": ["TemplePerformer", "Hauler6"]},
+        "Meng": {"skills": ["Musician 12"], "roles": ["TemplePerformer", "Hauler5"]},
         "Rith": {
             "skills": ["Musician 12"],
-            "roles": ["TavernPerformer", "Militia", "Miner3"],
+            "roles": ["TavernPerformer", "Militia", "Miner4"],
+        },
+        "Avuz": {
+            "skills": [
+                (Skills.WeaponSmith, 13),
+                (Skills.GemCutter, 7),
+                ("armoruser,discipline,observer,fighter,biter,dodger", 4),
+            ],
+            "roles": [
+                "Militia",
+                "Miner5",
+                "CompotentPoet-> xPerformer",
+                "GemCutter",
+                "WeaponSmith",
+            ],
+        },
+        "Edzul": {
+            "skills": [("Trapper", 13), ("Dyer", 5), ("Gelder", 3), ("Dancer", 3)],
+            "roles": ["Dancer-> xPerformer", "hauler6", "Stonecutter"],
+        },
+        "Fath": {
+            "skills": [],
+            "roles": ["Militia", "miner8"],  # TODO
+        },
+        "Shorast": {
+            "skills": [("Trapper", 6)],
+            "roles": ["Miner2", "Militia"],
+        },
+        "Zulban": {
+            "skills": [(Skills.GemCutter, 3), ("LyeMaker", 3)],
+            "roles": ["Militia", "Miner7"],
+        },
+        "Zon": {
+            "skills": [("Trapper",10),("Milker",5)],
+            "roles": ["nganggur","miner"],
+        },
+        "MengOrs": {
+            "skills": [],
+            "roles": ["nganggur"],
+        },
+        "template": {
+            "skills": [],
+            "roles": [],
         },
     }
+
+    armies = [
+        "spear":["Rigoth", "Kadol", "Shorast", "Urdim"],
+        "Sword":["Avuz", "Rith", "Zulban",
+        "crossbow":["Sazir"]
+    ]
+    miners=["Fath","Degel","Meng","Kogan"]
 
 
 if __name__ == "__main__":
