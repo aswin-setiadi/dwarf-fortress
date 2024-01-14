@@ -10,8 +10,13 @@ from stats import (
 )
 from utils import print_skill_table
 
-# logging.basicConfig(filename="char.log", filemode="a", level=logging.INFO)
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(
+    filename="char.log",
+    filemode="a",
+    format="%(asctime)s %(module)s %(levelname)s %(message)s",
+    level=logging.INFO,
+)
+# logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
@@ -644,7 +649,6 @@ def instantiate_chartemplate() -> Character:
     return char
 
 
-
 def main():
     chars: list[Character] = []
     # chars.append(instantiate_char0())
@@ -671,7 +675,7 @@ def main():
     for char in chars:
         print(f"{char.name}={char.goals}")
         char.add_skills()
-    print_skill_table(chars)
+    print_skill_table(chars, skills=[Skills.Appraiser, Skills.Organizer])
 
     # need engraver
     skill_assignment = {
@@ -803,8 +807,8 @@ def main():
             "roles": ["Militia", "Miner7"],
         },
         "Zon": {
-            "skills": [("Trapper",10),("Milker",5)],
-            "roles": ["nganggur","miner"],
+            "skills": [("Trapper", 10), ("Milker", 5)],
+            "roles": ["nganggur", "miner"],
         },
         "MengOrs": {
             "skills": [],
@@ -816,12 +820,12 @@ def main():
         },
     }
 
-    armies = [
-        "spear":["Rigoth", "Kadol", "Shorast", "Urdim"],
-        "Sword":["Avuz", "Rith", "Zulban",
-        "crossbow":["Sazir"]
-    ]
-    miners=["Fath","Degel","Meng","Kogan"]
+    armies = {
+        "spear": ["Rigoth", "Kadol", "Shorast", "Urdim"],
+        "Sword": ["Avuz", "Rith", "Zulban"],
+        "crossbow": ["Sazir"],
+    }
+    miners = ["Fath", "Degel", "Meng", "Kogan"]
 
 
 if __name__ == "__main__":
