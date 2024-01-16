@@ -315,6 +315,8 @@ class Comedian(Skill):
 
 
 class Concentration(Skill):
+    """absorb military demo"""
+
     def __init__(self) -> None:
         self.attributes = {
             SoulAttributes.Focus: Scores.A,
@@ -721,6 +723,8 @@ class Negotiator(Skill):
 
 
 class Observer(Skill):
+    """Detect stealth, good for entrance guard/ marksdwarf on wall"""
+
     def __init__(self) -> None:
         self.attributes = {
             SoulAttributes.SpatialSense: Scores.A,
@@ -1013,9 +1017,9 @@ class Skills(Enum):
     FurnaceOperator = FurnaceOperator()
     Herbalist = Herbalist()
     Planter = Planter()
-    Spinner = Spinner()
-    Thresher = Thresher()
-    Weaver = Weaver()
+    Spinner = Spinner()  # spin wool
+    Thresher = Thresher()  # spin plant
+    Weaver = Weaver()  # thread (including spider silk) to cloth
     WoodBurner = WoodBurner()
     WoodCutter = WoodCutter()
     Suturer = Suturer()
