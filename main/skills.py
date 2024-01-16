@@ -1086,6 +1086,12 @@ class Skills(Enum):
     Concentration = Concentration()
     Observer = Observer()
 
+    @classmethod
+    def list(cls) -> list[Skill]:
+        """return list of Skill based obj"""
+        # return list(map(lambda x: x.value, cls))
+        return [x.value for x in cls]
+
     def __call__(self):
         self.value
 

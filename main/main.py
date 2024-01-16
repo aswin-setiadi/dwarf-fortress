@@ -676,6 +676,7 @@ def main():
         print(f"{char.name}={char.goals}")
         char.add_skills()
     print_skill_table(chars, skills=[Skills.Appraiser, Skills.Organizer])
+    # print_skill_table(chars)
 
     # need engraver
     skill_assignment = {

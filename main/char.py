@@ -80,7 +80,7 @@ class Character:
         self.attributes: dict[Enum, AttributeType] = dict(
             (x, AttributeType.n) for x in Character.atbs
         )
-        self.skills: dict[Enum, tuple[int, bool, float]] = {}
+        self.skills: dict[Skills, tuple[int, bool, float]] = {}
 
     def add_skills(self):
         for skill in Skills:
