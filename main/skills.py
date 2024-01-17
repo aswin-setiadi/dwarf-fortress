@@ -63,6 +63,7 @@ class Skill(metaclass=ABCMeta):
             score += attributes[atb] / weight
         return score
 
+
 class BrokerSkill(Skill):
     def is_skill_clashes(
         self,
@@ -70,10 +71,11 @@ class BrokerSkill(Skill):
         goals: set[Goals],
         facets: dict[Facets, Quality],
         name: str,
-        ) -> bool:
+    ) -> bool:
         if beliefs[Beliefs.COMMERCE] < Quality.Neutral:
-            return False
-        return True
+            return True
+        return False
+
 
 class CraftSkill(Skill):
     def is_skill_clashes(
@@ -845,7 +847,7 @@ class Spinner(Skill):
 
 class StoneCarver(CraftSkill):
     """
-    Produces stone furniture(table chair door), slab for tomb
+    Produces stone furniture(table chair door), slab for tomb, statue
     not sure order correct or not cause missing in attributes wiki
     and in stone carver wiki it seems ordered from bottom up.
     """
