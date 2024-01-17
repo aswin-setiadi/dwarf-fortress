@@ -63,6 +63,17 @@ class Skill(metaclass=ABCMeta):
             score += attributes[atb] / weight
         return score
 
+class BrokerSkill(Skill):
+    def is_skill_clashes(
+        self,
+        beliefs: dict[Beliefs, Quality],
+        goals: set[Goals],
+        facets: dict[Facets, Quality],
+        name: str,
+        ) -> bool:
+        if beliefs[Beliefs.COMMERCE] < Quality.Neutral:
+            return False
+        return True
 
 class CraftSkill(Skill):
     def is_skill_clashes(
@@ -167,7 +178,7 @@ class AnimalTrainer(Skill):
         }
 
 
-class Appraiser(Skill):
+class Appraiser(BrokerSkill):
     def __init__(self) -> None:
         self.attributes = {
             SoulAttributes.AnalyticalAbility: Scores.A,
@@ -654,7 +665,7 @@ class Intimidator(Skill):
         return True
 
 
-class JudgeOfIntent(Skill):
+class JudgeOfIntent(BrokerSkill):
     def __init__(self) -> None:
         self.attributes = {
             SoulAttributes.Empathy: Scores.A,
@@ -713,7 +724,7 @@ class Miner(Skill):
         }
 
 
-class Negotiator(Skill):
+class Negotiator(BrokerSkill):
     def __init__(self) -> None:
         self.attributes = {
             SoulAttributes.Language: Scores.A,
