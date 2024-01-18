@@ -913,6 +913,18 @@ class Suturer(Skill):
         }
 
 
+class Sword(MilitarySkill):
+    def __init__(self) -> None:
+        self.attributes = {
+            SoulAttributes.Kinesthesic: Scores.A,
+            SoulAttributes.Willpower: Scores.B,
+            SoulAttributes.SpatialSense: Scores.C,
+            BodyAttributes.Strength: Scores.A,
+            BodyAttributes.Agility: Scores.B,
+            BodyAttributes.Toughness: Scores.C,
+        }
+
+
 class Tactician(MilitarySkill):
     def __init__(self) -> None:
         self.attributes = {
@@ -1060,6 +1072,7 @@ class Skills(Enum):
 
     # military
     Discipline = Discipline()  # easy to increase w. basic mil. training.
+    Sword = Sword()
     ArmorUser = ArmorUser()
     Fighter = Fighter()
     Dodger = Dodger()
