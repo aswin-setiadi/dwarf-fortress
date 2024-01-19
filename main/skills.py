@@ -125,7 +125,7 @@ class MilitarySkill(Skill):
         if kwargs["bypass"] == True:
             return False
         if beliefs[Beliefs.MARTIAL_PROWESS] < Quality.Neutral:
-            logger.warning(f"{name} {Beliefs.MARTIAL_PROWESS} > {Quality.Neutral}")
+            logger.warning(f"{name} {Beliefs.MARTIAL_PROWESS} < {Quality.Neutral}")
             return True
             # or beliefs[Beliefs.STOICISM] < Quality.Neutral
         if beliefs[Beliefs.PEACE] > Quality.Neutral:
