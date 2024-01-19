@@ -34,6 +34,13 @@ def main():
     chars.append(cg.char8())
     chars.append(cg.char9())
     chars.append(cg.char10())
+    chars.append(cg.char11())
+    chars.append(cg.char12())
+    chars.append(cg.char13())
+    chars.append(cg.char14())
+    chars.append(cg.char15())
+    chars.append(cg.char16())
+    chars.append(cg.char17())
     for char in chars:
         print(f"{char.name}={char.goals}")
         char.add_skills()
@@ -96,7 +103,78 @@ def main():
             "Teacher4",
             Skills.ArmorSmith,
         ],
-        "Kosoth": [],
+        "KosothAva": [
+            "gemset10",
+            "miner5",
+            "cheesemaker1",
+            "siegeEng1",
+            "papermaker1",
+            "axe,shield,armor,discipline,observer,fighter,dodger=3",
+        ],
+        "likotIlral": [
+            "engraver5",
+            "mason5",
+            "tanner5",
+            "stonecutter5",
+            "stonecarver5",
+            "spear,shield,armor,discipline,observer,fighter,dodger3",
+            "dancer3",
+            "rider2",
+            "climber3",
+            "swimmer1",
+        ],
+        "mistemErith": [
+            "surgeon1",
+            "recordkeeper1",
+            "persuader3",
+            "musician3",
+            "percussionist2",
+        ],
+        "monomTekkud": [
+            "glassmaker6",
+            "persuader,judgeofIntent,convers,comedian4",
+            "negotiate,liar,intimidator,flatterer,consoler,pacifier3",
+            "dancer3",
+        ],
+        "mosusSigun": [
+            "clothier1",
+            "appraiser,organizer,recordk1",
+            "spear,shield,armor,discipline,observer,fighter,dodger1",
+            "persuader,pacifier3",
+            "liar,intimidator,converse,comedian,flatterer2",
+            "negotiate,JoI,consoler1",
+            "swimmer,climber,dancer1",
+        ],
+        "thikutIsha": [
+            "bowyer6",
+            "mason4",
+            "weaver1",
+            "flatterer3",
+            "JoI,intimidate,converse,comedian,consoler,pacifier2",
+            "persuader,negotiate,liar1",
+            "dancer,musician,keyboardist2",
+            "swimmer1",
+        ],
+        "tulonShol": ["miner1", "bonecarver1", "dancer2", "swimmer1"],
+    }
+    needs = {
+        "AtisAth": ["fight", "craft", "martialtrain"],
+        "Dakost": ["fight"],
+        "Kogsak": ["fight"],
+        "Shorast": ["fight", "martialtrain"],
+        "uristD": ["craftobj!", "fight"],
+        "uristE": ["fight"],
+        "zulbanKubul": ["fight", "martialtrain"],
+        "lokumLet": [],
+        "unibKeskal": ["fight"],
+        "urdimRith": ["praytomafi!", "learnsomething"],
+        "kosothAva": [],
+        "likotIlral": [],
+        "mistemErith": [],
+        "monomTekkud": [],
+        "MosusSigun": ["craft object"],
+        "thikutIsha": [],
+        "tulonShol": [],
     }
 
 
