@@ -168,6 +168,10 @@ class MilitarySkill(Skill):
         return (score, goal)
 
 
+class PerformingSKill(Skill):
+    ...
+
+
 class AnimalTrainer(Skill):
     def __init__(self) -> None:
         self.attributes = {
@@ -448,6 +452,18 @@ class Crossbowman(MilitarySkill):
         }
 
 
+class Dancer(PerformingSKill):
+    def __init__(self) -> None:
+        self.attributes = {
+            SoulAttributes.Kinesthesic: Scores.A,
+            SoulAttributes.SpatialSense: Scores.B,
+            SoulAttributes.Music: Scores.C,
+            BodyAttributes.Agility: Scores.A,
+            BodyAttributes.Endurance: Scores.B,
+            BodyAttributes.Strength: Scores.C,
+        }
+
+
 class Diagnoser(Skill):
     def __init__(self) -> None:
         self.attributes = {
@@ -676,6 +692,16 @@ class JudgeOfIntent(BrokerSkill):
         }
 
 
+class Keyboard(PerformingSKill):
+    def __init__(self) -> None:
+        self.attributes = {
+            SoulAttributes.Music: Scores.A,
+            SoulAttributes.Creativity: Scores.B,
+            SoulAttributes.Focus: Scores.C,
+            BodyAttributes.Agility: Scores.A,
+        }
+
+
 class Leader(MilitarySkill):
     def __init__(self) -> None:
         self.attributes = {
@@ -787,6 +813,18 @@ class Pacifier(Skill):
         return True
 
 
+class Percussion(PerformingSKill):
+    def __init__(self) -> None:
+        self.attributes = {
+            SoulAttributes.Music: Scores.A,
+            SoulAttributes.Creativity: Scores.B,
+            SoulAttributes.Focus: Scores.C,
+            BodyAttributes.Agility: Scores.A,
+            BodyAttributes.Endurance: Scores.B,
+            BodyAttributes.Strength: Scores.C,
+        }
+
+
 class Persuader(Skill):
     def __init__(self) -> None:
         self.attributes = {
@@ -825,12 +863,30 @@ class Planter(Skill):
         }
 
 
+class Poet(PerformingSKill):
+    def __init__(self) -> None:
+        self.attributes = {
+            SoulAttributes.Language: Scores.A,
+            SoulAttributes.Creativity: Scores.B,
+            SoulAttributes.Intuition: Scores.C,
+        }
+
+
 class RecordKeeper(Skill):
     def __init__(self) -> None:
         self.attributes = {
             SoulAttributes.AnalyticalAbility: Scores.A,
             SoulAttributes.Memory: Scores.B,
             SoulAttributes.Focus: Scores.C,
+        }
+
+
+class Speaker(PerformingSKill):
+    def __init__(self) -> None:
+        self.attributes = {
+            SoulAttributes.Language: Scores.A,
+            SoulAttributes.SocialAwareness: Scores.B,
+            SoulAttributes.Empathy: Scores.C,
         }
 
 
@@ -885,6 +941,16 @@ class StoneCutter(Skill):
 
     def __init__(self) -> None:
         self.attributes = {}
+
+
+class StringedInstrument(PerformingSKill):
+    def __init__(self) -> None:
+        self.attributes = {
+            SoulAttributes.Music: Scores.A,
+            SoulAttributes.Creativity: Scores.B,
+            SoulAttributes.Focus: Scores.C,
+            BodyAttributes.Agility: Scores.A,
+        }
 
 
 class Surgeon(Skill):
@@ -963,6 +1029,17 @@ class Weaver(Skill):
             SoulAttributes.SpatialSense: Scores.B,
             SoulAttributes.Creativity: Scores.C,
             BodyAttributes.Agility: Scores.A,
+        }
+
+
+class WindInstrument(PerformingSKill):
+    def __init__(self) -> None:
+        self.attributes = {
+            SoulAttributes.Music: Scores.A,
+            SoulAttributes.Creativity: Scores.B,
+            SoulAttributes.Focus: Scores.C,
+            BodyAttributes.Agility: Scores.A,
+            BodyAttributes.Endurance: Scores.B,
         }
 
 
@@ -1115,6 +1192,15 @@ class Skills(Enum):
     # misc.
     Concentration = Concentration()
     Observer = Observer()
+
+    # performing
+    Dancer = Dancer()
+    Keyboardist = Keyboard()
+    Percussion = Percussion()
+    Poet = Poet()
+    Speaker = Speaker()
+    StringedInstrument = StringedInstrument()
+    WindInstrument = WindInstrument()
 
     @classmethod
     def list(cls) -> list[Skill]:
