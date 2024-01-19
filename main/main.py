@@ -829,5 +829,426 @@ def main():
     miners = ["Fath", "Degel", "Meng", "Kogan"]
 
 
+def game2():
+    chars: list[Character] = []
+    c0 = Character(
+        name="Dodok Lolokshalig",
+        gender="male",
+        goals={Goals.CREATE_A_GREAT_WORK_OF_ART},
+    )
+    # body and soul attributes
+    c0.set_creativity(AT.g3)
+    c0.set_kinesthesic_sense(AT.g3)
+    c0.set_willpower(AT.g1)
+    c0.set_analytical_ability(AT.b1)
+    c0.set_patience(AT.b2)
+    # facets
+    c0.set_bashful(Quality.VeryLow)
+    c0.set_bravery(Quality.VeryLow)
+    c0.set_depression_propensity(Quality.VeryHigh)
+    c0.set_greed(Quality.Low)
+    c0.set_wastefulness(Quality.Low)
+    c0.set_politeness(Quality.Low)
+    c0.set_immodesty(Quality.Low)
+    c0.set_privacy(Quality.High)
+    c0.set_discord(Quality.Low)
+    c0.set_altruism(Quality.Low)
+    c0.set_vengeful(Quality.Low)
+    c0.set_confidence(Quality.High)
+    c0.set_lust_propensity(Quality.High)
+
+    # beliefs
+    c0.set_hard_work(Quality.Lowest)
+    c0.set_commerce(Quality.Low)
+    c0.set_introspection(Quality.Low)
+    chars.append(c0)
+
+    c1 = Character(
+        name="Eshtan Thuneninod",
+        gender="male",
+        goals={Goals.CREATE_A_GREAT_WORK_OF_ART},
+    )
+    c1.set_spatial_sense(AT.g2)
+    c1.set_social_awareness(AT.g2)
+    c1.set_intuition(AT.b1)
+
+    c1.set_trust(Quality.VeryHigh)
+    c1.set_humor(Quality.VeryLow)
+    c1.set_ambition(Quality.VeryLow)
+    c1.set_singleminded(Quality.High)
+    c1.set_imagination(Quality.Low)
+    c1.set_hopeful(Quality.High)
+    c1.set_tolerant(Quality.Low)
+    c1.set_activity_level(Quality.High)
+    c1.set_privacy(Quality.Low)
+    c1.set_perfectionist(Quality.Low)
+
+    c1.set_knowledge(Quality.Low)
+    c1.set_power(Quality.Low)
+
+    chars.append(c1)
+
+    c2 = Character(name="Momuz Othmorul", gender="male", goals={Goals.MASTER_A_SKILL})
+    c2.set_strength(AT.g1)
+    c2.set_toughness(AT.b1)
+    c2.set_intuition(AT.g3)
+    c2.set_focus(AT.g1)
+    c2.set_linguistic_ability(AT.g1)
+    c2.set_kinesthesic_sense(AT.b1)
+    c2.set_patience(AT.b2)
+
+    c2.set_gratitude(Quality.VeryHigh)
+    c2.set_closeminded(Quality.VeryLow)
+    c2.set_greed(Quality.Low)
+    c2.set_orderliness(Quality.Low)
+    c2.set_vanity(Quality.High)
+    c2.set_singleminded(Quality.High)
+    c2.set_imagination(Quality.High)
+    c2.set_vengeful(Quality.Low)
+    c2.set_immoderation(Quality.High)
+
+    c2.set_harmony(Quality.Low)
+    c2.set_competition(Quality.High)
+
+    chars.append(c2)
+
+    c3 = Character(
+        name="Tobul Edosrigoth",
+        gender="female",
+        goals={Goals.CREATE_A_GREAT_WORK_OF_ART},
+    )
+
+    c3.set_creativity(AT.g3)
+    c3.set_willpower(AT.g2)
+    c3.set_social_awareness(AT.b2)
+
+    c3.set_humor(Quality.High)
+    c3.set_altruism(Quality.VeryHigh)
+    c3.set_cruelty(Quality.VeryHigh)
+    c3.set_excitement_seeking(Quality.High)
+    c3.set_anger_propensity(Quality.High)
+    c3.set_gregariousness(Quality.Low)
+    c3.set_activity_level(Quality.Low)
+    c3.set_thoughtlessness(Quality.High)
+    c3.set_cheer_propensity(Quality.Low)
+    c3.set_gratitude(Quality.High)
+    c3.set_greed(Quality.High)
+    c3.set_lust_propensity(Quality.Low)
+    c3.set_dutifulness(Quality.High)
+
+    c3.set_commerce(Quality.Low)
+    c3.set_stoicism(Quality.Low)
+    c3.set_perseverance_belief(Quality.Low)
+    c3.set_sacrifice(Quality.High)
+    c3.set_power(Quality.Low)
+
+    chars.append(c3)
+
+    c4 = Character(
+        name="Vucar Asteshkosoth", gender="female", goals={Goals.START_A_FAMILY}
+    )
+    c4.set_recuperation(AT.b1)
+    c4.set_intuition(AT.g2)
+    c4.set_kinesthesic_sense(AT.g2)
+    c4.set_memory(AT.g1)
+    c4.set_willpower(AT.g1)
+    c4.set_focus(AT.b2)
+
+    c4.set_politeness(Quality.VeryHigh)
+    c4.set_singleminded(Quality.VeryHigh)
+    c4.set_love_propensity(Quality.VeryHigh)
+    c4.set_disdain_advice(Quality.Low)
+    c4.set_assertiveness(Quality.High)
+    c4.set_discord(Quality.Low)
+    c4.set_ambition(Quality.High)
+    c4.set_altruism(Quality.Low)
+    c4.set_gregariousness(Quality.High)
+    c4.set_lust_propensity(Quality.High)
+    c4.set_imagination(Quality.Low)
+    c4.set_curious(Quality.High)
+
+    c4.set_cooperation(Quality.Low)
+    chars.append(c4)
+
+    c5 = Character(
+        name="Dodok Okirbesmar", gender="female", goals={Goals.START_A_FAMILY}
+    )
+    c5.set_disease_resistance(AT.g1)
+    c5.set_recuperation(AT.b1)
+
+    c5.set_linguistic_ability(AT.g1)
+    c5.set_musical_ability(AT.b2)
+    c5.set_kinesthesic_sense(AT.b3)
+
+    c5.set_hopeful(Quality.VeryHigh)
+    c5.set_assertiveness(Quality.VeryLow)
+    c5.set_emotionally_obsessive(Quality.High)
+    c5.set_privacy(Quality.Low)
+    c5.set_cheer_propensity(Quality.High)
+    c5.set_pride(Quality.Low)
+    c5.set_wastefulness(Quality.High)
+    c5.set_perfectionist(Quality.Low)
+    c5.set_dutifulness(Quality.High)
+    c5.set_swayed_by_emotions(Quality.Low)
+    c5.set_perseverance(Quality.High)
+    c5.set_immodesty(Quality.High)
+    c5.set_greed(Quality.High)
+    c5.set_trust(Quality.High)
+
+    c5.set_martial_prowess(Quality.VeryLow)
+    c5.set_hard_work(Quality.Neutral)
+    chars.append(c5)
+
+    c6 = Character(
+        name="Udib Keskalvathez", gender="female", goals={Goals.START_A_FAMILY}
+    )
+    c6.set_strength(AT.b1)
+    c6.set_agility(AT.b1)
+    c6.set_linguistic_ability(AT.g2)
+    c6.set_kinesthesic_sense(AT.g1)
+    c6.set_memory(AT.g1)
+    c6.set_focus(AT.g1)
+    c6.set_spatial_sense(AT.b1)
+    c6.set_creativity(AT.b1)
+
+    c6.set_lust_propensity(Quality.Highest)
+    c6.set_disdain_advice(Quality.Highest)
+    c6.set_stress_vulnerability(Quality.VeryLow)
+    c6.set_anxiety_propensity(Quality.High)
+    c6.set_greed(Quality.High)
+    c6.set_ambition(Quality.High)
+    c6.set_discord(Quality.High)
+    c6.set_emotionally_obsessive(Quality.Low)
+    c6.set_depression_propensity(Quality.Low)
+    c6.set_hopeful(Quality.High)
+    c6.set_anger_propensity(Quality.Low)
+    c6.set_bravery(Quality.Low)
+    c6.set_singleminded(Quality.Low)
+
+    c6.set_nature(Quality.Neutral)
+    chars.append(c6)
+
+    c7 = Character(
+        name="Athel Bomrekdesor", gender="female", goals={Goals.MASTER_A_SKILL}
+    )
+    c7.set_recuperation(AT.g1)
+    c7.set_strength(AT.b2)
+    c7.set_memory(AT.g2)
+    c7.set_creativity(AT.b1)
+    c7.set_spatial_sense(AT.b1)
+
+    c7.set_cheer_propensity(Quality.VeryLow)
+    c7.set_anxiety_propensity(Quality.Low)
+    c7.set_perseverance(Quality.Low)
+    c7.set_art_inclined(Quality.High)
+    c7.set_singleminded(Quality.Low)
+    c7.set_swayed_by_emotions(Quality.High)
+    c7.set_love_propensity(Quality.Low)
+    c7.set_imagination(Quality.Low)
+    c7.set_depression_propensity(Quality.High)
+    c7.set_trust(Quality.Low)
+    c7.set_hate_propensity(Quality.High)
+    c7.set_discord(Quality.High)
+    c7.set_cruelty(Quality.Low)
+    c7.set_greed(Quality.High)
+    c7.set_immoderation(Quality.High)
+    c7.set_humor(Quality.High)
+
+    c7.set_sacrifice(Quality.High)
+    c7.set_peace(Quality.High)
+
+    chars.append(c7)
+
+    c8 = Character(
+        name="Logem Ducimtorad", gender="female", goals={Goals.START_A_FAMILY}
+    )
+    c8.set_recuperation(AT.g1)
+    c8.set_disease_resistance(AT.b2)
+    c8.set_creativity(AT.g3)
+    c8.set_social_awareness(AT.g2)
+    c8.set_musical_ability(AT.g1)
+    c8.set_analytical_ability(AT.g1)
+    c8.set_linguistic_ability(AT.g1)
+    c8.set_kinesthesic_sense(AT.b1)
+    c8.set_intuition(AT.b2)
+
+    c8.set_trust(Quality.High)
+    c8.set_swayed_by_emotions(Quality.High)
+    c8.set_cruelty(Quality.Low)
+    c8.set_envy_propensity(Quality.Low)
+    c8.set_curious(Quality.High)
+    c8.set_abstract_inclined(Quality.High)
+    c8.set_disdain_advice(Quality.High)
+    c8.set_altruism(Quality.Low)
+    c8.set_vanity(Quality.Low)
+    c8.set_ambition(Quality.Low)
+    c8.set_politeness(Quality.Low)
+
+    c8.set_loyalty(Quality.Neutral)
+    c8.set_law(Quality.Neutral)
+    c8.set_truth(Quality.Neutral)
+
+    chars.append(c8)
+
+    c9 = Character(name="Onul Megidnil", gender="male", goals={Goals.START_A_FAMILY})
+    c9.set_agility(AT.g1)
+    c9.set_disease_resistance(AT.b1)
+
+    c9.set_creativity(AT.g3)
+    c9.set_spatial_sense(AT.g3)
+    c9.set_empath(AT.g2)
+    c9.set_patience(AT.g1)
+    c9.set_kinesthesic_sense(AT.b1)
+    c9.set_willpower(AT.b1)
+    c9.set_linguistic_ability(AT.b1)
+    c9.set_memory(AT.b2)
+    c9.set_focus(AT.b2)
+
+    c9.set_orderliness(Quality.Highest)
+    c9.set_lust_propensity(Quality.VeryLow)
+    c9.set_altruism(Quality.Low)
+    c9.set_anxiety_propensity(Quality.High)
+    c9.set_vengeful(Quality.Low)
+    c9.set_assertiveness(Quality.Low)
+    c9.set_vanity(Quality.High)
+    c9.set_discord(Quality.Low)
+    c9.set_immodesty(Quality.Low)
+    c9.set_cruelty(Quality.Low)
+
+    c9.set_decorum(Quality.High)
+    chars.append(c9)
+
+    c10 = Character(
+        name="Tekkud Igathlikot", gender="male", goals={Goals.MASTER_A_SKILL}
+    )
+    c10.set_agility(AT.b1)
+    c10.set_recuperation(AT.b1)
+    c10.set_linguistic_ability(AT.g3)
+    c10.set_intuition(AT.g1)
+    c10.set_social_awareness(AT.g1)
+    c10.set_creativity(AT.b1)
+    c10.set_kinesthesic_sense(AT.b2)
+
+    c10.set_excitement_seeking(Quality.VeryHigh)
+    c10.set_hate_propensity(Quality.VeryLow)
+    c10.set_ambition(Quality.VeryLow)
+    c10.set_discord(Quality.Low)
+    c10.set_activity_level(Quality.High)
+    c10.set_orderliness(Quality.High)
+    c10.set_envy_propensity(Quality.Low)
+    c10.set_confidence(Quality.High)
+    c10.set_immoderation(Quality.High)
+    c10.set_friendliness(Quality.Low)
+    c10.set_imagination(Quality.High)
+    c10.set_bravery(Quality.High)
+    c10.set_gratitude(Quality.High)
+
+    c10.set_tranquility(Quality.VeryHigh)
+    c10.set_romance(Quality.VeryHigh)
+    c10.set_craftsmanship(Quality.High)
+    c10.set_truth(Quality.Neutral)
+    chars.append(c10)
+    c11 = Character(
+        name="Datan Rerrasfikod",
+        gender="female",
+        goals={Goals.CREATE_A_GREAT_WORK_OF_ART},
+    )
+    c11.set_disease_resistance(AT.g1)
+    c11.set_recuperation(AT.b1)
+    c11.set_analytical_ability(AT.g3)
+    c11.set_patience(AT.b1)
+    c11.set_empath(AT.b2)
+    c11.set_intuition(AT.b3)
+
+    c11.set_violent(Quality.VeryLow)
+    c11.set_stress_vulnerability(Quality.VeryLow)
+    c11.set_discord(Quality.VeryLow)
+
+    c11.set_introspection(Quality.Low)
+    c11.set_cooperation(Quality.Low)
+    c11.set_harmony(Quality.High)
+    c11.set_craftsmanship(Quality.Neutral)
+    chars.append(c11)
+    c12 = Character(name="Dumat Idenidek", gender="male", goals={Goals.START_A_FAMILY})
+    chars.append(c12)
+
+    # c= Character(name="",gender="male",goals={Goals.})
+    # chars.append(c)
+
+    armies = {
+        "sword": [],
+        "hammer": [],
+        "crossbow": [],
+    }
+
+    for char in chars:
+        print(f"{char.name}={char.goals}")
+        char.add_skills()
+    skills_to_check = [
+        Skills.FurnaceOperator,
+        Skills.Brewer,
+        Skills.Planter,
+        Skills.Thresher,
+        Skills.Weaver,
+        Skills.WoodBurner,
+        Skills.Suturer,
+        Skills.WoundDresser,
+        Skills.Miner,
+        Skills.StoneCutter,
+        Skills.Cook,
+        Skills.Bowyer,
+        Skills.WeaponSmith,
+        Skills.ArmorSmith,
+        Skills.GemCutter,
+        Skills.Carpenter,
+        Skills.StoneCarver,
+        Skills.StoneCrafter,
+        Skills.Engraver,
+        Skills.Mason,
+        Skills.ArmorUser,
+        Skills.Fighter,
+        Skills.Dodger,
+        Skills.Tactician,
+        Skills.Leader,
+        Skills.Appraiser,
+        Skills.JudgeOfIntent,
+        Skills.Negotiator,
+        Skills.Organizer,
+        Skills.Consoler,
+        Skills.Pacifier,
+        Skills.Diagnoser,
+        Skills.BoneDoctor,
+        Skills.Surgeon,
+        Skills.RecordKeeper,
+        Skills.Comedian,
+        Skills.Conversationalist,
+        Skills.Flatterer,
+        Skills.Intimidator,
+        Skills.Liar,
+        Skills.Persuader,
+    ]
+    # print_skill_table(chars, skills=skills_to_check)
+    print_skill_table([c7, c8, c9, c10, c11, c12])
+    # woodcrafter,mason
+    # stonecutter smooth wall
+    # engraver
+
+    roles = {
+        "DodokLolok": ["StoneCarver5", "BoneDoctor2", "Surgeon2", "WoodCutter1"],
+        "Eshtan": [Roles.ExpeditionLeader, "Carpenter4", "TavernKeeper"],
+        "Momuz": [Roles.MilitaryLeader],
+        "Tobul": ["StoneCrafter4", "Planter3", "Brewer3", "TavernPerformer"],
+        "Vucar": ["Cook5", "GemCutter5", "TempMiner"],
+        "DodokOkir": [Roles.Broker, Roles.BookKeeper, "StoneCutter2"],
+        "Udib": [Roles.ChiefMedicalDoctor, "Engraver5", "Miner2"],
+        "AthelBom": ["Bowyer2", "Miner", "Herbalist"],
+        "LogemDucim": ["Miner", "Woodcutter2", Roles.Manager],
+        "OnulMeg": ["weaponsmith2", "Miner", "AnimalTrainer"],
+        "TekkudIgath": [],
+        "DatanRerrasfikod": [],
+        "DumatIdenidek": [],
+    }
+
+
 if __name__ == "__main__":
-    main()
+    game2()
