@@ -41,7 +41,7 @@ class Skill(metaclass=ABCMeta):
         goals: set[Goals],
         facets: dict[Facets, Quality],
         name: str,
-        **kwargs,
+        **kwargs: bool,
     ) -> bool:
         """Check if skill clashes with any beliefs/ facets"""
         return False
@@ -72,7 +72,7 @@ class BrokerSkill(Skill):
         goals: set[Goals],
         facets: dict[Facets, Quality],
         name: str,
-        **kwargs,
+        **kwargs: bool,
     ) -> bool:
         if beliefs[Beliefs.COMMERCE] < Quality.Neutral:
             return True
@@ -86,7 +86,7 @@ class CraftSkill(Skill):
         goals: set[Goals],
         facets: dict[Facets, Quality],
         name: str,
-        **kwargs,
+        **kwargs:bool,
     ) -> bool:
         if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
             logger.warning(f"{name} {Beliefs.CRAFTSMANSHIP} < {Quality.Neutral}")
@@ -120,7 +120,7 @@ class MilitarySkill(Skill):
         goals: set[Goals],
         facets: dict[Facets, Quality],
         name: str,
-        **kwargs,
+        **kwargs:bool,
     ) -> bool:
         if kwargs["bypass"] == True:
             return False
