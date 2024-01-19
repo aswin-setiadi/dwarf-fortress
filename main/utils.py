@@ -40,6 +40,9 @@ def print_skill_table(chars: list[Character], skills: Iterable[Skills] = []):
         elif skill.name == "Concentration":
             print("".ljust(50, "#"))
             print("Misc.".ljust(20, " ") + namestr)
+        elif skill.name == "Dancer":
+            print("".ljust(50, "#"))
+            print("".ljust(20, " ") + namestr)
         l: list[str] = []
         for char in chars:
             if skill in char.skills.keys():

@@ -86,7 +86,7 @@ class CraftSkill(Skill):
         goals: set[Goals],
         facets: dict[Facets, Quality],
         name: str,
-        **kwargs:bool,
+        **kwargs: bool,
     ) -> bool:
         if beliefs[Beliefs.CRAFTSMANSHIP] < Quality.Neutral:
             logger.warning(f"{name} {Beliefs.CRAFTSMANSHIP} < {Quality.Neutral}")
@@ -120,7 +120,7 @@ class MilitarySkill(Skill):
         goals: set[Goals],
         facets: dict[Facets, Quality],
         name: str,
-        **kwargs:bool,
+        **kwargs: bool,
     ) -> bool:
         if kwargs["bypass"] == True:
             return False
@@ -480,6 +480,7 @@ class Discipline(Skill):
     Active military training raise discipline rather quickly.
     Exposed to dead body, rain, cancelling jobs due to "horrified" also raise it.
     Creature naturally high stress and horror tolerance hard to train discipline.
+    Easy to increase w. basic mil. training.
     """
 
     def __init__(self) -> None:
@@ -813,6 +814,16 @@ class Pacifier(Skill):
         return True
 
 
+class PaperMaker(Skill):
+    def __init__(self) -> None:
+        self.attributes = {
+            SoulAttributes.Kinesthesic: Scores.A,
+            SoulAttributes.SpatialSense: Scores.B,
+            BodyAttributes.Strength: Scores.A,
+            BodyAttributes.Agility: Scores.B,
+        }
+
+
 class Percussion(PerformingSKill):
     def __init__(self) -> None:
         self.attributes = {
@@ -891,6 +902,8 @@ class Speaker(PerformingSKill):
 
 
 class Spinner(Skill):
+    """Spin wool"""
+
     def __init__(self) -> None:
         self.attributes = {
             SoulAttributes.Kinesthesic: Scores.A,
@@ -1000,13 +1013,38 @@ class Tactician(MilitarySkill):
         }
 
 
+class Tanner(Skill):
+    """Also includes vellum creation (paper from animal hide)"""
+
+    def __init__(self) -> None:
+        self.attributes = {
+            SoulAttributes.Kinesthesic: Scores.A,
+            BodyAttributes.Agility: Scores.A,
+        }
+
+
 class Thresher(Skill):
+    """Spin plant thread"""
+
     def __init__(self) -> None:
         self.attributes = {
             SoulAttributes.Kinesthesic: Scores.A,
             BodyAttributes.Agility: Scores.A,
             BodyAttributes.Strength: Scores.B,
             BodyAttributes.Endurance: Scores.C,
+        }
+
+
+class Trapper(Skill):
+    """Successfully completing the 'capture a live land animal' task
+    fulfills a dwarf's 'do something exciting' need."""
+
+    def __init__(self) -> None:
+        self.attributes = {
+            SoulAttributes.AnalyticalAbility: Scores.A,
+            SoulAttributes.Creativity: Scores.B,
+            SoulAttributes.SpatialSense: Scores.C,
+            BodyAttributes.Agility: Scores.A,
         }
 
 
@@ -1129,10 +1167,10 @@ class Skills(Enum):
     AnimalTrainer = AnimalTrainer()
     Miner = Miner()
     StoneCutter = StoneCutter()
-    # Successfully completing the 'capture a live land animal' task
-    # fulfills a dwarf's 'do something exciting' need.
-    # Trapper = Trapper()
-    # Tanner = Tanner()
+
+    Trapper = Trapper()
+    Tanner = Tanner()
+    PaperMaker = PaperMaker()
 
     # Crafting
     Cook = Cook()
@@ -1148,7 +1186,7 @@ class Skills(Enum):
     Mason = Mason()
 
     # military
-    Discipline = Discipline()  # easy to increase w. basic mil. training.
+    Discipline = Discipline()
     Sword = Sword()
     ArmorUser = ArmorUser()
     Fighter = Fighter()
@@ -1167,11 +1205,11 @@ class Skills(Enum):
 
     # Manager
     Organizer = Organizer()
-    # Expedition Leader/ Mayor at 50 pop.
+
     Consoler = Consoler()
     Pacifier = Pacifier()
 
-    # CMD-> do everything in beginning, depend on diagnose skill
+    # CMD
     Diagnoser = Diagnoser()
 
     # Doctor

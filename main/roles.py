@@ -4,11 +4,16 @@ from skills import BodyAttributes, Skills, SoulAttributes
 
 
 class Roles(Enum):
+    # do everything in beginning, depend on diagnose skill
     ChiefMedicalDoctor = {Skills.Diagnoser}
     Manager = {Skills.Organizer, Skills.Consoler, Skills.Pacifier}
     Broker = {Skills.JudgeOfIntent, Skills.Appraiser, Skills.Negotiator}
     BookKeeper = {Skills.RecordKeeper}
-    ExpeditionLeader = {Skills.Consoler, Skills.Pacifier}
+    # Expedition Leader/ Mayor at 50 pop.
+    ExpeditionLeader = {
+        Skills.Consoler,
+        Skills.Pacifier,
+    }
     MilitaryLeader = {
         Skills.ArmorUser,
         Skills.Dodger,
