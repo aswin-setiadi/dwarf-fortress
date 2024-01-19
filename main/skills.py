@@ -153,18 +153,12 @@ class MilitarySkill(Skill):
     ) -> tuple[int, bool]:
         goal = True if Goals.BECOME_A_LEGENDARY_WARRIOR in goals else False
         score = 0
-        if beliefs[Beliefs.MARTIAL_PROWESS] > Quality.Neutral:
-            score += beliefs[Beliefs.MARTIAL_PROWESS]
-        if beliefs[Beliefs.PEACE] < Quality.Neutral:
-            score -= beliefs[Beliefs.PEACE]
-        if facets[Facets.BRAVERY] > Quality.Neutral:
-            score += facets[Facets.BRAVERY]
-        if facets[Facets.STRESS_VULNERABILITY] < Quality.Neutral:
-            score -= facets[Facets.STRESS_VULNERABILITY]
-        if facets[Facets.DEPRESSION_PROPENSITY] < Quality.Neutral:
-            score -= facets[Facets.DEPRESSION_PROPENSITY]
-        if facets[Facets.ANXIETY_PROPENSITY] < Quality.Neutral:
-            score -= facets[Facets.ANXIETY_PROPENSITY]
+        score += beliefs[Beliefs.MARTIAL_PROWESS]
+        score -= beliefs[Beliefs.PEACE]
+        score += facets[Facets.BRAVERY]
+        score -= facets[Facets.STRESS_VULNERABILITY]
+        score -= facets[Facets.DEPRESSION_PROPENSITY]
+        score -= facets[Facets.ANXIETY_PROPENSITY]
         return (score, goal)
 
 
