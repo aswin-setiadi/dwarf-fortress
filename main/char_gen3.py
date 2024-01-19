@@ -287,3 +287,220 @@ def char10() -> Character:
     c.set_competition(qty.Low)
     c.set_truth(qty.Neutral)
     return c
+
+
+def char11() -> Character:
+    c = Character(name="Kosoth Avalavuz", gender="male", goals={Goals.MASTER_A_SKILL})
+    c.set_endurance(AT.g1)
+    c.set_disease_resistance(AT.b2)
+    c.set_recuperation(AT.b2)
+
+    c.set_analytical_ability(AT.g3)
+    c.set_linguistic_ability(AT.g1)
+    c.set_focus(AT.b1)
+
+    c.set_discord(qty.Highest)
+    c.set_orderliness(qty.VeryHigh)
+    c.set_love_propensity(qty.Low)
+    c.set_trust(qty.Low)
+    c.set_gregariousness(qty.High)
+    c.set_altruism(qty.Low)
+    c.set_stress_vulnerability(qty.High)
+    c.set_envy_propensity(qty.Low)
+    c.set_anxiety_propensity(qty.High)
+    c.set_singleminded(qty.High)
+
+    c.set_stoicism(qty.VeryHigh)
+    c.set_tradition(qty.High)
+    c.set_friendship(qty.Neutral)
+    c.set_knowledge(qty.Neutral)
+    return c
+
+
+def char12() -> Character:
+    c = Character(
+        name="Likot Ilrallimar", gender="female", goals={Goals.START_A_FAMILY}
+    )
+    c.set_endurance(AT.b1)
+    c.set_disease_resistance(AT.b2)
+
+    c.set_spatial_sense(AT.g2)
+    c.set_patience(AT.g2)
+    c.set_intuition(AT.g1)
+    c.set_willpower(AT.g1)
+    c.set_creativity(AT.g1)
+    c.set_musical_ability(AT.b1)
+    c.set_kinesthesic_sense(AT.b2)
+    c.set_social_awareness(AT.b2)
+    c.set_analytical_ability(AT.b3)
+
+    c.set_anger_propensity(qty.VeryLow)
+    c.set_perfectionist(qty.VeryLow)
+    c.set_excitement_seeking(qty.VeryHigh)
+    c.set_politeness(qty.Low)
+    c.set_orderliness(qty.High)
+    c.set_art_inclined(qty.High)
+    c.set_cheer_propensity(qty.High)
+    c.set_altruism(qty.Low)
+    c.set_bashful(qty.Low)
+
+    c.set_perseverance_belief(qty.VeryLow)
+    c.set_loyalty(qty.Neutral)
+    return c
+
+
+def char13() -> Character:
+    c = Character(
+        name="Mistem Erithducim", gender="female", goals={Goals.MASTER_A_SKILL}
+    )
+    c.set_endurance(AT.g3)
+    c.set_disease_resistance(AT.g1)
+    c.set_toughness(AT.g1)
+    c.set_agility(AT.b1)
+    c.set_recuperation(AT.b2)
+
+    c.set_willpower(AT.g2)
+    c.set_spatial_sense(AT.b1)
+    c.set_analytical_ability(AT.b2)
+    c.set_intuition(AT.b2)
+    c.set_patience(AT.b2)
+
+    c.set_anger_propensity(qty.VeryLow)
+    c.set_closeminded(qty.Low)
+    c.set_cheer_propensity(qty.High)
+    c.set_singleminded(qty.Low)
+
+    c.set_independence(qty.VeryHigh)
+    c.set_martial_prowess(qty.Neutral)
+    return c
+
+
+def char14() -> Character:
+    c = Character(
+        name="Monom Tekkudrimtar", gender="male", goals={Goals.START_A_FAMILY}
+    )
+    # no bodyattribute explicit values
+    c.set_willpower(AT.g3)
+    c.set_musical_ability(AT.g3)
+    c.set_intuition(AT.g2)
+    c.set_patience(AT.b1)
+
+    c.set_disdain_advice(qty.VeryLow)
+    c.set_privacy(qty.Low)
+    c.set_perfectionist(qty.High)
+    c.set_love_propensity(qty.Low)
+    c.set_dutifulness(qty.Low)
+    c.set_perseverance(qty.High)
+    c.set_assertiveness(qty.Low)
+    c.set_ambition(qty.Low)
+    c.set_pride(qty.High)
+    c.set_emotionally_obsessive(qty.Low)
+    c.set_trust(qty.Low)
+
+    c.set_friendship(qty.Neutral)
+    c.set_artwork(qty.Neutral)
+    return c
+
+
+def char15() -> Character:
+    c = Character(
+        name="Mosus Sigunbomrek",
+        gender="female",
+        goals={Goals.CREATE_A_GREAT_WORK_OF_ART},
+    )
+    c.set_recuperation(AT.g3)
+    c.set_strength(AT.g3)
+    c.set_agility(AT.g2)
+    c.set_disease_resistance(AT.g1)
+
+    c.set_linguistic_ability(AT.g2)
+    c.set_creativity(AT.g2)
+    c.set_patience(AT.g1)
+    c.set_willpower(AT.b1)
+    c.set_spatial_sense(AT.b2)
+    c.set_confidence(qty.Highest)
+    c.set_bravery(qty.VeryLow)
+    c.set_ambition(qty.VeryHigh)
+    c.set_friendliness(qty.Low)
+    c.set_hate_propensity(qty.Low)
+    c.set_privacy(qty.Low)
+    c.set_imagination(qty.Low)
+    c.set_tolerant(qty.Low)
+    c.set_closeminded(qty.High)
+    c.set_art_inclined(qty.High)
+    c.set_immoderation(qty.High)
+    c.set_activity_level(qty.Low)
+    c.set_stress_vulnerability(qty.Low)
+    c.set_emotionally_obsessive(qty.High)
+
+    c.set_independence(qty.Low)
+    c.set_knowledge(qty.Low)
+    c.set_sacrifice(qty.High)
+    c.set_cunning(qty.Low)
+    c.set_truth(qty.Neutral)
+    return c
+
+
+def char16() -> Character:
+    c = Character(
+        name="Thikut Ishashonul", gender="female", goals={Goals.CRAFT_A_MASTERWORK}
+    )
+    c.set_agility(AT.b1)
+    c.set_strength(AT.b2)
+
+    c.set_empath(AT.g3)
+    c.set_musical_ability(AT.g2)
+    c.set_willpower(AT.g1)
+    c.set_analytical_ability(AT.g1)
+    c.set_linguistic_ability(AT.b2)
+    c.set_spatial_sense(AT.b2)
+
+    c.set_humor(qty.Lowest)
+    c.set_gratitude(qty.VeryHigh)
+    c.set_anger_propensity(qty.VeryLow)
+    c.set_depression_propensity(qty.High)
+    c.set_tolerant(qty.Low)
+    c.set_stress_vulnerability(qty.Low)
+    c.set_vengeful(qty.Low)
+    c.set_ambition(qty.High)
+    c.set_greed(qty.High)
+    c.set_immoderation(qty.High)
+    c.set_pride(qty.High)
+
+    c.set_sacrifice(qty.Low)
+    c.set_law(qty.High)
+    c.set_loyalty(qty.Low)
+    return c
+
+
+def char17() -> Character:
+    c = Character(name="Tulon Sholidoslan", gender="male", goals={Goals.MASTER_A_SKILL})
+    c.set_toughness(AT.g3)
+    c.set_strength(AT.g1)
+    c.set_recuperation(AT.b2)
+
+    c.set_social_awareness(AT.g3)
+    c.set_focus(AT.g3)
+    c.set_linguistic_ability(AT.g1)
+    c.set_memory(AT.b1)
+
+    c.set_pride(qty.VeryLow)
+    c.set_vengeful(qty.VeryLow)
+    c.set_thoughtlessness(qty.VeryLow)
+    c.set_imagination(qty.VeryHigh)
+    c.set_lust_propensity(qty.High)
+    c.set_anger_propensity(qty.Low)
+    c.set_disdain_advice(qty.Low)
+    c.set_art_inclined(qty.High)
+    c.set_hopeful(qty.Low)
+    c.set_orderliness(qty.High)
+    c.set_wastefulness(qty.Low)
+    c.set_emotionally_obsessive(qty.Low)
+    c.set_cheer_propensity(qty.Low)
+    c.set_curious(qty.Low)
+    c.set_greed(qty.High)
+    c.set_stress_vulnerability(qty.Low)
+
+    c.set_law(qty.Low)
+    c.set_nature(qty.Neutral)
+    return c
