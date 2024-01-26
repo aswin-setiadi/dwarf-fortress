@@ -226,6 +226,16 @@ class ArmorUser(MilitarySkill):
         }
 
 
+class BoneCarver(CraftSkill):
+    def __init__(self) -> None:
+        self.attributes = {
+            SoulAttributes.Kinesthesic: Scores.A,
+            SoulAttributes.SpatialSense: Scores.B,
+            SoulAttributes.Creativity: Scores.C,
+            BodyAttributes.Agility: Scores.A,
+        }
+
+
 class BoneDoctor(Skill):
     def __init__(self) -> None:
         self.attributes = {
@@ -297,6 +307,18 @@ class Carpenter(CraftSkill):
             SoulAttributes.Creativity: Scores.C,
             BodyAttributes.Strength: Scores.A,
             BodyAttributes.Agility: Scores.B,
+        }
+
+
+class Clothier(CraftSkill):
+    """ """
+
+    def __init__(self) -> None:
+        self.attributes = {
+            SoulAttributes.Kinesthesic: Scores.A,
+            SoulAttributes.SpatialSense: Scores.B,
+            SoulAttributes.Creativity: Scores.C,
+            BodyAttributes.Agility: Scores.A,
         }
 
 
@@ -621,6 +643,28 @@ class GemCutter(CraftSkill):
         }
 
 
+class GemSetter(CraftSkill):
+    def __init__(self) -> None:
+        self.attributes = {
+            SoulAttributes.Kinesthesic: Scores.A,
+            SoulAttributes.SpatialSense: Scores.B,
+            SoulAttributes.Creativity: Scores.C,
+            BodyAttributes.Agility: Scores.A,
+        }
+
+
+class GlassMaker(CraftSkill):
+    def __init__(self) -> None:
+        self.attributes = {
+            SoulAttributes.Kinesthesic: Scores.A,
+            SoulAttributes.SpatialSense: Scores.B,
+            SoulAttributes.Creativity: Scores.C,
+            BodyAttributes.Strength: Scores.A,
+            BodyAttributes.Agility: Scores.B,
+            BodyAttributes.Endurance: Scores.C,
+        }
+
+
 class Herbalist(Skill):
     def __init__(self) -> None:
         self.attributes = {
@@ -750,6 +794,15 @@ class Miner(Skill):
             BodyAttributes.Strength: Scores.A,
             BodyAttributes.Toughness: Scores.B,
             BodyAttributes.Endurance: Scores.C,
+        }
+
+
+class Musician(PerformingSKill):
+    def __init__(self) -> None:
+        self.attributes = {
+            SoulAttributes.Music: Scores.A,
+            SoulAttributes.Creativity: Scores.B,
+            SoulAttributes.Focus: Scores.C,
         }
 
 
@@ -892,6 +945,34 @@ class RecordKeeper(Skill):
         }
 
 
+class SiegeEngineer(CraftSkill):
+    """The quality of the siege engine parts affects the engine's reload time
+    (and possibly accuracy).[Verify] It is not known whether the siege engine
+    itself also can be of a certain quality. The quality and material of the
+    ammunition (in case of ballista arrows) affects the damage and possibly
+    accuracy as well.
+
+    The only way of obtaining high-quality siege engine parts is to have them
+    made by a trained engineer; the only way to train an engineer is to make
+    parts or ammunition. Assembling and disassembling siege engines does not
+    train the siege engineer skill. Dwarves will occasionally produce
+    masterpieces long before reaching Legendary skill level, but be prepared to
+    waste hundreds of logs until you have three masterpiece parts. Bringing an
+    engineer to Proficient level (the highest you could buy when starting a new
+    fortress) will take about 120 logs. Becoming Legendary requires 600 logs.
+    """
+
+    def __init__(self) -> None:
+        self.attributes = {
+            SoulAttributes.AnalyticalAbility: Scores.A,
+            SoulAttributes.Creativity: Scores.B,
+            SoulAttributes.SpatialSense: Scores.C,
+            BodyAttributes.Strength: Scores.A,
+            BodyAttributes.Agility: Scores.B,
+            BodyAttributes.Endurance: Scores.C,
+        }
+
+
 class Speaker(PerformingSKill):
     def __init__(self) -> None:
         self.attributes = {
@@ -1020,6 +1101,16 @@ class Tanner(Skill):
         self.attributes = {
             SoulAttributes.Kinesthesic: Scores.A,
             BodyAttributes.Agility: Scores.A,
+        }
+
+
+class Teacher(Skill):
+    def __init__(self) -> None:
+        """teach faster in military training session during demo. No mention of guildhall.."""
+        self.attributes = {
+            SoulAttributes.Empathy: Scores.A,
+            SoulAttributes.SocialAwareness: Scores.B,
+            SoulAttributes.Language: Scores.C,
         }
 
 
@@ -1184,6 +1275,12 @@ class Skills(Enum):
     WoodCrafter = WoodCrafter()
     Engraver = Engraver()
     Mason = Mason()
+    GemSetter = GemSetter()
+    # CheeseMaker = CheeseMaker() cheese has no quality
+    SiegeEngineer = SiegeEngineer()
+    GlassMaker = GlassMaker()
+    Clothier = Clothier()
+    BoneCarver = BoneCarver()
 
     # military
     Discipline = Discipline()
@@ -1230,9 +1327,11 @@ class Skills(Enum):
     # misc.
     Concentration = Concentration()
     Observer = Observer()
+    Teacher = Teacher()
 
     # performing
     Dancer = Dancer()
+    Musician = Musician()
     Keyboardist = Keyboard()
     Percussion = Percussion()
     Poet = Poet()
